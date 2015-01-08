@@ -1,0 +1,36 @@
+#!/bin/sh
+
+data_base="cscope.files"
+find_path=""
+file_name=""
+file_type=".c$"
+home_path=$HOME
+tmp=$$.tmp
+if [ $# -lt 1 ]; then
+	echo "please input the files name which you want find"
+	exit 1
+fi
+
+file_name=$1
+
+if [ $# -gt 1 ] ; then
+	file_type=$2$
+fi
+
+find_path=`pwd`
+if [ ! -f $find_path/$data_base ];then
+	echo " data base cscope.files is not exist"
+	exit 1
+fi
+
+
+awk -F '/' '{print NR,$NF}' $find_path/$data_base | grep -i  $file_name | grep $file_type | awk '{print $1}' >$tmp
+
+awk '{if(FNR==NR){aa[NR]=$0}else{if($1 in aa)print aa[$1]}}' $find_path/$data_base $tmp
+rm -rf $tmp
+
+
+
+
+
+

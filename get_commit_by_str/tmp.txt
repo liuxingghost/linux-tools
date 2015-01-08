@@ -1,0 +1,4782 @@
+=========>/home/zhangxd/work/Lollipop-CS/LINUX/android/system/core<========
+commit d879fbf49cf87cf2d2a05beb4c0be0fb381e6a62
+Author: zhangxd <zhangxd1224@thundersoft.com>
+Date:   Mon Dec 8 16:03:20 2014 +0800
+
+    [R42061][8974LBU] FTA log Porting
+    
+    Modification ID:   8974LBU-BSP-FID3001
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: I8d19dfb512843ab1832cf4cf152af7594670f405
+
+commit 2e59a179127f63cdadae7f3150a53b382c8e92e6
+Author: Thundersoft_songkw0613 <songkw0613@thundersoft.com>
+Date:   Mon Dec 1 21:45:41 2014 +0800
+
+    [R41757][8974LBU] fix compile problem for SDDL.
+    
+    Modification ID: 8974LBU-BSP-FID0101
+    Scratch or Copy [S/C]: C
+    Copy from:
+    Other Info:
+    
+    Change-Id: Id48ca1d1351b0893d75c52db1af13093c278ddea
+
+commit f73b65412b7ab4f420790f42d6a19e1420f592d1
+Merge: 007998b 4b8937e
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Dec 3 01:33:49 2014 -0800
+
+    Merge "logd: throttle SELinux denials to 20/sec"
+
+commit 007998b7ae42fc27d4b777b70b16db3fac851d4c
+Merge: 5d653cf 5ae158d
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Nov 28 06:56:36 2014 -0800
+
+    Merge "Dolby:  Add support for Dolby UDC DD/DD+ Decoder"
+
+commit 5d653cf29058bcb39987f8e774c0775bd2b16a2b
+Merge: 1d3d79c 9a130c6
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Nov 27 21:53:26 2014 -0800
+
+    Merge "system: Support for offloading Java audio tracks"
+
+commit 1d3d79cd8bbbd6a8f9d247accff66f342dd8c66a
+Merge: 93fb4d5 5be7ca5
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Nov 27 18:28:16 2014 -0800
+
+    Merge "healthd: Reinitialize mChargerNames for every battery update"
+
+commit 5ae158df2e03e787139d656265dceb42d98fb6fe
+Author: Robert Jones <rob.jones@dolby.com>
+Date:   Tue Dec 17 16:32:01 2013 +1100
+
+    Dolby:  Add support for Dolby UDC DD/DD+ Decoder
+    
+    - System property changes to handle Dolby UDC settings
+    
+    CRs-Fixed: 761339
+    Change-Id: I2d67297c6acf488b2646d5b9c4ea3f2663cc292e
+
+commit 5be7ca5e3b082c70fcab8530fe652b0b9eb87d6c
+Author: Ramakrishnan Ganesh <ramakris@codeaurora.org>
+Date:   Fri Nov 15 16:40:49 2013 -0800
+
+    healthd: Reinitialize mChargerNames for every battery update
+    
+    Booting up the device without the usb sets the usb power supply
+    type as UNKNOWN. Due to this mChargerNames gets incorrectly
+    initialized at bootup. The value of usb power supply type changes
+    at run-time. So it makes sense to update mChargerNames everytime
+    we have a battery related update.
+    
+    Change-Id: I2ec9f9a420ca61814d43c316b418ce94de3691bc
+
+commit 4b8937e36cabd35760b414fbbfc302486abb230f
+Author: Nick Kralevich <nnk@google.com>
+Date:   Wed Nov 19 13:33:22 2014 -0800
+
+    logd: throttle SELinux denials to 20/sec
+    
+    Impose a limit of 20 selinux denials per second. Denials beyond
+    that point don't add any value, and have the potential to cause
+    crashes or denial of service attacks.
+    
+    Do some other misc cleanup while I'm here.
+    
+    Bug: 18341932
+    Change-Id: I6125d629ae4d6ae131d2e53bfa41e1f50277d402
+
+commit 9a130c69abeb0aa34947430975170b17c4cf4f7c
+Author: Narsinga Rao Chella <nrchella@codeaurora.org>
+Date:   Sat Nov 15 15:48:48 2014 -0800
+
+    system: Support for offloading Java audio tracks
+    
+    Offload Java audio tracks if the property is set.
+    This is used to avoid mixing in audioflinger and
+    to apply effects in DSP. Also update function to
+    calculate bytes per sample for offload format.
+    
+    Change-Id: I0705e70a806a335e372e844de8a1210fbfe58cd7
+
+commit 93fb4d51452d8e79cb327dcf21211871d1f7c3ae
+Merge: 96cccdc baafab4
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Nov 14 20:32:14 2014 -0800
+
+    Merge "Add torch light access permission to torch app"
+
+commit 96cccdcf7ac056e80bccd72bbd73b4d4333e2591
+Merge: 6d66893 c8bf383
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Nov 14 04:40:51 2014 -0800
+
+    Merge "healthd: Treat Wipower charging as a form of Wireless Charging"
+
+commit c8bf38374aa6953e1ad35955fe6c90f35c3bd225
+Author: Abhijeet Dharmapurikar <adharmap@codeaurora.org>
+Date:   Mon Nov 3 12:34:24 2014 -0800
+
+    healthd: Treat Wipower charging as a form of Wireless Charging
+    
+    Wipower charging is a form of Wireless charging where the
+    power path is via induction and control path goes over BT.
+    
+    Change-Id: Ib2767d512394a0b4aef11a961a83872070a46cd8
+
+commit 6d66893ba67e88422c987a47facf474d303cb28a
+Merge: 193ed1d bc7026b
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Nov 12 13:57:38 2014 -0800
+
+    Merge "system: core: fastboot: Increase USB protocol buffer size to 1024"
+
+commit 193ed1d6a410f82c4a0bab4fc2246fec46fa543d
+Merge: e92cfe3 91a70c8
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Nov 11 07:35:52 2014 -0800
+
+    Merge "system: core: increase the polling time for remount_ro to 3600"
+
+commit baafab4d732cfbebcda67e376ad14b8fd0605ca8
+Author: Kui Wang <kuiw@codeaurora.org>
+Date:   Thu May 15 20:13:41 2014 +0800
+
+    Add torch light access permission to torch app
+    
+    Add torch light access permission to torch app
+    
+    Change-Id: Icf3eb08d75481fb70229887b76a8cdb5d3516944
+
+commit 91a70c8671ecd03988c80f7e594667d9d277f434
+Author: Konstantin Dorfman <kdorfman@codeaurora.org>
+Date:   Thu Dec 5 14:39:39 2013 +0200
+
+    system: core: increase the polling time for remount_ro to 3600
+    
+    eMMC4.5 introduces an addition of cache on the device.
+    We experienced long flush durations in some of the devices,
+    and therefore the adb reboot resets the target before the flush
+    completes.
+    Latest tests show that increasing it to 2400 wasn't enough thus
+    it was increased to 3600.
+    
+    Change-Id: Ifbe7af16aa1861d0d57c808b0240361c0317d5c5
+    CRs-fixed: 581363
+
+commit bc7026bbd2cd5fa54df5b6ba3f5dc143efd123e3
+Author: Channagoud Kadabi <ckadabi@codeaurora.org>
+Date:   Wed Nov 5 16:59:27 2014 -0800
+
+    system: core: fastboot: Increase USB protocol buffer size to 1024
+    
+    With USB3.0 SS support the max packet size supported by USB protocol
+    is 1024 bytes. When connected to a USB device in SuperSpeed, if only
+    512 bytes are sent at a time the device would interpret each transfer
+    as a short packet and slows down overall throughput. To accommodate
+    for SuperSpeed USB bulk endpoints, increase the buffer size to 1024.
+    
+    Change-Id: I4f447fe38045bc0008e2d6dd3f36c2d6819d6c15
+
+commit e92cfe34afe2df748f440fdeb05faf0191b1125e
+Merge: a4eecf7 fa7665c
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sat Nov 8 05:37:50 2014 -0800
+
+    Merge "Make tombstones directory to not follow symlink."
+
+commit a4eecf78e4a9476c5bcd9ece813755b01a0b856c
+Merge: 44015f9 cc2c328
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sat Nov 8 05:37:47 2014 -0800
+
+    Merge "adb/fastboot: Support SuperSpeed USB devices"
+
+commit 44015f9aeb5c36f30068c2adb0fda8db17d975fb
+Merge: 34351f5 1a63b81
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sat Nov 8 05:37:05 2014 -0800
+
+    Merge "healthd: Support alarm in power off charging mode"
+
+commit 34351f5867102241cd35a25d4e130bc6df9c027c
+Merge: 4263dfb 5ea1acd
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sat Nov 8 05:37:04 2014 -0800
+
+    Merge "Revert "healthd: charger: Support alarm in power off charging mode""
+
+commit 4263dfb8224ab4e5644ead337d7bf223fd885408
+Merge: ec56908 fd23edd
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sat Nov 8 05:36:25 2014 -0800
+
+    Merge "init: Do not call recursive_restorecon on soc.0"
+
+commit cc2c3283ee0094d2c52a183d55b73966dcafa759
+Author: Peter Heatwole <pheatwol@codeaurora.org>
+Date:   Tue Aug 13 13:55:24 2013 -0700
+
+    adb/fastboot: Support SuperSpeed USB devices
+    
+    When enumerating USB 3.0 devices, a 6-byte SuperSpeed companion
+    descriptor follows each standard descriptor. The ADB and Fastboot
+    Linux clients currently fail to interpret these additional
+    descriptors and simply bail. Fix this by skipping over them.
+    
+    Change-Id: I254dad8ed81e8de74a4fac36e8ce54b5da9715fe
+
+commit ec5690864a8247ffb855f1970d32b581869d8e6c
+Merge: dd88064 ba338b4
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Nov 7 14:34:32 2014 -0800
+
+    Merge "system: core: increase the polling time for remount_ro"
+
+commit fa7665cf0fbc85c04fa37e4c74ed3afcebe41209
+Author: Sudhir Sharma <sudhshar@codeaurora.org>
+Date:   Fri Oct 31 18:47:55 2014 -0700
+
+    Make tombstones directory to not follow symlink.
+    
+    Use file descriptor to change ownership.
+    
+    Change-Id: I3e00ccb8496d8d91bae9b78ce5e38e4cabd4a3d6
+
+commit dd8806458e02bbf32e99566c79a3276d9a725cb2
+Merge: 07c05ce e31f336
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Nov 7 01:18:18 2014 -0800
+
+    Merge "healthd: charger: only reboot under NORMAL mode"
+
+commit 1a63b81ae7081d469605868400d10d9731b8d6e0
+Author: Matthew Qin <yqin@codeaurora.org>
+Date:   Fri Oct 17 13:11:50 2014 +0800
+
+    healthd: Support alarm in power off charging mode
+    
+    To implement this feature need to let the phone reboot some time
+    earlier than the alarm time.
+    
+    Change-Id: I6505a99b51932ffa23518769f8fd4d2590021543
+
+commit 5ea1acd42f0e6a5a74377115084adc893ff0410f
+Author: Matthew Qin <yqin@codeaurora.org>
+Date:   Wed Oct 22 11:15:01 2014 +0800
+
+    Revert "healthd: charger: Support alarm in power off charging mode"
+    
+    This reverts commit 0041eb9ba5643c99724fa92e79886deb5758c8e1.
+    
+    Change-Id: I6920564d072c13d9219a90816f4a21bc5f5b63fd
+
+commit fd23edd48272976d2fb333f377242173f92aa343
+Author: Biswajit Paul <biswajitpaul@codeaurora.org>
+Date:   Mon Nov 3 16:33:45 2014 -0800
+
+    init: Do not call recursive_restorecon on soc.0
+    
+    During coldboot calling restorecon_recursive on soc.0 causes boot
+    time delays and failing the framework to bootup.Increase the coldboot
+    timeout to accomodate recursive restorecon on "/sys/devices/"
+    
+    Change-Id: Ie364a3ca30db3a1344ea95def04f09660947a13f
+=========>/home/zhangxd/work/Lollipop-CS/LINUX/android/system/extras<========
+commit 7a5a976631fbfca96fdca416418589bf374c7dba
+Author: Thundersoft_songkw0613 <songkw0613@thundersoft.com>
+Date:   Mon Dec 1 21:44:12 2014 +0800
+
+    [R41757][8974LBU] fix compile problem for SDDL.
+    
+    Modification ID: 8974LBU-BSP-FID0101
+    Scratch or Copy [S/C]: C
+    Copy from:
+    Other Info:
+    
+    Change-Id: Id0816b4f8cac5b4d4c7f5fe38cc9debcd71eeab5
+
+commit ba2a23604727e5b333dd16a9287556d799d6d39e
+Merge: 844b2e1 960e907
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 21 17:46:50 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit 960e907388e88fcee1c373a44479571d84b79059
+Merge: 844b2e1 14aefc3
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 21 06:16:22 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit 14aefc3548c1703450389c8aba1c41fe2ba204b6
+Merge: 844b2e1 156f0cf
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Oct 19 17:16:34 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit 156f0cf7c2985304e30863689e835da4e1d66e09
+Merge: 844b2e1 98c241d
+Author: The Android Automerger <android-build@google.com>
+Date:   Thu Oct 16 06:15:55 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit 98c241d5550c973b1aa5b392892bcd3aa035ea45
+Merge: 844b2e1 d3d2d8c
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Oct 15 06:16:48 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit d3d2d8ca17549b117c46c5f854dc8b28cd425aef
+Merge: 844b2e1 25c6eb9
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 14 06:14:57 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit 25c6eb945868367713e91e1cd640c987edc49839
+Merge: 844b2e1 6a08808
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Oct 13 06:14:25 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit 6a0880819314fb41e3375ec7212acb0757d4a855
+Merge: 844b2e1 bae9c01
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Oct 12 06:15:20 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit bae9c012ef486c84dcdb816d540f31b07854a0cb
+Merge: 844b2e1 0732700
+Author: The Android Automerger <android-build@google.com>
+Date:   Thu Oct 9 06:14:28 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit 07327005d2bfc54bb37be0ba0e5d451fcb1f6890
+Merge: 844b2e1 2212f80
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Oct 8 06:21:24 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit 2212f80bbc881428ec1002225126ecb5a6d2b04a
+Merge: 844b2e1 2ad9bfa
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 7 06:16:08 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit 2ad9bfa65ee8c2be37945502384e9fc3bc2eaf7a
+Merge: 844b2e1 739e056
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Oct 6 06:16:45 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit 739e056d4e5f5dfab8b18f937ddac0342032820b
+Merge: 844b2e1 f780c15
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Oct 5 06:16:14 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit f780c15f13686763a3fc4e95a28914a2134fe145
+Merge: 844b2e1 a56e18b
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Oct 1 06:24:59 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit a56e18bddc87093a43c10b805c016ccfe98bae8c
+Merge: 844b2e1 4f06949
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Sep 30 06:25:09 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit 4f06949ed9d746b2b39034bc1576852a2bc205d1
+Merge: 844b2e1 bc54a02
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Sep 29 06:22:53 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit bc54a024b32bcc0a8d7c7d37e58cb6d96a26ea85
+Merge: 844b2e1 7d1f8ff
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Sep 28 06:18:06 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit 7d1f8ffb3c51fe761801da7e88d18dac87becf4a
+Merge: 844b2e1 050a664
+Author: The Android Automerger <android-build@google.com>
+Date:   Thu Sep 25 06:23:10 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit 050a6648e9e36977de93fcfcbd5e0fef639ea492
+Merge: 844b2e1 781a5de
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Sep 24 06:21:25 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit 781a5de25594fdc76e78a21cb4398c67cd50f9f1
+Merge: 844b2e1 516d235
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Sep 23 06:21:06 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit 516d235ea20eefed6002f5240a2966520667c463
+Merge: 844b2e1 c19853e
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Sep 22 06:17:09 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit c19853eb52395cb0a2fdcc4abc7449e8280058f5
+Merge: 844b2e1 8eb838b
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Sep 21 06:13:41 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit 8eb838bd186fe9b4958c046471d7c40a0c47cdc7
+Merge: 361acef dc17ee2
+Author: The Android Automerger <android-build@google.com>
+Date:   Sat Sep 20 21:03:13 2014 -0700
+
+    merge in lmp-release history after reset to 361acefb08e8d77d56e2d007edaabaa8a486bc3a
+
+commit dc17ee20729671d59262fe5ee6f5f29caef6790d
+Merge: 844b2e1 361acef
+Author: The Android Automerger <android-build@google.com>
+Date:   Sat Sep 20 06:14:51 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit 361acefb08e8d77d56e2d007edaabaa8a486bc3a
+Merge: 844b2e1 39ff756
+Author: The Android Automerger <android-build@google.com>
+Date:   Thu Sep 18 06:15:13 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit 39ff756b5fd6ceba91aa50bad2387d055e16453b
+Merge: 844b2e1 46007c4
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Sep 17 06:17:03 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit 46007c45d9f7cd3f85d49add847233f020d66da4
+Merge: 844b2e1 cd42277
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Sep 16 06:16:03 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit cd42277527f81c3e79f88e3fcc0d7615a2645e80
+Merge: 844b2e1 8633e9d
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Sep 15 06:16:53 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+
+commit 8633e9df2efc9f0ae4739808d454fcf610e1cd18
+Merge: 844b2e1 1551a31
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Sep 14 06:14:56 2014 -0700
+
+    merge in lmp-release history after reset to 844b2e166c6218018e9676994cff8d5d2a8cbf62
+=========>/home/zhangxd/work/Lollipop-CS/LINUX/android/bionic<========
+commit f2f774b052056204e86ba140470471dbe0eeae9f
+Author: Thundersoft_songkw0613 <songkw0613@thundersoft.com>
+Date:   Mon Dec 1 21:37:20 2014 +0800
+
+    [R41757][8974LBU] fix compile problem for SDDL.
+    
+    Modification ID: 8974LBU-BSP-FID0101
+    Scratch or Copy [S/C]: C
+    Copy from:
+    Other Info:
+    
+    Change-Id: Ic05c0a73edb89a91ae3a029b2509cd69e319a3e0
+
+commit 7b93f5af2fd5ee9bca6bee5f5bbb2cc33cb56deb
+Author: Wei Wang <wangw@codeaurora.org>
+Date:   Tue Oct 7 11:58:22 2014 -0700
+
+    libm: add missing symbols to optimized math functions
+    
+    add the following missing symbols to optimized math functions:
+    sqrtl => sqrt
+    sinl  => sin
+    cosl  => cos
+    
+    these symbols will be weak references to the functions at
+    right-hand side when compiler internal macro
+    (__LDBL_MANT_DIG__ == 53) is true
+    
+    Change-Id: Ie3b3e720b3207bbc13574b9b6d42738767f22754
+
+commit 9aa974c6d69c8eaf2355d86c64c27f1dc30d6ac0
+Author: Brent DeGraaf <bdegraaf@codeaurora.org>
+Date:   Fri Sep 19 09:27:24 2014 -0400
+
+    bionic/libm pow optimizations for arm64
+    
+    Optimize a narrow, commonly used range of inputs for faster pow.
+    
+    Change-Id: Ic2f2aefe73433fb354429f5a9de5141b716ca89b
+
+commit ae62d8384a903217af343d1e4114bc73c9fd1a5d
+Author: Biswajit Paul <biswajitpaul@codeaurora.org>
+Date:   Mon Jul 29 16:48:31 2013 +0530
+
+    bionic: Detect userspace memory leak
+    
+    When process is consuming memory beyond the limit specified by
+    property, it will print all the allocations of the same process.
+    To enable this feature, do following steps:
+    1. libc.debug.malloc 40
+    2. libc.debug.malloc.program <PROCESS_NAME>
+    3. libc.debug.malloc.maxprocsize <VALUE_IN_BYTES>
+    4. libc.malloc.minalloclim <VALUE_IN_BYTES>
+    
+    Conflicts:
+            libc/bionic/malloc_debug_check.cpp
+            libc/bionic/malloc_debug_common.cpp
+    
+    Change-Id: I03a4de9643ec954802b26443ce5685975ea30f89
+
+commit 341ddb546559c316cbf3678af8487b542936fa9c
+Author: Brent DeGraaf <bdegraaf@codeaurora.org>
+Date:   Wed Oct 2 09:47:11 2013 -0400
+
+    libc: krait: Re-factor high-performance memcpy for thumb2
+    
+    The majority of libc under bionic is built for thumb2.  Refactor the
+    high performance memcpy used in previous builds for thumb2, including
+    information that can be used for stack-unwinding.
+    
+    Change-Id: I8a25e9cdc242a54f0fea41c135e11312f0bbb449
+
+commit c6684cdb21956d4455e2e74a76dfcf6f8d1659cc
+Author: Lucas Crowthers <lucasc@codeaurora.org>
+Date:   Fri Jun 15 19:27:46 2012 -0400
+
+    Bionic/libm: math optimizations
+    
+    A couple math function optimizations.  It is a squashed version of
+    previous commits.
+    
+    Change-Id: I09db8e265a121ebb4a14a3b52bef11664d6cc341
+
+commit e7632cebdc3e84c8e3a40f09d8d5496c4035808c
+Author: Xin Qi <xqi@codeaurora.org>
+Date:   Fri Aug 15 11:12:32 2014 -0700
+
+    libc: krait: Implement optimized versions of memmove and bcopy
+    
+    Code has been refactored to thumb2 for consistency with the rest
+    of bionic libc, as well as performance and correctness.
+    
+    Use memove & bcopy in cortex-a53.
+    
+    Change-Id: I5f738ef3eb12ece6b55285f1588eab3d4bbbe27d
+
+commit a22316478d940e2d858f4de51bd4c8f3438f6fe3
+Author: Pracheer <pracheer@codeaurora.org>
+Date:   Fri Mar 28 11:32:50 2014 +0530
+
+    libc: Add cortex-a53 bionic code
+    
+    Add cortex-a53 makefile. Currently it
+    uses cortex-a15 bionic code.
+    
+    Change-Id: I1401b54b6c61d17782dff827d69f92b35a4f5c4f
+
+commit 2415f1feb1defde671dfc6e9276a58e9a3f447ed
+Author: Chiou-Hao Hsu <chsu@codeaurora.org>
+Date:   Wed Jul 2 18:46:28 2014 -0700
+
+    Include asm/sigcontext.h only for LP64 in singnal.h
+    
+    Causes compilation issues reporting no definition of
+    __uint128_t.
+    
+    Change-Id: I10db050c63fbff866671d53bfd4ce66d3ea7cc7f
+
+commit 944e192df6757bd8b7a87ce60e9db605f73f50eb
+Merge: c891e24 2155882
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 21 17:42:56 2014 -0700
+
+    merge in lmp-release history after reset to c891e24073830e07ba7373dee554ff2c70e1d313
+
+commit 21558820806532fdf250389719b81e438ca02a98
+Merge: c891e24 c32cd43
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 21 06:09:30 2014 -0700
+
+    merge in lmp-release history after reset to c891e24073830e07ba7373dee554ff2c70e1d313
+
+commit c32cd431fa8f0cc155cb17dff393855229ad5713
+Merge: c891e24 1840121
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Oct 19 17:07:47 2014 -0700
+
+    merge in lmp-release history after reset to c891e24073830e07ba7373dee554ff2c70e1d313
+
+commit 1840121a6a243ddf9e41ec20b1c3457789e11253
+Merge: c891e24 90a1ed4
+Author: The Android Automerger <android-build@google.com>
+Date:   Thu Oct 16 06:09:40 2014 -0700
+
+    merge in lmp-release history after reset to c891e24073830e07ba7373dee554ff2c70e1d313
+
+commit 90a1ed4f45a030a46747b8f1f93121bad6b18267
+Merge: c891e24 48116b3
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Oct 15 06:09:27 2014 -0700
+
+    merge in lmp-release history after reset to c891e24073830e07ba7373dee554ff2c70e1d313
+
+commit 48116b30240dd79429edd29341572345cc004d54
+Merge: c891e24 614ff98
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 14 06:09:28 2014 -0700
+
+    merge in lmp-release history after reset to c891e24073830e07ba7373dee554ff2c70e1d313
+
+commit 614ff987ceef818702bee05dd0d7525fac76e80b
+Merge: c891e24 8e06009
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Oct 13 06:09:26 2014 -0700
+
+    merge in lmp-release history after reset to c891e24073830e07ba7373dee554ff2c70e1d313
+
+commit 8e06009fcda4818c6c65de7d040c7bcd9b75a9ca
+Merge: c891e24 8a2d72d
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Oct 12 06:09:31 2014 -0700
+
+    merge in lmp-release history after reset to c891e24073830e07ba7373dee554ff2c70e1d313
+
+commit c891e24073830e07ba7373dee554ff2c70e1d313
+Author: Christopher Ferris <cferris@google.com>
+Date:   Thu Oct 9 18:31:01 2014 -0700
+
+    Add back symbols to fix Greed for Glory franchise.
+    
+    Bug: 17813018
+    Change-Id: Id939426ee5303117b9601e7915fcfec5024fc621
+
+commit c9734d24d92f4737f5ab3808c77d816a1b084582
+Author: Christopher Ferris <cferris@google.com>
+Date:   Wed Oct 8 22:48:20 2014 -0700
+
+    Re-add dlmalloc for 32 bit.
+    
+    It turns out that appportable has a version that calls dlmalloc directly.
+    Re-add the dlmalloc symbol for 32 bit only as a compatibility shim that
+    calls malloc.
+    
+    Bug: 17881362
+    Change-Id: I8f20963b0b8d323489dc083e4063779e0d1d7447
+
+commit 8a2d72d586a80d7145a24c459176d96be4b18142
+Merge: 1543fdf d690d19
+Author: The Android Automerger <android-build@google.com>
+Date:   Thu Oct 9 06:09:26 2014 -0700
+
+    merge in lmp-release history after reset to 1543fdf616ddebee7819214437527f380e5c743b
+
+commit d690d19dd018ff37471f8319381257d64db5dd7c
+Merge: 1543fdf b767222
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Oct 8 06:10:36 2014 -0700
+
+    merge in lmp-release history after reset to 1543fdf616ddebee7819214437527f380e5c743b
+
+commit 1543fdf616ddebee7819214437527f380e5c743b
+Author: Elliott Hughes <enh@google.com>
+Date:   Tue Oct 7 16:02:11 2014 -0700
+
+    Work around a bug in Immersion's libImmEmulatorJ.so.
+    
+    This library calls pthread_mutex_lock and pthread_mutex_unlock with a NULL
+    pthread_mutex_t*. This gives them (and their users) one release to fix things.
+    
+    Bug: 17443936
+    
+    (cherry picked from commit 7d3f553f989f830976efa92ddc3c84661d4d42aa)
+    
+    Change-Id: Ie26bbecd3a74d61113b51c18832872499b97ee86
+    (cherry picked from commit b5e7eba6d1b97e471996fcfe7dbde7cbba7512ef)
+
+commit 2cf155713aaba451065d593335d544f2ada24ddf
+Merge: d11eac3 40bc7cd
+Author: Christopher Ferris <cferris@google.com>
+Date:   Tue Oct 7 15:27:36 2014 +0000
+
+    am 40bc7cd4: (-s ours) DO NOT MERGE  Re-add .save directive for arm assembler code.
+    
+    * commit '40bc7cd4ed9fb848a7b3d934f69669f64ceed707':
+      DO NOT MERGE  Re-add .save directive for arm assembler code.
+
+commit b7672222a96987c2df3ca9ff5a541089fd1d730b
+Merge: d11eac3 24a365f
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 7 06:09:29 2014 -0700
+
+    merge in lmp-release history after reset to d11eac3455a059a092ceee92eda9905e1d661e94
+
+commit 24a365fbe49e21407247c2d696cf46cddf0dfd14
+Author: Christopher Ferris <cferris@google.com>
+Date:   Mon Oct 6 15:11:28 2014 -0700
+
+    Force export symbols on all x86 variants in libc.
+    
+    For silvermont, the __popcountsi2 symbol does not get exported by libc.
+    But for atom, this symbol is exported. Since we already exported this symbol
+    for previous releases, it's better to just follow through and force
+    the export, but only for 32 bit. x86 64 bit will not export this symbol.
+    
+    Bug: 17681440
+    Change-Id: I6c62245f0960910f64baaaf6d9d090bf3ea5f435
+
+commit d11eac3455a059a092ceee92eda9905e1d661e94
+Author: Christopher Ferris <cferris@google.com>
+Date:   Mon Oct 6 15:11:28 2014 -0700
+
+    Force export symbols on all x86 variants in libc.
+    
+    For silvermont, the __popcountsi2 symbol does not get exported by libc.
+    But for atom, this symbol is exported. Since we already exported this symbol
+    for previous releases, it's better to just follow through and force
+    the export, but only for 32 bit. x86 64 bit will not export this symbol.
+    
+    Bug: 17681440
+    Change-Id: I6c62245f0960910f64baaaf6d9d090bf3ea5f435
+
+commit 6c1389bf5f89e92b090e3dbfc37e757c778aad0b
+Merge: a508714 397c90b
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Oct 6 06:10:13 2014 -0700
+
+    merge in lmp-release history after reset to a508714800242b294291060641ed35d719bdc857
+
+commit 397c90bf3e4ca68c9848dac45fd81c8b1793c6b3
+Merge: a508714 5579bf6
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Oct 5 06:10:03 2014 -0700
+
+    merge in lmp-release history after reset to a508714800242b294291060641ed35d719bdc857
+
+commit a508714800242b294291060641ed35d719bdc857
+Author: Alex Van Brunt <avanbrunt@nvidia.com>
+Date:   Fri Sep 26 13:32:47 2014 -0700
+
+    Reimplement clock(3) using clock_gettime(3)
+    
+    Unlike times(), clock_gettime() is implemented as a vDSO on many architectures.
+    So, using clock_gettime() will return a more accurate time and do so with less
+    overhead because it does have the overhead of calling into the kernel.
+    
+    It is also significantly more accurate because it measures the actual time in
+    nanoseconds rather than the number of ticks (typically 1 millisecond or more).
+    
+    Bug: 17814435
+    
+    (cherry picked from commit 8d0b2dbf2154d5da17ff09b1d4f864d281362ad2)
+    
+    Change-Id: Id4945d9f387330518f78669809639952e9227ed9
+
+commit ea9800e98598c71fe76c4e2a0d0498b6bd490a83
+Author: Elliott Hughes <enh@google.com>
+Date:   Fri Sep 12 16:33:37 2014 -0700
+
+    Explain why clock(3) isn't broken.
+    
+    Bug: 17441123
+    Bug: 17814435
+    
+    (cherry picked from commit f83c208b82c78dad07f4065f63bdd354f5ef9951)
+    
+    Change-Id: I2065afe73b79a8d86404edee16e983625d902cdc
+=========>/home/zhangxd/work/Lollipop-CS/LINUX/android/bootable/recovery<========
+commit 7f3f5c6b1215f7eacae8dd5bade211b4b797b635
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Wed Dec 10 21:26:07 2014 +0800
+
+    [R42059][8974LBU][TEMP] For Factory Data reset, directly use the make_ext4fs() of QCOM since make_ext4fs_internal() failed for now.
+    
+    Modification ID: 8974LBU-FDR-FID0501
+    Scratch or Copy [S/C]:S
+    Copy from:
+    Other Info:
+    
+    Change-Id: I3612e033b5330c57547b363d20237b5fc7c4ff6f
+
+commit 4c315ee70b880279ebd5bb1407d98f3e8e4dca66
+Author: Thundersoft_songkw0613 <songkw0613@thundersoft.com>
+Date:   Fri Dec 5 22:06:57 2014 +0800
+
+    [R41757][8974LBU] fix no android background and progress bar problem.
+    
+    Modification ID: 8974LBU-BSP-FID0101
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: Ifd0345c98ef67a3c6ae739f6d5c9fb07eb79ed1c
+
+commit ceed9c9b79cde7ceec1e77c1f9cadd8382074139
+Author: Thundersoft_songkw0613 <songkw0613@thundersoft.com>
+Date:   Mon Dec 1 21:13:41 2014 +0800
+
+    [R41757][8974LBU] fix compile problem for SDDL.
+    
+    Modification ID: 8974LBU-BSP-FID0101
+    Scratch or Copy [S/C]: S
+    Copy from:
+    Other Info:
+    
+    ==Depends on==
+    - system/extra
+    	modified:         ext4_utils/ext4_utils.h
+    
+    - system/core
+    	include/corkscrew/
+    	libcorkscrew/
+    
+    - hardware/qcom/(or fujitsu)
+            nanddata
+    
+    - bionic/
+     	modified:         libc/Android.mk
+    
+    	libc/bionic/md5.c
+    	libc/bionic/md5.h
+    	libc/include/sys/exec_elf.h
+    	libc/kernel/uapi/linux/mkdrv_common.h
+    	libc/kernel/uapi/linux/nonvolatile.h
+    	libc/kernel/uapi/linux/nonvolatile_common.h
+    
+    - build/
+    	modified:         core/Makefile
+    	modified:         core/main.mk
+    	modified:         tools/releasetools/build_image.py
+    
+    	core/recovery.mk
+    	tools/SCHashGenerator/
+    
+    Change-Id: Id60d94c18a42b4e622c3678958d91080195b34a5
+
+commit cd5dc5579f3365746009c3444bb839a061720368
+Author: Thundersoft_songkw0613 <songkw0613@thundersoft.com>
+Date:   Mon Dec 1 20:51:01 2014 +0800
+
+    [R41757][8974LBU] Merged SDDL Sourcecodes.
+    
+    Modification ID: 8974LBU-BSP-FID0101
+    Scratch or Copy [S/C]: C
+    Copy from: H1325026,A1411008,H1415008,H1325003,H1325001,H1415007,H1415006,H1325019,H1410073,H1415002,H1415001
+    Other Info:
+    
+    Change-Id: I507a7e8c18734b5db3ed095a397ab4497576818d
+
+commit 1bd13f531c9a6e5f4b29750788e3a2b673aded38
+Author: Arthur Shuai <shuaiq@codeaurora.org>
+Date:   Wed Sep 10 03:01:13 2014 +0800
+
+    recovery: add APPLY_EXT option
+    
+    Enable update from APPLY_EXT
+    
+    Conflicts:
+    default_device.cpp
+    Change-Id: I5d70b432c2f387ac18148f2bfc1d7c31306250bc
+
+commit b03dc5b230eaa1a6e37b4b2216c1fa1234b4ecb0
+Author: Kun Liang <kunliang@codeaurora.org>
+Date:   Mon Oct 20 14:56:33 2014 +0800
+
+    minui: fix relative path not correct issue
+    
+    When "charger/xx.png" passed as relative path, it will lead to
+    incorrect loading path because of "/" exists.
+    Modify the rule to match only the first letter to identify whether
+    it is absolutely path or relative path.
+    
+    Change-Id: I8d6e1758649f0040279d2185e3ee3ecf2a05113c
+
+commit 1b090f777301ff57d8bfb83b6d251edaea53b0b9
+Author: muluhe <muluhe@codeaurora.org>
+Date:   Wed Oct 8 13:32:15 2014 +0800
+
+    recovery: Add support alpha for PNG
+    
+    Add alpha channel support for PNG files. Support both full path
+    and filename to locate PNG file which let's the application put
+    the PNG file where their want.
+    
+    Change-Id: Ife4d1caa8dd027c9b26678d3e32da772b56bf2b4
+
+commit f25b74723f0e9da1e67c948968f520b6b48a389e
+Author: Muluhe <muluhe@codeaurora.org>
+Date:   Wed Oct 8 13:25:30 2014 +0800
+
+    recovery:Enable Multi-language support
+    
+    Add Chinese language support for Minui lib.
+    
+    Change-Id: I83ce7d99fa42a4613da2e6228175de931b120293
+
+commit f3c42249400bd32736d20d891210c2dd1972fba7
+Author: Mulu He <muluhe@codeaurora.org>
+Date:   Fri Aug 29 15:54:23 2014 +0800
+
+    recovery: make dynamic lib for fastmmi
+    
+    Generate dynamic lib for fastmmi.
+    
+    Change-Id: I63e77420d5addbcc6eebeedc213f629085766b4c
+
+commit 8822a78acb927e0db2525799b8ddbac674ecacf2
+Author: Arthur Shuai <shuaiq@codeaurora.org>
+Date:   Fri Sep 5 14:37:31 2014 +0800
+
+    recovery:  enable text UI
+    
+    Set default test enabled
+    Change-Id: I8b185cf17c608bba36d9bbd20a86c8db8d288fe2
+
+commit cddb68b5eafbeba696d5276bda1f1a9f70bbde42
+Author: Michael Runge <mrunge@google.com>
+Date:   Wed Oct 29 12:42:15 2014 -0700
+
+    Use more aggressive sync writing to applypatch.
+    
+    We have seen cases where the boot partition is patched, but upon
+    recovery the partition appears to be corrupted.  Open up all
+    patched files/partitions with O_SYNC, and do not ignore the
+    errors from fsync/close operations.
+    
+    Bug: 18170529
+    Change-Id: I392ad0a321d937c4ad02eaeea9170be384a4744b
+
+commit a6c142f2a579ea5e7cdfbc88e6a061c55029265a
+Author: Michael Runge <mrunge@google.com>
+Date:   Tue Oct 28 19:49:57 2014 -0700
+
+    Force sync files written by minzip.
+    
+    Some files appear to be missing their sync to disk.
+    
+    Bug: 18145574
+    Change-Id: Ic858624a4dd65bbfc54d30f3a13c607078270345
+
+commit f15e31edf948d9dac11858fba6dfdff8a5cd91c9
+Author: Michael Runge <mrunge@google.com>
+Date:   Fri Oct 24 14:14:41 2014 -0700
+
+    Log mount/unmount errors to UI
+    
+    Bug: 18092022
+    Change-Id: I6c42038ebeb1cfc1e7ca0d3e12310fdce1b990b0
+
+commit 6a821fe5f054df674151d54e7b03be63afd35d58
+Author: Nick Kralevich <nnk@google.com>
+Date:   Thu Oct 23 20:36:42 2014 -0700
+
+    unconditionally apply SELinux labels to symlinks
+    
+    At the end of the OTA script, we walk through /system, updating
+    all the permissions on the filesystem, including the UID, GID,
+    standard UNIX permissions, capabilities, and SELinux labels.
+    
+    In the case of a symbolic link, however, we want to skip most of
+    those operations. The UID, GID, UNIX permissions, and capabilities
+    don't meaningfully apply to symbolic links.
+    
+    However, that's not true with SELinux labels. The SELinux label on
+    a symbolic link is important. We need to make sure the label on the
+    symbolic link is always updated, even if none of the other attributes
+    are updated.
+    
+    This change unconditionally updates the SELinux label on the symbolic
+    link itself. lsetfilecon() is used, so that the link itself is updated,
+    not what it's pointing to.
+    
+    In addition, drop the ENOTSUP special case. SELinux has been a
+    requirement since Android 4.4. Running without filesystem extended
+    attributes is no longer supported, and we shouldn't even try to handle
+    non-SELinux updates anymore. (Note: this could be problematic if
+    these scripts are ever used to produce OTA images for 4.2 devices)
+    
+    Bug: 18079773
+    Change-Id: I87f99a1c88fe02bb2914f1884cac23ce1b385f91
+
+commit bd6138cffeedf1d60346ec9d34711fe38d0f8323
+Author: Michael Runge <mrunge@google.com>
+Date:   Wed Oct 22 17:05:08 2014 -0700
+
+    Allow passing of mount args to mountFn
+    
+    Bug: 18079773
+    Bug: 18092222
+    
+    Change-Id: Ifc3f3e123de729dfbb2f49414b3207afa96268d5
+
+commit 7548025bdd111421cff2fe73839c01e2dc0a0365
+Author: Michael Runge <mrunge@google.com>
+Date:   Wed Oct 22 19:48:41 2014 -0700
+
+    Log to UI any metadata setting errors
+    
+    Bug: 18079773
+    Change-Id: Ic6fddbcbcb6ddb9e1cbd1698df98387c0033ae15
+
+commit b8344b6f5908935ac2e36109c7433fde34646620
+Author: Nick Kralevich <nnk@google.com>
+Date:   Wed Oct 22 18:38:48 2014 -0700
+
+    Make /cache/recovery/last_log available in recovery
+    
+    Create a new recovery UI option to allow the user to view
+    /cache/recovery/last_log for their device. This gives enhanced
+    debugging information which may be necessary when a failed
+    OTA occurs.
+    
+    Bug: 18094012
+    Change-Id: Ic3228de96e9bfc2a0141c7aab4ce392a38140cf3
+
+commit d5b1727765060b2886d11cf7af9588b818be12cf
+Author: Michael Runge <mrunge@google.com>
+Date:   Wed Oct 22 14:28:23 2014 -0700
+
+    Treat already-renamed files as having no problems.
+    
+    This should help with reentrant OTAs.
+    
+    Bug: 18079773
+    
+    Change-Id: I102fd738e3b450483ecd4471384c12e89fc586e2
+
+commit 6dcd11944644db4bd7069d189b52e3f18de0967b
+Merge: a6e13ae e55d032
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 21 17:42:57 2014 -0700
+
+    merge in lmp-release history after reset to a6e13ae01bff5109361868f565187f16d045c82d
+
+commit e55d0326c438a23d2d1ef8263e201eae4d834bb2
+Merge: a6e13ae b57de60
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 21 06:09:31 2014 -0700
+
+    merge in lmp-release history after reset to a6e13ae01bff5109361868f565187f16d045c82d
+
+commit b57de6082aa4d985f5333932a1f9aa3318642fd9
+Merge: a6e13ae a238104
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Oct 19 17:07:49 2014 -0700
+
+    merge in lmp-release history after reset to a6e13ae01bff5109361868f565187f16d045c82d
+
+commit a23810490422ad8708a93e533fbfa12615f10be3
+Merge: a6e13ae 3648601
+Author: The Android Automerger <android-build@google.com>
+Date:   Thu Oct 16 06:09:42 2014 -0700
+
+    merge in lmp-release history after reset to a6e13ae01bff5109361868f565187f16d045c82d
+
+commit 364860163552f06457055cfd7855ac862ef17216
+Merge: a6e13ae c6aafd4
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Oct 15 06:09:28 2014 -0700
+
+    merge in lmp-release history after reset to a6e13ae01bff5109361868f565187f16d045c82d
+
+commit c6aafd42da42d5e00089ae6d4d7f3181938f32d4
+Merge: a6e13ae 078bd94
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 14 06:09:29 2014 -0700
+
+    merge in lmp-release history after reset to a6e13ae01bff5109361868f565187f16d045c82d
+
+commit 078bd9418772a96538e7b2e52f7aae0748748cdf
+Merge: a6e13ae 66b01fb
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Oct 13 06:09:28 2014 -0700
+
+    merge in lmp-release history after reset to a6e13ae01bff5109361868f565187f16d045c82d
+
+commit 66b01fb51cb51518f4fdd2f88386f56708a4a7dc
+Merge: a6e13ae b7f9825
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Oct 12 06:09:32 2014 -0700
+
+    merge in lmp-release history after reset to a6e13ae01bff5109361868f565187f16d045c82d
+
+commit b7f98256037ec04f7a08b397499904dd0468eb3c
+Merge: a6e13ae dc5206c
+Author: The Android Automerger <android-build@google.com>
+Date:   Thu Oct 9 06:09:27 2014 -0700
+
+    merge in lmp-release history after reset to a6e13ae01bff5109361868f565187f16d045c82d
+
+commit dc5206cbb5a169183ac50c6fa6b1a94de51e55a2
+Merge: a6e13ae f51aa27
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Oct 8 06:10:37 2014 -0700
+
+    merge in lmp-release history after reset to a6e13ae01bff5109361868f565187f16d045c82d
+
+commit f51aa2794a70664fbc24c24ad9900260bbffa931
+Merge: a6e13ae 7d393c5
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 7 06:09:30 2014 -0700
+
+    merge in lmp-release history after reset to a6e13ae01bff5109361868f565187f16d045c82d
+
+commit 7d393c5a32817e0e039d479d0a92151aeb6bec7b
+Merge: a6e13ae 39d2677
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Oct 6 06:10:15 2014 -0700
+
+    merge in lmp-release history after reset to a6e13ae01bff5109361868f565187f16d045c82d
+=========>/home/zhangxd/work/Lollipop-CS/LINUX/android/external/sepolicy<========
+commit 264be4b7001bdc2aab0e8b95bdbc3d93e7e3eee0
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Tue Nov 11 16:21:08 2014 +0800
+
+    [R41658][8974LBU] Modified for mmdata/fota2/persist2-3 build
+    
+    Modification ID: 8974LBU-BSP-FID0010
+    Scratch or Copy [S/C]: C
+    Copy from: H1410008
+    Other Info:
+    
+    Change-Id: I1006056b9a69b2d96de187ff0c5ffb5ef8657a75
+
+commit ae59808f9c66aa946e0ac2ca762fa595579f4845
+Merge: 67d9cba 03866ca
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sat Nov 8 05:37:24 2014 -0800
+
+    Merge "WFD : Adding policy exceptions in app domain for wfd"
+
+commit 03866cacb349dd2b64c33905ffd5e09d9ecc4396
+Author: Manu Prasad <mpras@codeaurora.org>
+Date:   Mon Oct 20 16:09:13 2014 -0700
+
+    WFD : Adding policy exceptions in app domain for wfd
+    
+    This is change is to allow wfd_app domain some exceptions
+    which are not allowed for entities generally derived from
+    app domain. This is required as the app domain policies
+    are in conflict with the wfd_app domain policies
+    
+    Change-Id: I26536d083fb5615cffef81d10260cb6704dc8955
+
+commit 67d9cba152fa5ed1e6d41880d546c06a0ba75488
+Author: Paul Zhang <paulz@codeaurora.org>
+Date:   Tue Sep 16 10:53:38 2014 +0800
+
+    Netd: receive broadcast message from hostapd
+    
+    allow netd to create dir /data/misc/wifi/sockets
+    allow netd to create sockets wpa_ctrl_*
+    allow netd to access dir /data/misc/dhcp
+    
+    Change-Id: Ibd48cd40a61f8e846ae54400dd628eb3287b93bb
+    CRs-Fixed: 685913
+
+commit 73a2b7321306ab5e96aea16ce7c584e10e639388
+Author: Nick Kralevich <nnk@google.com>
+Date:   Fri Oct 24 14:25:49 2014 -0700
+
+    allow system_server to set kernel scheduling priority
+    
+    Addresses the following denial:
+    
+      avc: denied { setsched } for comm="system_server" scontext=u:r:system_server:s0 tcontext=u:r:kernel:s0 tclass=process permissive=0
+    
+    It's not clear why system_server is adjusting the scheduling priority
+    of kernel processes (ps -Z | grep kernel). For now, allow the operation,
+    although this is likely a kernel bug.
+    
+    Maybe fix bug 18085992.
+    
+    Bug: 18085992
+    Change-Id: Ic10a4da63a2c392d90084eb1106bc5b42f95b855
+
+commit f287cd46eec155b2715b57f2b6336c56e7dd02f5
+Author: Nick Kralevich <nnk@google.com>
+Date:   Thu Oct 23 12:12:58 2014 -0700
+
+    recovery: allow changing unlabeled symbolic links
+    
+    Currently, recovery is allowed write access to the following three
+    file labels:
+    
+    * system_file (directories, files, and symbolic links)
+    * exec_type (directories, files, and symbolic links)
+    * unlabeled (directory and files)
+    
+    system_file is the default label on all files in /system. exec_type
+    is the attribute used to mark executables on /system.
+    
+    The third file type, "unlabeled", refers to filesystem objects where
+    the label hasn't been set, or a label is set but isn't defined by the
+    currently loaded policy.
+    
+    The current policy only allows unlabeled files or directories to
+    be modified. Symbolic links were accidentally excluded. This causes
+    problems when trying to fix up labels/permissions on unlabeled
+    symbolic links.
+    
+    Allow unlabeled symbolic link modifications.
+    
+    Bug: 18079773
+    Change-Id: I8e5c33602cdc38ec9a95b4e83f9ccbb06fe9da7c
+
+commit 1b74a109f54693c7b8060370b5ac13fbd986744e
+Author: Nick Kralevich <nnk@google.com>
+Date:   Tue Oct 21 22:39:42 2014 -0700
+
+    DO NOT MERGE: allow access to labeled executables in /system
+    
+    Most files on /system are labeled with the "system_file" label, and
+    are readable by default by all SELinux domains. However, select
+    executables are labeled with their own label, so that SELinux knows
+    what domains to enter upon running the executable.
+    
+    Allow adbd read access to labeled executables in /system. We do
+    this by granting adbd read access to exec_type, the attribute
+    assigned to all executables on /system.
+    
+    This allows "adb pull /system" to work without generating
+    SELinux denials.
+    
+    Bug: 18078338
+    Change-Id: I97783759af083968890f15f7b1d8fff989e80604
+
+commit 69a4c7daf3a93b3fec6a83acf9c6aaa5d1b3cc78
+Merge: 480374e 0e9bfdd
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 21 17:43:54 2014 -0700
+
+    merge in lmp-release history after reset to 480374e4d082238a71773f29483c5d24ad8b3f6d
+
+commit 0e9bfdd6a9a53730972aab696303570e4a5ccb88
+Merge: 480374e d690451
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 21 06:11:34 2014 -0700
+
+    merge in lmp-release history after reset to 480374e4d082238a71773f29483c5d24ad8b3f6d
+
+commit d6904518fb430a299d8b88d1b4bee9607cf5b9ec
+Merge: 480374e 2e51e20
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Oct 19 17:09:58 2014 -0700
+
+    merge in lmp-release history after reset to 480374e4d082238a71773f29483c5d24ad8b3f6d
+
+commit 480374e4d082238a71773f29483c5d24ad8b3f6d
+Author: Nick Kralevich <nnk@google.com>
+Date:   Thu Oct 16 15:00:19 2014 -0700
+
+    Fix compile time / CTS gps_data_files neverallow assertion
+    
+    Currently, zygote spawned apps are prohibited from modifying GPS
+    data files. If someone tries to allow GPS access to any app domain,
+    it generates a compile time / CTS exception.
+    
+    Relax the rules slightly for system_app. These apps run with UID=system,
+    and shouldn't be banned from handling gps data files.
+    
+    This change doesn't add or remove any SELinux rules. Rather, it just
+    relaxes a compile time assertion, allow partners to create SELinux
+    rules allowing the access if they desire.
+    
+    Bug: 18021422
+    Change-Id: Iad0c6a3627efe129246e2c817f6f71d2735eba93
+
+commit 2e51e203b4151239d421245f3d699a3b0f5e8ea6
+Merge: 51bfecf 17ece9c
+Author: The Android Automerger <android-build@google.com>
+Date:   Thu Oct 16 06:11:34 2014 -0700
+
+    merge in lmp-release history after reset to 51bfecf49d50982f64aba1fa73bbbdd2e40a444f
+
+commit 51bfecf49d50982f64aba1fa73bbbdd2e40a444f
+Author: Robin Lee <rgl@google.com>
+Date:   Mon Oct 13 12:10:08 2014 +0100
+
+    Pull keychain-data policy out of system-data
+    
+    Migrators should be allowed to write to /data/misc/keychain in order
+    to remove it. Similarly /data/misc/user should be writable by system
+    apps.
+    
+    TODO: Revoke zygote's rights to read from /data/misc/keychain on
+    behalf of some preloaded security classes.
+    
+    Bug: 17811821
+    Change-Id: I9e9c6883cff1dca3755732225404909c16a0e547
+
+commit 17ece9ca840761bb1361ef9bbac550a233218250
+Merge: ebfd9f8 58b3cae
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Oct 15 06:11:14 2014 -0700
+
+    merge in lmp-release history after reset to ebfd9f87197f4a39bbc2a5e4f6c6dffc28be36d7
+
+commit 58b3cae1bcea4dbd713b7d881a6968afa625e47e
+Merge: ebfd9f8 2144017
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 14 06:11:03 2014 -0700
+
+    merge in lmp-release history after reset to ebfd9f87197f4a39bbc2a5e4f6c6dffc28be36d7
+
+commit 21440171eeec4ec76326df76ff0626f64fa89248
+Merge: ebfd9f8 dc5a8d9
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Oct 13 06:10:48 2014 -0700
+
+    merge in lmp-release history after reset to ebfd9f87197f4a39bbc2a5e4f6c6dffc28be36d7
+
+commit dc5a8d9de547f79775285604bf13e870f4cf707f
+Merge: ebfd9f8 90adbf9
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Oct 12 06:11:10 2014 -0700
+
+    merge in lmp-release history after reset to ebfd9f87197f4a39bbc2a5e4f6c6dffc28be36d7
+
+commit ebfd9f87197f4a39bbc2a5e4f6c6dffc28be36d7
+Author: Nick Kralevich <nnk@google.com>
+Date:   Fri Oct 10 16:11:03 2014 -0700
+
+    allow oemfs:dir search
+    
+    mediaserver and drmserver both have permission to read oemfs
+    related files. However, there are no search permissions on the
+    directory, so the files would be unreachable.
+    
+    Grant search permissions on the oemfs directory, so that the files
+    within that directory can be read.
+    
+    Bug: 17954291
+    Change-Id: I9e36dc7b940bd46774753c1fa07b0f47c36ff0db
+
+commit 2380d05f9791b6789b81e28ca8841df1b8b62c6d
+Author: Nick Kralevich <nnk@google.com>
+Date:   Fri Oct 10 15:56:22 2014 -0700
+
+    allow system_server oemfs read access
+    
+    Bug: 17954291
+    Change-Id: Ia904fff65df5142732928561d81ea0ece0c52a8d
+
+commit 90adbf91f5a98a27f65ad151139e89c669037467
+Merge: 0a52df5 0aecf75
+Author: The Android Automerger <android-build@google.com>
+Date:   Thu Oct 9 06:10:55 2014 -0700
+
+    merge in lmp-release history after reset to 0a52df50207e6b398278d6faae026ce04eb13602
+
+commit 0aecf75da9a90e91fa12ae6fba8bc6d68efb7359
+Merge: 0a52df5 f77f887
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Oct 8 06:13:34 2014 -0700
+
+    merge in lmp-release history after reset to 0a52df50207e6b398278d6faae026ce04eb13602
+
+commit f77f887bc2a9cbce96dca4a4b527fab5faae7b6b
+Merge: 0a52df5 a1fdedb
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 7 06:11:01 2014 -0700
+
+    merge in lmp-release history after reset to 0a52df50207e6b398278d6faae026ce04eb13602
+
+commit a1fdedb5776a5136c3c71a6c8b3e5590a887de4e
+Merge: f2c0118 f970ac1
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Oct 6 06:12:21 2014 -0700
+
+    merge in lmp-release history after reset to f2c011892ddef55d0d4a585f9deb985e8cd34cf9
+
+commit f970ac100c36267f33fb3ccf64296adc0aa9790a
+Merge: f2c0118 933bd2c
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Oct 5 06:11:52 2014 -0700
+
+    merge in lmp-release history after reset to f2c011892ddef55d0d4a585f9deb985e8cd34cf9
+
+commit 0a52df50207e6b398278d6faae026ce04eb13602
+Author: Mike Lockwood <lockwood@google.com>
+Date:   Mon Sep 29 06:18:19 2014 -0700
+
+    Give bootanimation access to /dev/snd files so it can use tinyalsa
+    
+    Bug: 17674304
+    
+    Change-Id: Ide32833809bca8d3ed8ddc898748e25d7a692319
+
+commit 933bd2c44fd7f13fedd01ed847071350a9e1186a
+Merge: f2c0118 e63f132
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Oct 1 06:14:15 2014 -0700
+
+    merge in lmp-release history after reset to f2c011892ddef55d0d4a585f9deb985e8cd34cf9
+
+commit e63f1325ddb0de6190dbf44b963db8ddadcd153d
+Merge: f2c0118 4df14b3
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Sep 30 06:15:08 2014 -0700
+
+    merge in lmp-release history after reset to f2c011892ddef55d0d4a585f9deb985e8cd34cf9
+
+commit 4df14b311a17c649771482a0bddcd2c6ddba39bb
+Merge: f2c0118 9847886
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Sep 29 06:14:58 2014 -0700
+
+    merge in lmp-release history after reset to f2c011892ddef55d0d4a585f9deb985e8cd34cf9
+
+commit 9847886b5a3db7eeed700ffca4b7ee43960ec7e0
+Merge: f2c0118 cf410c7
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Sep 28 06:12:10 2014 -0700
+
+    merge in lmp-release history after reset to f2c011892ddef55d0d4a585f9deb985e8cd34cf9
+
+commit f2c011892ddef55d0d4a585f9deb985e8cd34cf9
+Author: Nick Kralevich <nnk@google.com>
+Date:   Fri Sep 26 10:51:12 2014 -0700
+
+    zygote: allow replacing /proc/cpuinfo
+    
+    Android's native bridge functionality allows an Android native
+    app written on one CPU architecture to run on a different architecture.
+    For example, Android ARM apps may run on an x86 CPU.
+    
+    To support this, the native bridge functionality needs to replace
+    /proc/cpuinfo with the version from /system/lib/<ISA>/cpuinfo
+    using a bind mount. See commit ab0da5a9a6860046619629b8e6b83692d35dff86
+    in system/core.
+    
+    This change:
+    
+    1) Creates a new label proc_cpuinfo, and assigns /proc/cpuinfo
+    that label.
+    2) Grants read-only access to all SELinux domains, to avoid
+    breaking pre-existing apps.
+    3) Grants zygote mounton capabilities for that file, so zygote
+    can replace the file as necessary.
+    
+    Addresses the following denial:
+    
+      avc: denied { mounton } for path="/proc/cpuinfo" dev="proc" ino=4026532012 scontext=u:r:zygote:s0 tcontext=u:object_r:proc:s0 tclass=file
+    
+    Bug: 17671501
+    
+    (cherry picked from commit 2de02877a30e73bdf30fb2bf9cc4957f9ddbf996)
+    
+    Change-Id: I2c2366bee4fe365288d14bca9778d23a43c368cb
+=========>/home/zhangxd/work/Lollipop-CS/LINUX/android/build<========
+commit 98fe935caa7ba7587140dd7cd49a863a8dc9a561
+Author: Thundersoft_songkw0613 <songkw0613@thundersoft.com>
+Date:   Wed Dec 3 22:20:47 2014 +0800
+
+    [R41757][8974LBU] fix compile problem for SDDL.
+    
+    Modification ID: 8974LBU-BSP-FID0101
+    Scratch or Copy [S/C]: C
+    Copy from: H1415002,H1325003
+    Other Info:
+    
+    Conflicts:
+    	core/Makefile
+    
+    Change-Id: I73006121489c40f37857371f59d54010bdd33de1
+
+commit 7c2dca26b624403774460232e1f989c7dfdcc300
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Wed Dec 3 19:39:17 2014 +0800
+
+    [R41658][8974LBU][TEMP] Deleted the recover.img build custom
+    
+    Modification ID: 8974LBU-BSP-FID0010
+    Scratch or Copy [S/C]: S
+    Copy from:
+    Other Info:
+    
+    Change-Id: Ia09c619166d7a09175cf8ad7ab9ea7174abfaa10
+
+commit 8bb46f51211a91de78ef1547400808b576262b53
+Author: Thundersoft_lutx0528 <lutx0528@thundersoft.com>
+Date:   Tue Nov 11 16:21:02 2014 +0800
+
+    [R41658][8974LBU] Merged the build scripts source code
+    
+    Modification ID: 8974LBU-BSP-FID0010
+    Scratch or Copy [S/C]: S
+    Copy from:
+    Other Info:
+    
+    Change-Id: I4e35639a3c7450269ab20091358d388c179b3c30
+
+commit a319d8ea8a3417a006722060a4598068feefaffa
+Merge: 2e864ac a1d1849
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Dec 3 01:33:27 2014 -0800
+
+    Merge "build: Add support for DTS decoder"
+
+commit a1d18490b23086b75353b60340f409f7508a5848
+Author: Subhash Chandra Bose Naripeddy <snariped@codeaurora.org>
+Date:   Fri Jan 24 11:12:01 2014 -0800
+
+    build: Add support for DTS decoder
+    
+    Add support for DTS decoder
+    
+    Change-Id: I545978cbd3d98ec8758b8317fd4e993edaa1edb3
+
+commit 2e864ac31a4567ac24393c1f64899e6ec309f8b1
+Merge: 30579b4 0f6509f
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sat Nov 8 01:57:10 2014 -0800
+
+    Merge "Enabling sdiv support in ART"
+
+commit 0f6509f7e278877c94b68de2611bc5f567a76642
+Author: Varun Garg <gargv@codeaurora.org>
+Date:   Fri Nov 7 12:23:45 2014 +0530
+
+    Enabling sdiv support in ART
+    
+    Added more target into ART instruction set feature look-up list
+    
+    Change-Id: I0ea0097181e5c76507b8ca2a34cf37d2e2ca6403
+
+commit 30579b41d1e943a7740b3dfe979d40f40ba0d8cc
+Author: Omprakash Dhyade <odhyade@codeaurora.org>
+Date:   Wed Oct 1 19:00:48 2014 -0700
+
+    Disable -mcpu=cortex-a15 flag for krait
+    
+    Disable -mcpu=cortex-a15 flag for krait.
+    Make it same as that of KK and use -march=armv7-a.
+    
+    Change-Id: I0047a2fac1b533c357ba1cee67534ce4782b2b20
+
+commit 2c1946654763036e7f6ede81afaabb78eaf46a61
+Author: Omprakash Dhyade <odhyade@codeaurora.org>
+Date:   Thu Oct 2 15:21:38 2014 -0700
+
+    Revert "Remove -Bsymbolic from builds."
+    
+    This reverts commit 50031de36ee77128b00e1ea77bcbb5a48628cfa3.
+    This revert helps in benchmark performance.
+    
+    Change-Id: I67df6f6be940b6699f7e7c26940a137154fe79c1
+
+commit f90a6fc396d86370e397c9357e4c0b00c812af04
+Author: Omprakash Dhyade <odhyade@codeaurora.org>
+Date:   Thu Oct 2 15:15:02 2014 -0700
+
+    Revert "Inhibit implicit -Bsymolic in -shared."
+    
+    This reverts commit 04cf31597021af3cd045dd9c50d94a87d0394023.
+    The revert helps in benchmark performance.
+    
+    Change-Id: Id3b0c68efdc7dacd43bcc3b3b6f61f288576307d
+
+commit a216054d3a122c38492e1e62c2c8509318222eda
+Author: Wei Wang <wangw@codeaurora.org>
+Date:   Thu Sep 25 16:16:03 2014 -0700
+
+    enable sdiv support in ART
+    
+    add more target into ART instruction set feature look-up list.
+    
+    Change-Id: If2332ff1fc1f496187ca632f7ee4af5fe880515e
+
+commit a1dc3e89659d169a6c4de58bd3e484a5fabd3bf4
+Author: David Ng <dave@codeaurora.org>
+Date:   Thu Sep 25 19:32:48 2014 -0700
+
+    Allow override of DEX_PREOPT_DEFAULT
+    
+    Allow device-specific override of DEX_PREOPT_DEFAULT value
+    rather than dependent on the number of runtimes supported
+    by the system.  This allows force generation of
+    non-stripped packages even when dex pre-opt is enabled
+    with only 1 runtime.
+    
+    Change-Id: I57573ce17dc46b7eccf1a3619b073ead1b77c134
+
+commit f34662ed8ab124a39f5347920efd0acff090b99f
+Author: David Ng <dave@codeaurora.org>
+Date:   Tue Sep 23 18:15:20 2014 -0700
+
+    Fully expand eng/debug/tests module install files
+    
+    When including eng, debug and tests modules that are tagged
+    using LOCAL_MODULE_TAGS, fully expand the install file list
+    from just the tagged module to all the module's INSTALLED
+    list.  This allows auto-generated files such as dex preopt
+    odex files tagged under the module's INSTALLED list to be
+    included.  This also makes the behavior of specifying a
+    module as debug using LOCAL_MODULE_TAGS to be the same as
+    specifying it as PRODUCT_PACKAGES_DEBUG when building
+    for userdebug or eng variant.
+    
+    Change-Id: If9a24b62d8bee9e378f3e5f58e9490e963238302
+
+commit 7e46e2bd2c6f1b4b84dcc54508cc5243bcfdf2f4
+Author: Wei Wang <wangw@codeaurora.org>
+Date:   Tue Aug 26 11:23:22 2014 -0700
+
+    enable sdiv support in ART
+    
+    ART looks for TARGET_CPU_VARIANT to determine hardware
+    instruction set support. QCOM chipsets set TARGET_CPU_VARIANT
+    as "generic", so we add it to ART's look-up list.
+    
+    Change-Id: I07917f3f9c86dca15951698510024e39b1fee565
+
+commit 013779a850ad13982fcc87530247ddb0ba4846a9
+Author: Chiou-Hao Hsu <chsu@codeaurora.org>
+Date:   Thu Oct 23 22:09:46 2014 -0700
+
+    framework: adding security-bridge
+    
+    adding security-bridge to FRAMEWORK_BASE_SUBDIRS
+    to make it compile as part of the framework/base java module
+    
+    Change-Id: Ic96ba5549525fcaa58c274f918ac511f69cb0096
+
+commit 67feab1ed520f289ceaf7f8500b71d9e9e3224e2
+Author: Sudhir Sharma <sudhshar@codeaurora.org>
+Date:   Tue Aug 12 19:26:48 2014 -0700
+
+    Fixing Compilation issue
+    
+    Change-Id: I1ad1e91498aee877c78cf85656fe704c585fb0cf
+
+commit de61afc95ec1f019bc7b235ea0963348cd817cd8
+Author: AUDITYA BHATTARAM <audityab@codeaurora.org>
+Date:   Tue Aug 5 11:08:15 2014 +0530
+
+    Fix the extra dt.img compilation issue.
+    
+    Add support for optional device tree image (dt.img)
+    for device that doesnt have TARGET_BOOTIMAGE_USE_EXT2
+    
+    Change-Id: I6e07b3ca6d049a8ebdad7ea304b4f39e7c846151
+
+commit ae0a99782d900fa539e7521032a87b8bb382e319
+Author: Ameya Thakur <ameyat@codeaurora.org>
+Date:   Wed Oct 24 19:31:42 2012 -0700
+
+    Fix case where boot/recovery.img were being built with wrong params.
+    
+    The boot and recovery images  now get built using the same params during ota package
+    generation as during a normal build.
+    
+    Change-Id: I93d46e11a4245288f0e87c87a2e4bf45ac5aff69
+
+commit 298cd1983b116e5ca1671365f8c64dfe1c1b0e85
+Author: Sreedhar <slakkara@codeaurora.org>
+Date:   Wed Dec 11 23:16:12 2013 +0530
+
+    Build: add DT image variable to Makefile
+    
+    DT image variable is currently present in
+    generate_extra_images.mk.This file is moved to
+    build/tasks to support persist image generation
+    during parallel make. As build/tasks is called
+    at the end of Makefile, DT image variable is not
+    available for other images generation like boot and
+    recovery. Adding this variable in Makefile ensures
+    the variable is defined before usage
+    
+    Change-Id: I21f675d8ce648dc1cf1f4f3aede33278300e08c9
+    CRs-fixed: 548299
+
+commit 4da943401270f8d175b32eb5d62603856f637ed1
+Author: David Ng <dave@codeaurora.org>
+Date:   Fri Jul 27 18:39:48 2012 -0700
+
+    build: Add support for device tree in boot.img
+    
+    Add support for optional device tree image (dt.img)
+    to boot and recovery images.  Some devices use kernel device
+    tree and this adds the device tree image as a section within
+    the boot/recovery images.
+    
+    Change-Id: I91431ef2f4b86485895678916e39a8572be878eb
+
+commit 3e40ca6feb7a72780f057ece321baa279b3eb59e
+Author: Shashank Mittal <mittals@codeaurora.org>
+Date:   Wed May 21 17:36:49 2014 -0700
+
+    Define CONFIG_64BIT for LP64 target
+    
+    Linux kernel uapi headers use CONFIG_64BIT flag. We need to define that if
+    __LP64__ flag is defined.
+    
+    Change-Id: I2143ca8d91d70506485f3eb6f21a9e5243c495cc
+
+commit bf7954631b2abaced19ab298798595e334108b04
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Oct 29 13:29:52 2014 -0700
+
+    "LRX21M"
+
+commit e8269481084df086a04c6bdcd3477d4209d4a7cb
+Author: Michael Runge <mrunge@google.com>
+Date:   Tue Oct 28 19:24:19 2014 -0700
+
+    Add post-install verification phase
+    
+    Verify the SHA sum of all patched and extracted files after
+    a file system remount.
+    
+    Bug: 18145574
+    
+    Change-Id: I2f053d085543e10e39153a774542d37ee0a238bd
+
+commit 7859c8c4a89793fa31206d90ec699edef947b376
+Author: Ying Wang <wangying@google.com>
+Date:   Fri Oct 24 11:36:59 2014 -0700
+
+    Store symbols.zip in apps_only build.
+    
+    Bug: 18103055
+    Change-Id: I0eb335e944138b0edc3050d19c076891f499a07c
+
+commit 4a9dff64eedca6108a35d68dcf5daab1749604be
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Oct 27 20:30:26 2014 -0700
+
+    "LRX21L"
+
+commit c60a9e658505d65de25ee34f29f937e2217dbde3
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Oct 27 14:12:32 2014 -0700
+
+    "LRX21K"
+
+commit 105c38977f7be049cec2c7121b72ccffb6387094
+Author: The Android Automerger <android-build@android.com>
+Date:   Sun Oct 26 12:41:22 2014 -0700
+
+    LRX21J
+
+commit 83b77d52ca01db77a49e8893d586efd8b78e7f28
+Author: The Android Automerger <android-build@android.com>
+Date:   Sun Oct 26 08:20:58 2014 -0700
+
+    LRX21I
+
+commit f041a59bd590340989d40a14c6a30fb122f5f063
+Author: The Android Automerger <android-build@google.com>
+Date:   Fri Oct 24 18:30:35 2014 -0700
+
+    "LRX21H"
+
+commit 6c52aa39414b9b8de1e212a1967634ea3669eab9
+Author: The Android Automerger <android-build@google.com>
+Date:   Fri Oct 24 16:05:46 2014 -0700
+
+    "LRX21G"
+=========>/home/zhangxd/work/Lollipop-CS/rpm_proc<========
+commit 279327ddf964d9e1b37337580f52e1887447713c
+Author: Thundersoft_songkw0613 <songkw0613@thundersoft.com>
+Date:   Thu Dec 11 21:35:56 2014 +0800
+
+    [R41990][8974LBU] LED notifications for sleep mode when suspend
+    
+    Modification ID: 8974LBU-LEDS-FID2501
+    Scratch or Copy [S/C]: C
+    Copy from: MDRV_TCXO_7035_001, MDRV_TCXO_7035_002
+    Other Info:
+    
+    Change-Id: If73e8d7c95fc7507a615a0bbbc12ead6ccef3b9a
+
+commit 8f47efb293024c427d146c292c19a9e626189257
+Author: Thundersoft_lutx0528 <lutx0528@thundersoft.com>
+Date:   Fri Nov 28 00:50:24 2014 -0500
+
+    update for make
+    
+    Change-Id: I036837c4189ff904c5713d8c2605fd0757182623
+
+commit efdaf33955262b34580740aa7499ff6c1a3a33bf
+Author: QC Publisher <qcpublisher@qti.qualcomm.com>
+Date:   Fri Dec 12 19:09:49 2014 -0800
+
+    Commit label r4230.1
+
+commit 78afc372ceb9cedd1e2960498c00f35ddbab78a5
+Author: QC Publisher <qcpublisher@qti.qualcomm.com>
+Date:   Fri Dec 5 18:47:22 2014 -0800
+
+    Commit label r4220A.1
+
+commit 187d49c214abbba2d9f07a1f0102575f880d378a
+Author: QC Publisher <qcpublisher@qti.qualcomm.com>
+Date:   Fri Nov 21 19:31:53 2014 -0800
+
+    Commit label r4215.1
+
+commit 0df169072a1ea7b162bea4f30f4ca3c80eaf6b4e
+Author: QC Publisher <qcpublisher@qti.qualcomm.com>
+Date:   Wed Nov 5 11:53:00 2014 -0800
+
+    Commit label r4210.1
+
+commit 3898ee8fe8d702e03dcd8ab6fbfd87bbefc8f78c
+Author: Gito Z <gitoz@qualcomm.com>
+Date:   Sat Jun 29 04:25:43 2013 -0700
+
+    init
+=========>/home/zhangxd/work/Lollipop-CS/LINUX/android/bootable/bootloader/lk<========
+commit f4f9d3f867397c99f9bf10d6fba406649224afb5
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Wed Dec 10 13:26:47 2014 +0800
+
+    [R41266][8974LBU] Deleted the lowbat image splash when normal poweron
+    
+    Modification ID: 8974LBU-DISPLAY-FID0301
+    Scratch or Copy [S/C]: S
+    Copy from:
+    Other Info:
+    
+    Change-Id: I65cf65d87b9dae321a7ef448ec6c46b8ea99046a
+
+commit b2a9cb2f13265ab72b4bc59bff0ff25daf26ae06
+Author: zhangxd1224 <zhangxd1224@thundersoft.com>
+Date:   Wed Nov 26 17:05:04 2014 +0800
+
+    [R41658][8974LBU] del the display tmp modify to enable power key
+    
+    Modification ID: 8974LBU-BSP-FID0009
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: I026ffaccd02fb7f0a3bd570ce0b2d633033693f9
+
+commit e7d0f1a7e3c20b1459b01752d69871f682b357da
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Sat Nov 22 15:18:55 2014 +0800
+
+    [R41266][8974LBU] Enable LK display.
+    
+    Modification ID: 8974LBU-DISPLAY-FID0301
+    Scratch or Copy [S/C]: S
+    Copy from:
+    Other Info: In order to enbale lk display quickly,
+                all the FJ's lk modifications were merged.
+                There were some temporary modifications,
+                the indicated log is:
+                  /* liuzl0402 --------------- temp start */
+                  /* liuzl0402 --------------- temp end */
+    
+    Change-Id: Iac41c1bea5dedab619e68e8d54f23a8223c2d969
+
+commit 7cd5fe472e647f05758921f078f0e867814fd9ea
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Sat Nov 22 13:25:31 2014 +0800
+
+    [8974LBU] Merged the dev_tree source code.
+    
+    Modification ID: 8974LBU-BSP-FID0004
+    Scratch or Copy [S/C]: C
+    Copy from: H1410018,H1320007
+    Other Info:
+    
+    Change-Id: Ifd962b52109f850775ed22d203d4341e2cae3b0b
+
+commit 8bc50f3a46bf16dbc89d89d02e6bf58e6e5a7453
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Fri Nov 21 16:02:49 2014 +0800
+
+    [R41658][8974LBU] Merged the model_id source code.
+    
+    Modification ID: 8974LBU-BSP-FID0003
+    Scratch or Copy [S/C]: C
+    Copy from: H1320008
+    Other Info:
+    
+    Change-Id: I60d1778a63b27f9805a694fdf1ca7d34d85f15a2
+
+commit 0d140a128740cdc6ad7378c45dedd9a2e86442fb
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Wed Nov 19 15:58:32 2014 +0800
+
+    [R41658][8974LBU] Merged the SMEM source code.
+    
+    Modification ID: 8974LBU-BSP-FID0002
+    Scratch or Copy [S/C]: C
+    Copy from: H1320001
+    Other Info:
+    
+    Change-Id: I65e010f7b9d2c285bc54bd3768800f42919cf8d0
+
+commit 435328e263b7d3d322f73fef741769dbdf117cc9
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Thu Nov 13 16:33:08 2014 +0800
+
+    [R][8974LBU][TEMP]Disable DISPLAY_SPLASH_SCREEN
+    
+    Modification ID:8974LBU-BringUP-TEMP-004
+    Scratch or Copy [S/C]:S
+    Copy from:
+    Other Info:
+    
+    Change-Id: I1ad0173c28c7ceb8a967430674c3a3a857f22d53
+
+commit ae1bb71ab667d374d003415f44b246b78d62494b
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Thu Nov 13 16:29:32 2014 +0800
+
+    [R][8974LBU][TEMP]Disable SSD_ENABLE
+    
+    Modification ID:8974LBU-BringUP-TEMP-003
+    Scratch or Copy [S/C]:S
+    Copy from:
+    Other Info:
+    
+    Change-Id: I78dd329fd942a7cffffb8442e5dc8a1879982f80
+
+commit 23b39e46a67b16eeaeca3c1a256afe0d691a42f5
+Merge: c9562fc 1716af1
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Dec 3 16:30:32 2014 -0800
+
+    Merge "arch: arm: Fix the cache routines"
+
+commit c9562fc220c085710ff5f1a0f1e964e38705ff09
+Merge: a65b102 c420e6e
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Nov 27 18:29:13 2014 -0800
+
+    Merge "dev: gcdb: Add HX8379 Truly panel file"
+
+commit a65b1023e35c5f1878e9fbcac6b84afed1316b2d
+Merge: 432971d ffe00db
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Nov 25 10:40:17 2014 -0800
+
+    Merge "fsm9900: disable logs in user builds"
+
+commit 432971d538c23835a5a0236c904d5af7a2c5f0a5
+Merge: 93494e6 2cf3cdd
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Nov 24 23:51:30 2014 -0800
+
+    Merge "mdm9625: disable logs in user builds"
+
+commit 93494e68d2cf93ace42d7fd56984c670a4b96912
+Merge: 1d4db06 fdec966
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Nov 24 23:51:28 2014 -0800
+
+    Merge "apq8064: disable logs in user builds"
+
+commit c420e6e567e087abcde5c62df4a69a5338f4a259
+Author: Ilia Lin <ilialin@codeaurora.org>
+Date:   Thu Nov 6 09:04:17 2014 +0200
+
+    dev: gcdb: Add HX8379 Truly panel file
+    
+    Add HX8379 Truly video mode panel file header.
+    
+    Change-Id: I8cb6cf16f7409db32d25448e0bd033a138714a6e
+
+commit 2cf3cddac18d972904786721a01dd62c10446006
+Author: Sridhar Parasuram <sridhar@codeaurora.org>
+Date:   Wed Nov 19 16:22:39 2014 -0800
+
+    mdm9625: disable logs in user builds
+    
+    Disable LK logging in user variant builds.
+    
+    Change-Id: Ic82316972c9265e90b06f9f2e9688a4cee324ee4
+
+commit fdec96659317f176d84511bd67a602edbbc7b465
+Author: Sridhar Parasuram <sridhar@codeaurora.org>
+Date:   Wed Nov 19 16:23:18 2014 -0800
+
+    apq8064: disable logs in user builds
+    
+    Disable LK logging in user variant builds.
+    
+    Change-Id: I7ce9111e1e1836715050ed7957ebbc067cf39f4c
+
+commit ffe00dbededa62d3c25f742fa2ea9949178e4a9a
+Author: Sridhar Parasuram <sridhar@codeaurora.org>
+Date:   Wed Nov 19 16:24:55 2014 -0800
+
+    fsm9900: disable logs in user builds
+    
+    Disable LK logging in user variant builds.
+    
+    Change-Id: I607aa2c502a8a763ab42886b2d37a72507b29b21
+
+commit 1d4db06cda7eea5674226eeccc80f73f4d3c9204
+Merge: 225da66 7147748
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Nov 18 06:22:18 2014 -0800
+
+    Merge "platform: msm_shared: disable the PWRSAVE mode in LK"
+
+commit 71477484f1c8cf4174e5cee1fabc0a7d357705b2
+Author: vijay kumar <vpendo@codeaurora.org>
+Date:   Fri Nov 7 13:08:13 2014 +0530
+
+    platform: msm_shared: disable the PWRSAVE mode in LK
+    
+    In target uninit after receiving the R1b response of CMD5,
+    clocks from the mmc are stopped suddenly even though the
+    DAT0 line pulled low, indicating the card is busy.To avoid
+    this the power save mode disabled in LK.
+    
+    Change-Id: I3b20ce4e68446682001fe83f2200ecbf3f736689
+
+commit 1716af1c13d94f3a15588fb233d3d384f9094677
+Author: Channagoud Kadabi <ckadabi@codeaurora.org>
+Date:   Tue Oct 14 13:41:35 2014 -0700
+
+    arch: arm: Fix the cache routines
+    
+    cache invalidate routines were going out of bound because of
+    incorrect branch instruction. Fix the loop in the cache routine
+    for invalidating the cache.
+    
+    Change-Id: Ife1c3764e9f7ebf1238e2079118d351eea53f6db
+
+commit 225da66efe7bff7143081929e359eea0cb43378f
+Merge: f73962d 901bb70
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Nov 7 21:58:55 2014 -0800
+
+    Merge "app: aboot: Disable fastboot commands registering for user builds"
+
+commit 901bb709aca4dd6cfeddeea31a0a86f29c6e64e4
+Author: Sridhar Parasuram <sridhar@codeaurora.org>
+Date:   Fri Oct 24 14:06:03 2014 -0700
+
+    app: aboot: Disable fastboot commands registering for user builds
+    
+    Disable registering fastboot commands for user builds by default.
+    
+    Change-Id: I71056522bbe7545cfdd714763140443aa8872f8a
+
+commit f73962d4c1fac7ee8158a5c53797490e9d89216f
+Merge: 59d7083 e2e8035
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Nov 5 10:49:35 2014 -0800
+
+    Merge "lib: debug: add common stack protection feature in lk"
+
+commit 59d70836068171d19de65b3b9aa79b0025d6d516
+Merge: 7a38704 3784a3a
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sat Nov 1 00:13:44 2014 -0700
+
+    Merge "msm8974: disable logs in user builds"
+
+commit 7a38704f30c559a07456b6c4f16bac9193bb8200
+Merge: 784b492 a4b710c
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sat Nov 1 00:13:43 2014 -0700
+
+    Merge "apq8084: disable logs in user builds"
+
+commit 784b492e53b69d0e6eb1aeb0738e99739a5dbaec
+Merge: d6cfb32 d4b293a
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Sep 29 05:41:47 2014 -0700
+
+    Merge "target: disable continuous splash screen when display init fails"
+
+commit d6cfb32915d85655f1fadfe8068fdd70d4eb1d11
+Merge: 89630d3 11d763e
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Sep 26 05:26:37 2014 -0700
+
+    Merge "target: msm8226: Disable SDHC mode during target uninit"
+
+commit d4b293ab6ca10ecec7e71b8cf9bc7b4703e8ef96
+Author: Justin Philip <jphili@codeaurora.org>
+Date:   Wed Sep 17 12:26:49 2014 +0530
+
+    target: disable continuous splash screen when display init fails
+    
+    Once the DSI read is done in LK and read LCD ID fails,
+    display_shutdown gets executed. Kernel thinks continuous
+    splash is enabled as a result the clock remains stuck at off.
+    To avoid this mismatch pass kernel boot param no splash when read ID fails.
+    This can be done by disabling continuous splash when display init fails.
+    
+    Change-Id: I38e177d2dd5aa5757006bd19621d73063c4127e6
+
+commit 11d763e62ab40b6b229f6bd1af84759f09c3acec
+Author: Aparna Mallavarapu <aparnam@codeaurora.org>
+Date:   Wed Sep 24 17:33:14 2014 +0530
+
+    target: msm8226: Disable SDHC mode during target uninit
+    
+    SDCC controller can run in SDHC mode or MCI mode. ABL runs in
+    SDHC mode, with this if we jump to hlos the hlos mount operations
+    are failing as the mount deamon is not able to access emmc partitions.
+    Disable SDHC mode before jumping to kernel resolves this issue by
+    helping SDCC kernel driver by giving a clean start.
+    
+    Change-Id: I79f5bf2dc6abf155376ac78be1c7ebcc951fffd2
+
+commit 89630d3c4600ce9317d72c1fa96f800744e596ce
+Merge: 653d3a1 31450b8
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Sep 24 03:32:19 2014 -0700
+
+    Merge "target: msm8610: Disable SDHC mode during target uninit."
+=========>/home/zhangxd/work/Lollipop-CS/boot_images<========
+commit a058a5d8649b13c9f778a05816a0cd90a0c70c4e
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Thu Dec 11 17:31:09 2014 +0800
+
+    [R41658][8974LBU] Fix QPST emergency download issue
+    
+    Modification ID:
+    Scratch or Copy [S/C]: S
+    Copy from:
+    Other Info:Update 8974_msimage.mbn and MPRG8974.mbn
+    
+    Change-Id: I90ecc1657f9290fb8aa6c41b4c03df5e41e0ccbc
+
+commit aebb40dc5b91fa4d137ec7a9ae6bb8d3b6477a2c
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Sat Nov 22 13:18:44 2014 +0800
+
+    [8974LBU] Add the platform id customization.
+    
+    Modification ID: 8974LBU-BSP-FID0004
+    Scratch or Copy [S/C]: C
+    Copy from: H1320007
+    Other Info:
+    
+    Change-Id: I84c783d30a04452fc607b29c52ad2b57da928730
+
+commit ddacfc05b30de63ba6ad51781ab0fd6a9a90c294
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Fri Nov 21 15:24:32 2014 +0800
+
+    [R41658][8974LBU] Merged the model_id source code.
+    
+    Modification ID: 8974LBU-BSP-FID0003
+    Scratch or Copy [S/C]: C
+    Copy from: H1320008,H1410017
+    Other Info:
+    
+    Change-Id: Ic39bd87283e5a2f667fb4ff2e44ceaf7bdc4d1a3
+
+commit c84768b961417895fc26c4966c9ec3ac82d484d7
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Fri Nov 21 10:44:24 2014 +0800
+
+    [R41658][8974LBU] Merged the SMEM source code.
+    
+    Modification ID: 8974LBU-BSP-FID0002
+    Scratch or Copy [S/C]: C
+    Copy from: H1320001
+    Other Info:
+    
+    Change-Id: I949762e7cf5a4ec9c3b69b52ab8d5239f3e311a1
+
+commit a336c85b61f228289f6862154ca30644e99e8b44
+Author: zhangxd1224 <zhangxd1224@thundersoft.com>
+Date:   Fri Nov 14 12:06:56 2014 +0800
+
+    [R41328][8974LBU][TEMP]  Add gpio config
+    
+    Modification ID: 8974LBU-BSP-FID0000
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info: add fujitsu's gpio config in sbl1
+                [TEMP]Fixed the model_id to 0x73.
+    
+    Change-Id: I6c9670736ac9ec6741b2c09d4d758e4c8a907b2f
+
+commit c7cab2be5db4abdf3180c8f160154764491dd49e
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Thu Nov 13 16:18:11 2014 +0800
+
+    [R][8974LBU][TEMP]Disable INTERNAL_PMIC_CHARGER_USED
+    
+    Modification ID:8974LBU-BringUP-TEMP-002
+    Scratch or Copy [S/C]:S
+    Copy from:
+    Other Info:
+    
+    Change-Id: I378fd4c0636c8032bc2435325c494edeae218d0b
+
+commit 14e658704ec05a616a2ad697ee7393cad59a56ea
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Thu Nov 13 16:11:10 2014 +0800
+
+    [R][8974LBU][TEMP]Fix the platform_id to MTP
+    
+    Modification ID:8974LBU-BringUP-TEMP-001
+    Scratch or Copy [S/C]:S
+    Copy from:
+    Other Info:
+    
+    Change-Id: Ia63d6aaceb412c74d284e0506415094c9cd401b7
+
+commit dc5801050c6180ee8fef7880b320a83715cfc2c3
+Author: QC Publisher <qcpublisher@qti.qualcomm.com>
+Date:   Fri Dec 12 19:09:49 2014 -0800
+
+    Commit label r4230.1
+
+commit 7ddfb24b1f6527cc7a50bc29f8ef5a30bc5d49a0
+Author: QC Publisher <qcpublisher@qti.qualcomm.com>
+Date:   Fri Dec 5 18:47:22 2014 -0800
+
+    Commit label r4220A.1
+
+commit cf65826f99f866849b437549e9694453dccbeaf9
+Author: QC Publisher <qcpublisher@qti.qualcomm.com>
+Date:   Fri Nov 21 19:31:53 2014 -0800
+
+    Commit label r4215.1
+
+commit 003f27d58b4b7cdf27bba23018219181c2d8ec88
+Author: QC Publisher <qcpublisher@qti.qualcomm.com>
+Date:   Wed Nov 5 11:53:00 2014 -0800
+
+    Commit label r4210.1
+
+commit 3898ee8fe8d702e03dcd8ab6fbfd87bbefc8f78c
+Author: Gito Z <gitoz@qualcomm.com>
+Date:   Sat Jun 29 04:25:43 2013 -0700
+
+    init
+=========>/home/zhangxd/work/Lollipop-CS/LINUX/android/kernel<========
+commit 9a97b6646d2d21f4300e15fdf8e5d92ebc43f021
+Author: zhangxd <zhangxd1224@thundersoft.com>
+Date:   Mon Dec 8 20:05:16 2014 +0800
+
+    [R42061][8974LBU] update ALOG_EXPORT_ADDR/MLOG_EXPORT_ADDR
+    
+    Modification ID:   8974LBU-BSP-FID3001
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: I3814d1989539b5d5ad05ce1293ec80cc2b6dc8f8
+
+commit 16932d252a4d369577e919c5eb6a7bf6e7d2022f
+Author: zhangxd <zhangxd1224@thundersoft.com>
+Date:   Mon Dec 8 17:30:13 2014 +0800
+
+    [R42061][8974LBU] FTA log Porting add kernel log
+    
+    Modification ID:   8974LBU-BSP-FID3001
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: I52e0e01c0fddd6cec1d0724c56079ecc081f4231
+
+commit 37e29a09d01f9ad37708358f3480b4549887308f
+Author: zhangxd <zhangxd1224@thundersoft.com>
+Date:   Mon Dec 8 16:46:51 2014 +0800
+
+    [R42061][8974LBU] FTA log Porting
+    
+    Modification ID:   8974LBU-BSP-FID3001
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: If7c07ec873f3f8916b3700a98ebfb382e4a1847e
+
+commit 3e283d6aae4558712f0708b84af608f52d7edd2e
+Author: zhangxd <zhangxd1224@thundersoft.com>
+Date:   Mon Dec 8 15:35:09 2014 +0800
+
+    [R42061][8974LBU]   FTA log Porting
+    
+    Modification ID:   8974LBU-BSP-FID3001
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: I5f96b6f38f33a139c3d1e039e1693168e3ccf657
+    
+     Author:    zhangxd <zhangxd1224@thundersoft.com>
+
+commit f79c76490232ad2820f330be20853e5a7e89071d
+Author: zhangxd1224 <zhangxd1224@thundersoft.com>
+Date:   Wed Dec 10 14:47:52 2014 +0800
+
+    [R42060][8974LBU] Add earphone dts in v0/v1/v2/v4/f
+    
+    Modification ID: 8974LBU-BSP-FID0701
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: Ib405b10d3d43f0be1a6157b6a1918a1139620719
+
+commit 1947404d33066189234918e07ad5f4ab40e741a8
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Wed Dec 10 14:22:14 2014 +0800
+
+    [R42457][8974LBU] Fix the off-charge issue
+    
+    Modification ID:8974LBU-CHARGE-FID0206/0208
+    Scratch or Copy [S/C]:S
+    Copy from:
+    Other Info: If the default charging is disabled,
+                the off charge process will exit and reboot the system.
+                This modification will enable the default charging.
+    
+    Change-Id: I5bc9f7946c27977a637e980743384604c677e09b
+
+commit e19909b56bdffa220fcc13c9bcbdc5b238a42010
+Author: zhangxd1224 <zhangxd1224@thundersoft.com>
+Date:   Wed Dec 3 20:57:41 2014 +0800
+
+    [R42060][8974LBU] Add earphone driver
+    
+    Modification ID: 8974LBU-BSP-FID0701
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: I2bf6d94f79d6aa1cbf27d98b8448f50aefdd9cba
+
+commit d89ac30003f2a3d4e3411285a038707f58f390fc
+Author: zhangxd1224 <zhangxd1224@thundersoft.com>
+Date:   Mon Dec 1 10:52:43 2014 +0800
+
+    [R42060][8974LBU] add yamaha codecs
+    
+    Modification ID: 8974LBU-BSP-FID0701
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    Other Info: add audio codecs and waveif
+    
+    Change-Id: I555897a6b34ed88b09ada5afb9383622d92f0444
+
+commit 7a8195f640adcd4fa35dff966203c693bc6efe45
+Author: Thundersoft_songkw0613 <songkw0613@thundersoft.com>
+Date:   Tue Dec 2 14:02:16 2014 +0800
+
+    [R41757][8974LBU] fix compile problem for SDDL.
+    
+    Modification ID: 8974LBU-BSP-FID0101
+    Scratch or Copy [S/C]: C
+    Copy from:
+    Other Info:
+               Need access /proc/driver/mmcdl  when SDDL.
+    
+    Change-Id: I40a0021b73136cdb23d6cc5a33da6108ef5d2e80
+
+commit 9187e96cb137d16d546a7d6f2407e63b1ee7daf2
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Wed Nov 26 16:40:47 2014 +0800
+
+    [R41658][8974LBU] Add the dts of FJDEV018-rev0/1/2/4/5/f
+    
+    Modification ID: 8974LBU-BSP-FID0008
+    Scratch or Copy [S/C]: S
+    Copy from:
+    Other Info:
+    
+    Change-Id: Ib055f606871d73f4e0f665822fe801b7b8d31c62
+
+commit 31a6a9d817ceb134f53c527c55f3f3522cc19d1e
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Tue Nov 25 21:08:10 2014 +0800
+
+    [R41266][8974LBU] Merged msm8974-mdss.dtsi and fixed the issue of usb can't connect when display on.
+    
+    Modification ID: 8974LBU-DISPLAY-FID0301
+    Scratch or Copy [S/C]: C
+    Copy from: FUJITSU:2013/10/08 DISP delete unused HW
+    Other Info: Because platform-enable-gpio and paltform-reset-gpio did not been deleted.
+                The function of mdss_dsi_panel_reset() is effective.
+                This function will lead to the usb-disconnect occured when display on.
+    
+    Change-Id: I5f09b8ed5c9ec773f8747e3bfc3e9298b7620f0c
+
+commit 913bb1855f8f6ae5d5b9b3db85f39196de0da0f0
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Sat Nov 22 16:39:08 2014 +0800
+
+    [R41658][8974LBU] Fix the issue of PowerKey is invalid.
+    
+    Modification ID: 8974LBU-BSP-FID0006
+    Scratch or Copy [S/C]: C
+    Copy from: H1410072,H1410015,H1410034
+    Other Info:
+    
+    Change-Id: I9586b292d237acd9f1ebd65e96ebc49e4ff0569b
+
+commit 7c96b6713b4b1e873385e7fd7dea5b22e6e6d4ed
+Author: Thundersoft_songkw0613 <songkw0613@thundersoft.com>
+Date:   Fri Nov 21 17:07:50 2014 +0800
+
+    [R41266][8974LBU] Merged the Backlight Sourcecode.
+    
+    Modification ID: 8974LBU-DISPLAY-FID0301
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: Iea95f240c4dff58ec340c90b1fff327df2a99aaa
+
+commit 39feea8d87a20e7e3100874e637ceee858077482
+Author: Thundersoft_songkw0613 <songkw0613@thundersoft.com>
+Date:   Fri Nov 21 17:07:25 2014 +0800
+
+    [R41266][8974LBU] Merged the LCD Sourcecode.
+    
+    Modification ID: 8974LBU-DISPLAY-FID0301
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info: add files under video and related invoked files and dts.
+    
+    Change-Id: Ifa0b03f91338f3cd0bc3262a2e71fac6e83ec727
+
+commit 47965beaf245bb61bf65a856ac520e015d6dba12
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Sat Nov 22 13:28:14 2014 +0800
+
+    [8974LBU] Add FJDEV018-rev3 dts.
+    
+    Modification ID: 8974LBU-BSP-FID0004
+    Scratch or Copy [S/C]: S
+    Copy from:
+    Other Info:
+    
+    Change-Id: Icf4f1cc7cef013fb1549f0ff51d848c223aac695
+
+commit c3aba5ae238e933c0c3396658d7f2300a8a80656
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Fri Nov 21 16:34:13 2014 +0800
+
+    [R41658][8974LBU] Merged the model_id source code.
+    
+    Modification ID: 8974LBU-BSP-FID0003
+    Scratch or Copy [S/C]: C
+    Copy from: H1320008
+    Other Info:
+    
+    Change-Id: I7b50e8c44ec42b1c440654149abe58cf44aca3e0
+
+commit 11f9fcc877ed21f8084d4b03dc9e077fe6eec8f6
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Fri Nov 21 11:15:14 2014 +0800
+
+    [R41658][8974LBU] Merged the SMEM source code.
+    
+    Modification ID: 8974LBU-BSP-FID0002
+    Scratch or Copy [S/C]: C
+    Copy from: H1320001
+    Other Info:
+    
+    Change-Id: Ibf953f1d43efef8397cca9ab7de4117716544f44
+
+commit 55cc646949b92234cde59179c192cc68eedc49cb
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Thu Nov 20 21:06:15 2014 +0800
+
+    [R41312][8974LBU] Enable Vol-up/Vol-down key.
+    
+    Modification ID: 8974LBU-KEY-FID0801
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:Add FJDEV-keys dts.
+    
+    Change-Id: I6678bcb2167e243c57fb81f5810df99a3d4ed4c5
+
+commit 7820348d63f9eaeedcfc32010b7c1da8331eb40e
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Thu Nov 20 20:18:29 2014 +0800
+
+    [R41658][8974LBU] Add charging_mode/makercmd_mode difinition.
+    
+    Modification ID: 8974LBU-BSP-FID0001
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: I6f2180a63d595ae1db74411cb1d84149a719a2f5
+
+commit 0dffd524fa320b7987b03f0adb391f61681b5a57
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Thu Nov 20 19:16:49 2014 +0800
+
+    [R41313][8974LBU] Merged the TouchPanel SourceCode.
+    
+    Modification ID: 8974LBU-touch-FID0401
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info: In order to fix the build error,
+                disabled the NV_read and CHRG_DETECT.
+    
+    Change-Id: Iea6f78548454ffefcc30ec6bc59bc43d3e59ad24
+
+commit ff8df562468214432ae2a7602c587b3db9880040
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Thu Nov 20 15:25:45 2014 +0800
+
+    [R][8974LBU] Merge the bsp base source code.
+    
+    Modification ID: 8974LBU-BSP-FID0001
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info: Merged the BLSP/GPIO/regulator dts.
+                Merged clock-8974/board-fjdev/board-fjdev-gpiomux
+    
+    Change-Id: I86edb11033db1b03fe59de17e3a379d2ecc30e14
+
+commit 891d2f5ab0b2ba8b9fabcd80739d95e98c061bf1
+Author: Anupam Sakargayan <asakarga@codeaurora.org>
+Date:   Thu Dec 4 15:47:43 2014 +0530
+
+    msm: kgsl: Device mutex lock for kgsl_cmdbatch_destroy
+    
+    kgsl_cancel_event must be called with device->mutex
+    otherwise it will cause a BUG_ON in kgsl_cancel_event
+    
+    kgsl_cmdbatch_destroy will call kgsl_cancel_event, hence added
+    device->mutex lock/unlock wherever kgsl_cmdbatch_destroy is called
+    
+    Change-Id: I9b9959236d6be0d80987279a64a0715363229f7b
+    Signed-off-by: Anupam Sakargayan <asakarga@codeaurora.org>
+
+commit 2bc6c38ff502d2af778c6b42c67b8e36a79a5363
+Author: Anupam Sakargayan <asakarga@codeaurora.org>
+Date:   Thu Dec 4 14:56:21 2014 +0530
+
+    Revert "msm: kgsl: Device mutex lock for kgsl_cancel_event"
+    
+    This reverts commit 43371a3f85e286627654e10caae62db22defe6ea.
+    
+    CRs-Fixed: 765051
+    Change-Id: Ic42960234e78a258a6918fcc2875ecc502e0e530
+    Signed-off-by: Anupam Sakargayan <asakarga@codeaurora.org>
+
+commit 3460c0c2243184580d853192e37438d4d7e7c623
+Merge: a0888fd 2b18aa1
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Dec 10 15:53:36 2014 -0700
+
+    Merge AU_LINUX_ANDROID_LA.BF.1.1_RB1.05.00.00.002.031 on remote branch
+    
+    Change-Id: Ia15237e87ccfa70f38cebcca32a422013a409660
+
+commit a0888fd6c05466d90700d500424375e2cbd37739
+Merge: ac807d7 e10f4b3
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sat Dec 6 00:48:27 2014 -0800
+
+    Merge "ASoC: msm: qdsp6v2: Unblock EOS on reset event callback"
+
+commit ac807d7279502e4d31c6e92c458419bacb907bd7
+Merge: 644b2a9 108a78f
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sat Dec 6 00:48:26 2014 -0800
+
+    Merge "msm: kgsl: Disable index reg dump during snapshot"
+
+commit 644b2a9c0ff69e2a89e96e2618ba64054580304d
+Merge: 3957f40 b9995bb
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sat Dec 6 00:48:25 2014 -0800
+
+    Merge "msm: kgsl: Disable shader memory dump during snapshot"
+
+commit 3957f40bfd2399a470558e3234b941ac17054f25
+Merge: ac66015 b45fc41
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sat Dec 6 00:48:24 2014 -0800
+
+    Merge "ASoC: wcd9320: use hwdep nodes to get calibration"
+
+commit ac66015864922afe85519392b6a2d2830d3e3d62
+Merge: 7ab9eb8 c829aa0
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Dec 5 04:49:11 2014 -0800
+
+    Merge "ASoC: wcd9xxx: use hwdep node for codec calibration"
+
+commit 108a78f18903f43cd4f33e3b31375b652e6fc6d6
+Author: Anupam Sakargayan <asakarga@codeaurora.org>
+Date:   Tue Nov 25 15:58:44 2014 +0530
+
+    msm: kgsl: Disable index reg dump during snapshot
+    
+    Disabling index reg dump for these chipsets (8974, 8x26, 8x10).
+    
+    CRs-Fixed: 751620
+    Change-Id: Ie1014bd18b49692f718279cfe7abaed874a376af
+    Signed-off-by: Anupam Sakargayan <asakarga@codeaurora.org>
+=========>/home/zhangxd/work/Lollipop-CS/LINUX/android/device/qcom/msm8974<========
+commit 619ddc7380c8a97267fb912dcfabffbde1108af0
+Author: Thundersoft_songkw0613 <songkw0613@thundersoft.com>
+Date:   Tue Dec 16 16:54:48 2014 +0800
+
+    [R42764][8974LBU] Add "FJ feat", "XSU" and RunCommand" to mk for build-in.
+    
+    Modification ID: 8974LBU-TOOL-FID3101, 8974LBU-TOOL-FID3104, 8974LBU-TOOL-FID3105
+    Scratch or Copy [S/C]: S
+    Copy from: [P]-12-2ND-GEN_NAB-D-SYSTEM-0991_SPEC-GEN_ADD-S, [P]_12-1ST-GEN_XXXXX_SPEC-GEN
+    Other Info:
+    
+    Change-Id: Iefd38fd942a24206bc42ff74b511555b7d5ccfb0
+
+commit 54635eee7a7594c3daaf024be4e8c359cf0dc042
+Author: zhangxd1224 <zhangxd1224@thundersoft.com>
+Date:   Wed Dec 17 13:55:36 2014 +0800
+
+    [R42805][8974LBU] loader_log porting
+    
+    Modification ID:   8974LBU-BSP-FID3005
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: I830bdd450e7cc39a3b63fb7ab5337811ba901e6f
+
+commit b83a913ba33e09ae6fcec8b4cf1ea72148e5e0d3
+Author: zhangxd <zhangxd1224@thundersoft.com>
+Date:   Mon Dec 8 15:55:34 2014 +0800
+
+    [R42061][8974LBU] FTA log Porting
+    
+    Modification ID:   8974LBU-BSP-FID3001
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: I322d03c9cf4318fe985feee04ac9c4a7b0432021
+
+commit 5856aa7e99a412f60d422fc96f9fa27b851e61c6
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Wed Dec 10 21:15:58 2014 +0800
+
+    [R42059][8974LBU] For Factory Data reset, need change the authority of nonvolatile node, and mount sst2 and fota partition
+    
+    Modification ID: 8974LBU-FDR-FID0501
+    Scratch or Copy [S/C]:C
+    Copy from:H1320003, A1415002, A1415001, H1410008
+    Other Info:
+    
+    Change-Id: Ie722e690ab5fe8a37dcc6ed20af399c0e79844c4
+
+commit 376a0f71d28ed5c8b7fceb5973c190c51f9176e4
+Author: zhangxd1224 <zhangxd1224@thundersoft.com>
+Date:   Mon Dec 1 21:01:56 2014 +0800
+
+    [R42060][8974LBU] update audio mixer path file
+    
+    Modification ID: 8974LBU-BSP-FID0701
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    Change-Id: I3ed340423cf9212b561081b5a923ef6907d42cf3
+
+commit ffd114b556fe62e0b886e756d05c09aa509b2963
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Wed Dec 3 19:30:34 2014 +0800
+
+    [R41658][8974LBU] Merged the partition size source code
+    
+    Modification ID: 8974LBU-BSP-FID0010
+    Scratch or Copy [S/C]: C
+    Copy from: H1410008,H1410128,H1410140,H1410031
+    Other Info:
+    
+    Change-Id: I8baa3da4a82cf07ad5b09b7f067c253d165daa0d
+
+commit 35a86942108ecdd0c673ac5fa70c4a7bd9235f7a
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Tue Nov 25 22:07:21 2014 +0800
+
+    [R41658][8974LBU] Fix the issue of virtual key does not exist
+    
+    Modification ID: 8974LBU-BSP-FID0007
+    Scratch or Copy [S/C]: S&C
+    Copy from: H1410039
+    Other Info: Also change the lcd_density to 480.
+    
+    Change-Id: I01a4b721cf1b327f6e84c45a544436385ee0fccc
+
+commit ea20a76153a285f272f805d467c5f58084bdd573
+Author: Paras Nagda <pnagda@codeaurora.org>
+Date:   Fri Dec 5 20:37:19 2014 +0530
+
+    msm8974: Update codec capabilities info in media_codecs.xml
+    
+    Add video encode/decode capabilities for 8974
+    
+    Change-Id: Ica69d94b6146b443eab3eecf13f2515352cfc977
+    CRs-Fixed: 763186
+
+commit 84092691bccca70ba9be0deb18907e055436c6fe
+Merge: 9a0637f 82ac494
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Dec 10 15:54:05 2014 -0700
+
+    Merge AU_LINUX_ANDROID_LA.BF.1.1_RB1.05.00.00.002.031 on remote branch
+    
+    Change-Id: Iddfe15e714de7121039fd8f39d4dfd45fbfb1927
+
+commit 9a0637faca26d79e1c6667df414c09527096c5ab
+Merge: b7044b8 b6256de
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Dec 4 06:50:40 2014 -0800
+
+    Merge "Suppress userspace undefined instructions logs"
+
+commit 82ac49422877772d45ca070dd72dcf8dc72b0e7b
+Merge: b7044b8 9dba7e1
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Dec 3 02:59:20 2014 -0700
+
+    Merge AU_LINUX_ANDROID_LA.BF.1.1_RB1.05.00.00.002.027 on remote branch
+    
+    Change-Id: I82ace271b1d561052a8d0d6678133162d129d41f
+
+commit b6256deda8592676a1cc062c3ce8a1307324140b
+Author: Samir Mehta <samirn@codeaurora.org>
+Date:   Wed Dec 3 11:50:33 2014 +0530
+
+    Suppress userspace undefined instructions logs
+    
+    On 8974 CONFIG_DEBUG_USER is enabled by default.
+    This config is printing undefined instruction logs in kernel for
+    userspaces processes causing excessive logging issues.Suppress
+    undefined instruction logs in kernel to avoid excessive logging.
+    
+    Change-Id: I91492619a2549126c6983901e5a5b2a7eb904e33
+
+commit b7044b8bd67c1956d9df570b37b776faa6aa2b53
+Merge: 736c4cc 562af14
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Dec 1 20:47:34 2014 -0800
+
+    Merge "Audio: Remove pcm offload formats"
+
+commit 736c4cc452ca583b9ebc87188b005b1f2dbbc3b9
+Merge: 009c03d 5c304cb
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Dec 1 06:54:12 2014 -0800
+
+    Merge "audio: msm8974: Disabling compress capture"
+
+commit 5c304cb0febbff3ef2cffea1c4186271207d532f
+Author: Divya Narayanan Poojary <dnaray@codeaurora.org>
+Date:   Fri Nov 28 15:44:37 2014 +0530
+
+    audio: msm8974: Disabling compress capture
+    
+    -There is no requirement to support compress offload capture
+     except for specific customer. Disabling it
+    
+    Change-Id: Ic3daa8a92c0afd29c72caa1a74c5545159d928e4
+
+commit 009c03d89b1b15b33e3d04630ec8ab65b4869f34
+Merge: 957d788 a57c98e
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Nov 27 08:40:35 2014 -0800
+
+    Merge "recovery.fstab: add support for sdcard OTA upgrade"
+
+commit 562af1413ccf7b95ae3c06e4c5705a0cfe640c02
+Author: Divya Narayanan Poojary <dnaray@codeaurora.org>
+Date:   Thu Nov 27 19:29:22 2014 +0530
+
+    Audio: Remove pcm offload formats
+    
+    - Removed 16 and 24 bit pcm offload formats in offload profile,since
+      pcm offload is not supported on B-family
+    
+    Change-Id: If2fb35ba68cee5864097fc1bd0b24dbcd33d1364
+
+commit a57c98e810b1beac0bdb26ab9625dace61482293
+Author: Maunik Shah <mshah@codeaurora.org>
+Date:   Thu Nov 27 14:46:27 2014 +0530
+
+    recovery.fstab: add support for sdcard OTA upgrade
+    
+    change file system type from ext4 to vfat to support OTA from sdcard
+    
+    Change-Id: Iae3b62194948fde8228c3fea115614d57c165e3f
+
+commit 9dba7e19b91a4ec29079e9d4d6dc5025e0b836bf
+Merge: 957d788 0aa35fa
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Nov 26 07:25:53 2014 -0700
+
+    Merge AU_LINUX_ANDROID_LA.BF.1.1_RB1.05.00.00.002.026 on remote branch
+    
+    Change-Id: I7f9b6d3fae7d91cd618127745a62da3692055dbc
+
+commit 957d78849d97f10fa966c1ea3b644c5e51667a2c
+Merge: 9902c75 6c4c33c
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Nov 25 23:01:55 2014 -0800
+
+    Merge "msm8974: Change accept_mac and deny_mac file paths."
+
+commit 9902c758f0470407287fb4198e7a265dbe33d73e
+Merge: 5118b52 d90abdb
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Nov 24 01:52:51 2014 -0800
+
+    Merge "msm8974: init: Add thermal file socket creation into init"
+
+commit 6c4c33cd3e530fe2b16721b52468e1854f3f29f6
+Author: Neelansh Mittal <neelanshm@codeaurora.org>
+Date:   Mon Nov 24 11:54:03 2014 +0530
+
+    msm8974: Change accept_mac and deny_mac file paths.
+    
+    Change default paths of the accept and deny mac
+    files from /data/hostapd/* to /data/misc/wifi/*
+    in hostapd.conf.
+    CRs-Fixed: 756614
+    
+    Change-Id: I055292fb406dc3d9c6c1babbcee6bf6ec4e65efc
+
+commit 5118b52b9aeb80bdc62cd1fab0b80fca9e6419f0
+Merge: aa77d07 014cf58
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Nov 19 10:21:44 2014 -0800
+
+    Merge "msm8974: Fix CTS issues for front and back camera configuration"
+
+commit aa77d07a047646185cfadfa17b4efd6d31a62bed
+Merge: 8718493 fc32f87
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Nov 19 07:41:31 2014 -0800
+
+    Merge "Add paths for DRM  to work with SEAndroid"
+
+commit 0aa35fab0593563f8254adb6a9f568163cccfdaa
+Merge: 8718493 d7c5ef4
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Nov 19 05:34:43 2014 -0700
+
+    Merge AU_LINUX_ANDROID_LA.BF.1.1_RB1.05.00.00.002.025 on remote branch
+    
+    Change-Id: I8ee602d7bda37c6fa7a0d336d5c3590a08584ea7
+
+commit 014cf58077b502f17e86675fcb6029bbe1750825
+Author: Paras Nagda <pnagda@codeaurora.org>
+Date:   Mon Nov 17 20:15:53 2014 +0530
+
+    msm8974: Fix CTS issues for front and back camera configuration
+    
+    - Change the bitrate for timelapsehigh/high,timelapse4kdci/4kdci,
+      timelapse2160p/2160p.
+    
+    - Point timelapsehigh/high to 2160p and remove 4kdci,2160p
+      for front camera.
+    
+    Change-Id: I06695d9a056ed1ebb9d9abee2d2c5694e57404b9
+    CRs-Fixed: 738050
+
+commit 87184935abd564ef07d812ef725ed3da7b3251fd
+Merge: ce6e79b dd440ec
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Nov 17 12:33:36 2014 -0800
+
+    Merge "IMS-RCS: init.target.rc changes for ConnectionManager"
+
+commit d90abdbf623e4cdba7dfad3be39e992726167bdc
+Author: Shiju Mathew <shijum@codeaurora.org>
+Date:   Fri Oct 17 15:12:22 2014 -0400
+
+    msm8974: init: Add thermal file socket creation into init
+    
+    Add thermal file socket creation into target init.
+    This change is required for SEAndroid so that
+    thermal socket context are not overridden by init.
+    
+    Change-Id: Iecf7d594083eb5085ae583043c7fa1415c220d3d
+
+commit ce6e79be156f467682360f2e6b6b168a4f1e57af
+Merge: bdcc2ce ed3b2d0
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Nov 13 01:22:03 2014 -0800
+
+    Merge "audio: Update mixer controls with uses cases for DB8074"
+
+commit d7c5ef481ad744a0e2b83548f94cbf8f8c082b11
+Merge: a2cc634 70a9f9b
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Nov 12 08:15:50 2014 -0700
+
+    Merge AU_LINUX_ANDROID_LA.BF.1.1_RB1.05.00.00.002.024 on remote branch
+    
+    Change-Id: I26d7104e25273a870e04a6c4c99344693834eded
+=========>/home/zhangxd/work/Lollipop-CS/trustzone_images<========
+commit 5c8b724944c3b1d4182b631a9550ff5a53067df3
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Sat Nov 22 14:43:49 2014 +0800
+
+    [R41658][8974LBU] Allows ACPU_lk to access LVS1.
+    
+    Modification ID: 8974LBU-BSP-FID0004
+    Scratch or Copy [S/C]: C
+    Copy from: H1320119
+    Other Info: Lk display need to enable LVS1,
+                It is must assign the permissions to APCU.
+    
+    Change-Id: I119bf0657cd5d54865eb69066c7b9a76e4946ce0
+
+commit d72b2fb592eb5786954a3f1e991dded53e4c7cf8
+Author: QC Publisher <qcpublisher@qti.qualcomm.com>
+Date:   Fri Dec 12 19:09:49 2014 -0800
+
+    Commit label r4230.1
+
+commit 57715f2b3915288e012d50f7ccbf6d93e95f22f2
+Author: QC Publisher <qcpublisher@qti.qualcomm.com>
+Date:   Fri Dec 5 18:47:22 2014 -0800
+
+    Commit label r4220A.1
+
+commit 328c5f4c233c4757847a778e9e30ca1152b08e35
+Author: QC Publisher <qcpublisher@qti.qualcomm.com>
+Date:   Fri Nov 21 19:31:53 2014 -0800
+
+    Commit label r4215.1
+
+commit aafd84a10e1b4c8a6677a340864d0d9504e2af41
+Author: QC Publisher <qcpublisher@qti.qualcomm.com>
+Date:   Wed Nov 5 11:53:00 2014 -0800
+
+    Commit label r4210.1
+
+commit 3898ee8fe8d702e03dcd8ab6fbfd87bbefc8f78c
+Author: Gito Z <gitoz@qualcomm.com>
+Date:   Sat Jun 29 04:25:43 2013 -0700
+
+    init
+=========>/home/zhangxd/work/Lollipop-CS/LINUX/android/system/media<========
+commit fda8817234c5a6f8a47a6a09204a5cb49abf9322
+Author: zhangxd1224 <zhangxd1224@thundersoft.com>
+Date:   Wed Dec 3 20:42:20 2014 +0800
+
+    [R42060][8974LBU] update audio_route
+    
+    Modification ID: 8974LBU-BSP-FID0701
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: I1cfe3dda2dcd88a47c7df60cea8f3dda01d7eb95
+
+commit af00bf7dce0b51e41134563e2dcc7aeeb3bd83ac
+Merge: a6ec737 905c01e
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sat Dec 6 21:58:26 2014 -0800
+
+    Merge "audio_effects: Support h/w accelerator effects"
+
+commit 905c01e727d30a311bbe70bee12930cfee436744
+Author: Subhash Chandra Bose Naripeddy <snariped@codeaurora.org>
+Date:   Fri May 23 22:03:41 2014 -0700
+
+    audio_effects: Support h/w accelerator effects
+    
+    Support h/w accelerator effects
+    
+    Change-Id: I7eb907b002129324cb60337790ca92188654e127
+
+commit a6ec737fff364477e7e93543d18f51bb17bd8799
+Author: Divya Sharma <c_shard@codeaurora.org>
+Date:   Sat Nov 2 21:36:11 2013 +0200
+
+    Nullify non-initialized entries in the mixer control structure
+    
+    While initialization process of some internal control structure,
+    some entries can remain  non-initialized.
+    To avoid possible crash while the structure release,
+    the non-initialized entries should be zeroed.
+    
+    Change-Id: I2450c9214eeb478cc57feef706d00b10c6897b60
+
+commit 6acbdabf4cd7017583ababb81ed0874237334be3
+Merge: 567167a ad07603
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 21 17:46:52 2014 -0700
+
+    merge in lmp-release history after reset to 567167ac6be36e732e98089d6e5d7d4f041f3323
+
+commit ad076039542ea5ae30a917a40b0d4bc539d924b5
+Merge: 567167a 813d4b9
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 21 06:16:25 2014 -0700
+
+    merge in lmp-release history after reset to 567167ac6be36e732e98089d6e5d7d4f041f3323
+
+commit 813d4b901fbfb2cc0d7172b7b1463d66580f3066
+Merge: 567167a f2cfaba
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Oct 19 17:16:37 2014 -0700
+
+    merge in lmp-release history after reset to 567167ac6be36e732e98089d6e5d7d4f041f3323
+
+commit f2cfaba7393835aacee0aa28448ab2edd35b5e47
+Merge: 567167a 08980c1
+Author: The Android Automerger <android-build@google.com>
+Date:   Thu Oct 16 06:15:58 2014 -0700
+
+    merge in lmp-release history after reset to 567167ac6be36e732e98089d6e5d7d4f041f3323
+
+commit 08980c1ed612e5e7a96e931b190ea8802ff55e84
+Merge: 567167a 24b0ea0
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Oct 15 06:16:53 2014 -0700
+
+    merge in lmp-release history after reset to 567167ac6be36e732e98089d6e5d7d4f041f3323
+
+commit 24b0ea04d928e6e7ad8c1735600339301955a441
+Merge: 567167a 2373202
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 14 06:14:59 2014 -0700
+
+    merge in lmp-release history after reset to 567167ac6be36e732e98089d6e5d7d4f041f3323
+
+commit 23732029a4208132b3bbca2cfa7fa86f39fddc98
+Merge: 567167a c572189
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Oct 13 06:14:27 2014 -0700
+
+    merge in lmp-release history after reset to 567167ac6be36e732e98089d6e5d7d4f041f3323
+
+commit c5721897981a91734a5a9b4b27d0102bc82b7e14
+Merge: 567167a 44b791f
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Oct 12 06:15:23 2014 -0700
+
+    merge in lmp-release history after reset to 567167ac6be36e732e98089d6e5d7d4f041f3323
+
+commit 44b791f4e13d965ccf90887c6a2ced4fa9c77754
+Merge: 567167a c71ba28
+Author: The Android Automerger <android-build@google.com>
+Date:   Thu Oct 9 06:14:31 2014 -0700
+
+    merge in lmp-release history after reset to 567167ac6be36e732e98089d6e5d7d4f041f3323
+
+commit 567167ac6be36e732e98089d6e5d7d4f041f3323
+Author: Eino-Ville Talvala <etalvala@google.com>
+Date:   Thu Oct 2 18:27:34 2014 -0700
+
+    CameraMetadata: Docs cleanup, especially units and range
+    
+    - Add entries for units and range into javadoc
+    - Fix up existing units entries and add new ones
+    - Fix up range entries to be consistent for enums
+    - Add range entries where it makes sense
+    - Minor fix to javadoc gen to allow for code indentation
+    - Lots of edits for consistency, especially to
+      available* entries.
+    
+    Bug: 16525650
+    Change-Id: I654d86c66e796e87d2cf3b47ffcc72cd26977e43
+
+commit c71ba287f7e4cbcc768d1104c48b571f14563315
+Merge: d77b234 01982c9
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Oct 8 06:21:30 2014 -0700
+
+    merge in lmp-release history after reset to d77b234a57985f421c32749f821c035f1a2af004
+
+commit 01982c90523f067606ab0f590a8144c221cdf267
+Merge: d77b234 81d0485
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 7 06:16:12 2014 -0700
+
+    merge in lmp-release history after reset to d77b234a57985f421c32749f821c035f1a2af004
+
+commit 81d0485528c8020f2daee598b4e6c3dc0510dc46
+Merge: d77b234 4cf38f8
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Oct 6 06:16:48 2014 -0700
+
+    merge in lmp-release history after reset to d77b234a57985f421c32749f821c035f1a2af004
+
+commit 4cf38f86ee4f9fdcea6855efcdf484d3f4234217
+Merge: d77b234 6aeded0
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Oct 5 06:16:16 2014 -0700
+
+    merge in lmp-release history after reset to d77b234a57985f421c32749f821c035f1a2af004
+
+commit ca25627fc63255d147286ef9a9624059825eb548
+Author: Igor Murashkin <iam@google.com>
+Date:   Thu Oct 2 15:27:09 2014 -0700
+
+    camera: Add a hwlevel attribute, annotate each metadata's hardware level
+    
+    * Set each metadata key to one of full,legacy,limited.
+    * All keys present on the lower level must also be present on higher
+      levels (i.e. all legacy keys present on limited/full devices, all limited
+      keys present on full devices.)
+    * If a key is not annotated, it is assumed to be optional even on full.
+      This is usually the case only for future, deprecated, or system keys.
+    
+    Bug: 17788234
+    Change-Id: Ie88f3750cc06d889c6750f2099598d53ccb601b7
+
+commit 6aeded0d7889a33c14b67b0e4276b6dcddfd2a12
+Merge: d77b234 401aba9
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Oct 1 06:25:04 2014 -0700
+
+    merge in lmp-release history after reset to d77b234a57985f421c32749f821c035f1a2af004
+
+commit 401aba93b4358010a9f8ed92c846230f1c3def58
+Merge: d77b234 33a5bf2
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Sep 30 06:25:14 2014 -0700
+
+    merge in lmp-release history after reset to d77b234a57985f421c32749f821c035f1a2af004
+
+commit 33a5bf245ccc560b8b25f1bdec1235ebd58b2820
+Merge: d77b234 c6b6579
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Sep 29 06:22:56 2014 -0700
+
+    merge in lmp-release history after reset to d77b234a57985f421c32749f821c035f1a2af004
+
+commit c6b657906eb9fd4b96ae5edb84708c201963499a
+Merge: d77b234 4f07a11
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Sep 28 06:18:11 2014 -0700
+
+    merge in lmp-release history after reset to d77b234a57985f421c32749f821c035f1a2af004
+
+commit d77b234a57985f421c32749f821c035f1a2af004
+Author: Eino-Ville Talvala <etalvala@google.com>
+Date:   Thu Sep 25 10:27:48 2014 -0700
+
+    Camera: Reduce maximum required ISO sensitivity to 800
+    
+    Too many ISPs can't produce 1600 gain.
+    
+    Bug: 17489253
+    Change-Id: Id99cb73dc935c145b12129029615ab1159eb4dae
+
+commit 4f07a11ad8b10879d37d4204788120660245f4e9
+Merge: a5bcb40 b408f53
+Author: The Android Automerger <android-build@google.com>
+Date:   Thu Sep 25 06:23:14 2014 -0700
+
+    merge in lmp-release history after reset to a5bcb401f154ddf05017ee13d6ae7e4774fd3107
+
+commit b408f531b14ab1bd29292494d4b72935054516e8
+Merge: a5bcb40 e4e721b
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Sep 24 06:21:30 2014 -0700
+
+    merge in lmp-release history after reset to a5bcb401f154ddf05017ee13d6ae7e4774fd3107
+
+commit e4e721b9a0782ab9f8ca455ad53c9c1e4ae01144
+Merge: a5bcb40 508ae6c
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Sep 23 06:21:09 2014 -0700
+
+    merge in lmp-release history after reset to a5bcb401f154ddf05017ee13d6ae7e4774fd3107
+
+commit a5bcb401f154ddf05017ee13d6ae7e4774fd3107
+Author: Ruben Brunk <rubenbrunk@google.com>
+Date:   Mon Sep 22 16:11:06 2014 -0700
+
+    camera2: Docs update for available AF modes.
+    
+    Bug: 17588783
+    Change-Id: If4010517e79b3a51bd6231424a10be672ff5a252
+
+commit 508ae6cb809744c237159246fa925ab3510caf81
+Merge: 425bf81 0ffb901
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Sep 22 06:17:11 2014 -0700
+
+    merge in lmp-release history after reset to 425bf818f27d2ee92b73c8f0d7d375d88d28dd68
+
+commit 0ffb90137541a0a83a80fd3d793da87d6b94a94a
+Merge: 425bf81 12836d9
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Sep 21 06:13:42 2014 -0700
+
+    merge in lmp-release history after reset to 425bf818f27d2ee92b73c8f0d7d375d88d28dd68
+=========>/home/zhangxd/work/Lollipop-CS/LINUX/android/hardware/libhardware<========
+commit d39800ce05d62321fffc61785995ceaf9a07a2be
+Author: zhangxd1224 <zhangxd1224@thundersoft.com>
+Date:   Fri Dec 5 10:40:18 2014 +0800
+
+    [R42060][8974LBU] update audio_route
+    
+    Modification ID: 8974LBU-BSP-FID0701
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: Ib4d5ba0f12cf3b8cb28db899ce68a598340d0921
+
+commit 6e2ab23d1e173d2396c73bfd85cf57e7daf74205
+Merge: 28e0a41 df6416f
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sat Dec 6 21:58:24 2014 -0800
+
+    Merge "hardware: Support hardware accelerated effects for HeadphoneX"
+
+commit 28e0a41a111b3f2aebc1439739fef7d465aa1901
+Merge: bffadea 597efc9
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Dec 5 12:24:07 2014 -0800
+
+    Merge "usbaudio: reset profile on device disconnect"
+
+commit bffadea10a8d3a80b29f0888bc784ac066da27c1
+Merge: 578953f 60d1ff1
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Dec 5 12:23:54 2014 -0800
+
+    Merge " usb audio: Fix incorrect bytes returned for recording"
+
+commit df6416f6490efdac5bcbb570ba9d993f6ff7a54b
+Author: Subhash Chandra Bose Naripeddy <snariped@codeaurora.org>
+Date:   Mon May 5 14:46:11 2014 -0700
+
+    hardware: Support hardware accelerated effects for HeadphoneX
+    
+    Add support to enable hardware accelerated effects when headphoneX
+    is switched on
+    
+    Change-Id: I6c3dc54fa6c3bb7e7c3565ba421bfb7c29293f74
+
+commit 597efc98f0cb9b010409320e4f590362fd97af7c
+Author: Haynes Mathew George <hgeorge@codeaurora.org>
+Date:   Wed Dec 3 09:21:45 2014 -0800
+
+    usbaudio: reset profile on device disconnect
+    
+    Reset ALSA device profile on disconnect event. Entries like
+    supported sample rates, channel counts, formats will be repopulated
+    on next connect.
+    
+    Change-Id: I27d3b7fd7ff22646996f58c53de08547b1a1fb6a
+    CRs-Fixed: 765434
+
+commit 60d1ff1f6a42c930b65254e22ad55a3df293351a
+Author: Pavan Chikkala <pavanc@codeaurora.org>
+Date:   Thu Nov 27 16:46:58 2014 +0530
+
+     usb audio: Fix incorrect bytes returned for recording
+    
+     In a recording session , the number of bytes read is
+     not updated when pcm_read() fails. This results in
+     silence data being added during a device switch from
+     USB headset to handset.
+     Fix is to reset the number of bytes read if pcm_read()
+     returns an error indicating removal of USB headset.
+    
+     CRs-Fixed: 753186
+    
+    Change-Id: I10d578c3cf1037c90a891e63be2bd1c2b7e6126b
+
+commit 578953f51c1b2046b0698ea65cebbc290820fd13
+Merge: 83e805b ca4c092
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Nov 20 15:36:12 2014 -0800
+
+    Merge "keymaster_test: change keymaster API version to 3"
+
+commit ca4c092b01a53ed33ed7c0371e3db79ac2598a6a
+Author: Jyoti Wadhwani <jyotiw@codeaurora.org>
+Date:   Wed Nov 12 15:39:01 2014 -0800
+
+    keymaster_test: change keymaster API version to 3
+    
+    Change-Id: I2786d46a94d3b2c3d4161dfd4e19b0960e893513
+
+commit 83e805b2c192caeb8abc9bc8b887b6f278a34b80
+Merge: 1687039 d7574b1
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Nov 14 23:56:13 2014 -0800
+
+    Merge "usbaudio: add more supported sample rates"
+
+commit 168703962a10518fce17bc681f88fcc55de74384
+Merge: 8e4f6bb 845569f
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Nov 14 23:56:11 2014 -0800
+
+    Merge "audio: Add audio parameter key for device connect"
+
+commit 845569f112a7cd49204815a1e878a8f5cc49a2f7
+Author: Haynes Mathew George <hgeorge@codeaurora.org>
+Date:   Wed Sep 24 19:10:12 2014 -0700
+
+    audio: Add audio parameter key for device connect
+    
+    Add audio parameter key for device connect.
+    
+    Bug: 17785277
+    Change-Id: Icd81702634e0bd83645d89c2d65e2b303fc11f8c
+
+commit d7574b1c0c8c3a1652c8fe9fa6b5e0ec6a407d36
+Author: Haynes Mathew George <hgeorge@codeaurora.org>
+Date:   Fri Nov 7 14:59:40 2014 -0800
+
+    usbaudio: add more supported sample rates
+    
+    Enumerate 96khz and 192khz as supported output sampling rates
+    
+    Change-Id: I7a56884959e67f18bcf2d6d07d6cd9b72e40b291
+
+commit 8e4f6bb7cd4de872df8019ded9d9f5580a129552
+Merge: e41db45 bf43034
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sat Nov 8 05:37:22 2014 -0800
+
+    Merge "hwcomposer: Add HWC_DISPLAY_SECURE as a dpy attribute"
+
+commit bf430340bff0d1e5dfa232b6e60ed7a5be642a88
+Author: Arun Kumar K.R <akumarkr@codeaurora.org>
+Date:   Fri Aug 22 17:09:51 2014 -0700
+
+    hwcomposer: Add HWC_DISPLAY_SECURE as a dpy attribute
+    
+    - HWC_DISPLAY_SECURE attribute will be used by SurfaceFlinger
+      to determine if the display is secure.
+    - This property will be set to true if the display is secure based on HDCP
+    
+    Change-Id: I9c01239521e81ae3d863e9bfbba0de72264dc14c
+
+commit e41db454b10aef93bca00928d8b5372851550e59
+Author: Bharath Ramachandramurthy <bramacha@codeaurora.org>
+Date:   Tue Jan 14 07:28:09 2014 -0800
+
+    audio: Update Listen HAL API for MultiSession
+    
+    - Updated the open_listen_session API to pass
+    listen_open_params.
+    - listen_open_params will be used to decide whether to open
+    CDSP or ADSP session.
+    
+    Change-Id: If797c58f99e877384f46f1f3a504dacf20ae45d1
+
+commit 7127ce2623172b4c363d279271bd6590088f9131
+Author: Vijaya Kumar T M <vtmuni@codeaurora.org>
+Date:   Thu Oct 16 14:55:43 2014 +0530
+
+    Power: Defining Multimedia hints for camcorder record
+    
+    Change-Id: I1f67c551202ec68f5e38268f8bc6d6aeb9071c0c
+
+commit 2d7d33b724cd94a7c125e69bba1373bc7b2f9c07
+Author: Hemant Gupta <hemantg@codeaurora.org>
+Date:   Mon Nov 11 11:53:48 2013 +0530
+
+    Bluetooth: Add support for HID Device Role
+    
+    This patch adds support for HID Device Role in HAL so that jni
+    layer can communicate wtih Bluedroid Stack when calling HID Device
+    API's and callbacks.
+    
+    Change-Id: I591f477ee58924a9003d6e733dcbbc4e8a7d3202
+
+commit b295f1680089a15b812b3a4a2250d673f941df13
+Author: Hemant Gupta <hemantg@codeaurora.org>
+Date:   Fri Apr 18 12:18:16 2014 +0530
+
+    Initial commit for HID Client
+    
+    Change-Id: Ia096cb1fc3f55842b8f56469d29ca6e0180853ea
+
+commit 0080e701f8e8e5d17df0453f4a73c394acd2e874
+Author: AnubhavGupta <anubhavg@codeaurora.org>
+Date:   Tue Aug 5 01:36:53 2014 +0530
+
+    Bluetooth: Backport A2DP Sink changes
+    
+     - update interfaces to enabled A2DP Sink.
+    
+    Change-Id: I344c53e9189695f99c9b9daba3217b85b9e2dd9c
+
+commit 807edfa28341505323b51169e5dd48564fff1d00
+Author: Kiran Kandi <kkandi@codeaurora.org>
+Date:   Thu Oct 17 15:49:54 2013 -0700
+
+    audio: add set_parameters for listen hal
+    
+    Add listen hal specific set parameters function so that Listen
+    service can call Listen hal directly, by passing audio hal. This
+    is needed since set_parameters call in audio hal does not guarantee the
+    correct return value is returned for any parameters set.
+    
+    Conflicts:
+    	include/hardware/audio.h
+    
+    Change-Id: I647b9e7f841c8157e4eb597655166ea863a00925
+
+commit 61dbc68f5ca8de13eb8342f462821a09f1975bf4
+Author: Nitin Arora <niarora@codeaurora.org>
+Date:   Wed Nov 20 16:57:47 2013 -0800
+
+    Bluetooth: HAL Changes for LPP
+    
+    These changes include modifications for implementing Low power
+    proximity features
+    
+    CRs-Fixed: 581289
+    Change-Id: I5ddbc8edffec0c6ca5eb8ed4dab12bf2e108bd55
+
+commit 1c60b6578940d3d994c586fe0a544231262ffb56
+Author: Kiran Kelageri <kkelageri@codeaurora.org>
+Date:   Wed Jul 16 18:33:55 2014 -0700
+
+    Bluetooth-Wipower: Support for Wipower feature.
+    
+    Wipower feature code is been enabled, This is used to
+    perform wireless charging over bluetooth low energy.
+    
+    Change-Id: I849e0e2fdecde27919ea759f0aebf4f68c9b16b1
+    CRs-fixed: 698314
+
+commit 9c8ea8207243a7f1da8807a0940ceac0e6292025
+Author: Dante Russo <drusso@codeaurora.org>
+Date:   Thu Apr 10 10:59:01 2014 -0700
+
+    Add masks for BeiDou and Glonass
+    
+    Added masks to the GPS interface
+    for deleting assistance data from
+    BeiDou and Glonass satellites
+    CRs-fixed: 498642
+    
+    Change-Id: I3887338ffcbcd3977473354df9c77dbe834ac45d
+
+commit 408d9e10b4a62ad1311b6a7a0d4dcc2054d64498
+Author: pramod kotreshappa <pramodk@codeaurora.org>
+Date:   Mon Mar 3 13:16:32 2014 -0800
+
+    Bluetooth: Add SSR clean up interface
+    
+    Provide SSR cleanup interface between BT Service and
+    stack
+    
+    Change-Id: Iaa9c7750c96224c9df923291d7dad2b2417cdad3
+    CRs-Fixed: 614585
+
+commit 78becc14d334a08a396afac4313833c3c7260cdf
+Author: Ayan Ghosh <abghosh@codeaurora.org>
+Date:   Fri Jul 25 17:11:58 2014 +0530
+
+    AVRCP 1.5 Implementation
+    
+    AVRCP 1.5 Implementation
+    
+    Change-Id: Ib3435429c58a70ba7235a20712e6d73de62a147e
+
+commit 949280f364494daa1f50116a4a440c27d3120d77
+Author: Pradeep Panigrahi <pradeepp@codeaurora.org>
+Date:   Wed Aug 14 16:29:22 2013 +0530
+
+    Bluetooth: Add BT_PROPERTY_REMOTE_TRUST_VALUE in BT property
+    
+    Add the above property for device trust feature in bluetooth.
+    
+    Change-Id: Ieab0dd140ac6080551f162a0517552bd469204f2
+    CRs-fixed: 523135
+
+commit 091164c3296dd86de31933500c95df59dac6c230
+Author: Srinu Jella <sjella@codeaurora.org>
+Date:   Tue Jun 4 20:20:27 2013 +0530
+
+    Bluetooth: SAP: Header files changes to support SAP on Bluedroid.
+    
+    This change consists of:
+    Header file changes for Bluedroid SAP profile
+    
+    Change-Id: I463543a45691b54577e145e066f89d46b6afd4be
+
+commit ca854b351e9eac481b76616bc38df9225a7366d0
+Author: Pramod Sivaraman <spramod@codeaurora.org>
+Date:   Tue Sep 24 19:13:26 2013 +0530
+
+    Bluetooth: Stack certification.
+    
+    Stack certification changes for L2CAP, SDP and RFCOMM.
+    
+    Change-Id: If322fff2c5dcf915333574aaae0394f130498305
+    Conflicts:
+    include/hardware/bluetooth.h
+
+commit 59aa62a86f2a2d04cf545d644d1cf4fb8f59e99a
+Author: Nitin Shivpure <nshivpur@codeaurora.org>
+Date:   Tue May 20 18:06:38 2014 +0530
+
+    Bluetooth: Adding support to get remote DI record
+    
+    Adding support to get remote DI record. The local
+    device can use the Device ID service record from
+    the remote device, In order to make best use of the
+    features on the device identified.
+    
+    Change-Id: I9b7ba1e0f61a05266f70581444d7ecac244c28ee
+    CRs-Fixed: 692532
+=========>/home/zhangxd/work/Lollipop-CS/LINUX/android/frameworks/base<========
+commit e4d8d93461fb0fe29a6f1fc43866fd8f2466505e
+Author: Thundersoft_songkw0613 <songkw0613@thundersoft.com>
+Date:   Wed Dec 10 18:16:38 2014 +0800
+
+    [R42059][8974LBU] Data intialization
+    
+    Modification ID: 8974LBU-FDR-FID0502
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: I509ce8628f05f3f68feedbd6301cc4581d575ddd
+
+commit 11f186fc1a6c45cb3891a8f5b732df8c61c2ed82
+Author: zhangxd1224 <zhangxd1224@thundersoft.com>
+Date:   Fri Dec 5 10:36:55 2014 +0800
+
+    [R42060][8974LBU] change InputEventForAudioJack to use sys file
+    
+    Modification ID: 8974LBU-BSP-FID0701
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: Ic29a27571654438dcdae82af6acf8ed7c2c9f547
+
+commit ab4c2fd21bf6bce50eb58399aa8334bdd46a39c2
+Merge: 31cdf3c 0b5d89d
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Dec 10 16:10:06 2014 -0800
+
+    Merge "Revert "MediaMuxer: handle expection for add track"" into LA.BF.1.1_rb1.16
+
+commit 0b5d89dd4b4beccef6b0121fae2932319ac95962
+Author: Vivek Mehta <mvivek@codeaurora.org>
+Date:   Mon Dec 8 23:07:20 2014 -0800
+
+    Revert "MediaMuxer: handle expection for add track"
+    
+    This reverts commit 0e57858602657ccbb22d6f592831f6e2547cc4ef
+    
+    Change-Id: Ia9b4969a660a9816b1698fabd5456400fca84563
+
+commit 31cdf3c516bebae0d7928a02a44531ad8879e5e2
+Author: Kun Liang <kunliang@codeaurora.org>
+Date:   Mon Dec 8 17:27:25 2014 +0800
+
+    AppOps: add null pointer check for isMmsRequest
+    
+    Fix the Java exception which is caused by null pointer issue in
+    AndroidHttpClient.
+    
+    Change-Id: I769229c37b17932c9b00eaa1d0303b603a8ebea1
+
+commit 931e9c4eae3c076ea45251c5e68e983ae21282b4
+Merge: ec0cb7e 16677d7
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sat Dec 6 21:58:21 2014 -0800
+
+    Merge "VideoView: Add logs for video start/stop profiling"
+
+commit ec0cb7ee87c7592f6738d2d70ec94cbc2d1a6831
+Merge: 24f186c 56408f2
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sat Dec 6 21:58:12 2014 -0800
+
+    Merge "Add constants in voLteServiceState for IMS registration"
+
+commit 24f186c04371ee697524f1cde30e9ab646e39276
+Merge: b74ab13 bf1961f
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Dec 5 18:56:14 2014 -0800
+
+    Merge "Creating connections for conference event package participants."
+
+commit b74ab1383a9526b93030525608785110722a6e09
+Merge: 27af014 4a3052e
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Dec 5 12:24:13 2014 -0800
+
+    Merge "Move media player list management to Audioservice"
+
+commit 27af014bdbfe9ded844ea64d0c58709225ce9236
+Merge: 2d943ef b9a0add
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Dec 5 12:24:06 2014 -0800
+
+    Merge "frameworks/base: Add support for fully transparent layers"
+
+commit 2d943ef22d2b6eda9f159f841fb2cd62555a2799
+Merge: cc1fe03 3a2bf3c
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Dec 5 12:24:00 2014 -0800
+
+    Merge "framework/base: Create surface based on the panel orientation."
+
+commit cc1fe03024ecaf9794e8c77582d254cf3f0bada9
+Merge: 2ce5263 8936b23
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Dec 5 12:23:59 2014 -0800
+
+    Merge "Display: Initialize mRotation to panel orientation."
+
+commit 2ce5263e24593a767919103ef9c064d602ba763a
+Merge: 5091155 e9bfde2
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Dec 5 12:23:45 2014 -0800
+
+    Merge "performance: fix erroneous deleted code"
+
+commit bf1961ffcf7a32765caf0fddfd0b2c6b4ce0de61
+Author: Tyler Gunn <tgunn@google.com>
+Date:   Thu Oct 30 14:27:48 2014 -0700
+
+    Creating connections for conference event package participants.
+    
+    - Add "addExistingConnection" method to connection service which provides
+    a way for a connection service to notify telecom of a pre-existing
+    connection (connections are normally created through telecom).
+    - Modify TelephonyConferenceController to retrieve its state from a
+    multiparty connection in the conference (in the case of IMS calls, this
+    would be the ImsCall that manages the conference) instead of just taking
+    the first one.
+    
+    Bug: 18057361
+    Change-Id: I26993aec54ecb0ce90ae6983fd3eed9d8d0a5773
+    
+    Adding method to get disconnect cause from conference
+    
+    Bug: 17842499
+    Change-Id: Ifb6e61d50d66aa8e8299e7024b2ab6d1d0f9d878
+    
+    Add functions to update on conference changes.
+    
+    + Add onConferenceChanged() to Connection, so that the Connection can
+    make act on changes to the conference.
+    + Add a utility function to PhoneCapabilities to remove a capability
+    from a PhoneCapabilities bitmask. Figure this abstracts some bit
+    logic away to make things more readable.
+    
+    Bug: 17429707
+    Change-Id: I0c97731a95dd6573488cd10f094a63abe2428bce
+    
+    Support disconnecting conference participants from conference.
+    
+    - Added "onDisconnectConferenceParticipant" method used to inform a
+    connection acting as the conference host that one of the participants
+    should be disconnected.
+    - Added "VIRTUAL_CALL" PhoneCapability used to indicate that a call cannot
+    be the active or background call, but only be a child of another call.
+    
+    Bug: 18228141
+    Bug: 18176606
+    Change-Id: I7aec631cc89c0f08e174b24ce3a9cb547b47e36b
+    
+    Replace onConferenceChanged with onConnectionAdded.
+    
+    This change is motivated by a desire to be able to adjust the
+    phone capabilities of a conference depending on its connections.
+    
+    Turns out Connection is not a good place to do this, because when
+    the conference is set, this code is only fired if the connection
+    service already contains the conference. Conference makes more
+    sense to do this anyways, at the end of the day.
+    
+    + Add onConnectionAdded function to Conference.java.
+    - Remove onConferenceChanged function from Connection.java.
+    
+    Bug: 18241753
+    Change-Id: Ib9212a8483a7a7b542618697399bbab8b2701b04
+    
+    Change access to removeConnection so we can override it.
+    
+    Bug: 18056632
+    Bug: 18240234
+    Change-Id: I4e82051a27f3565e9a854df8b27c35300cdbe2ad
+    
+    Add functions to update on conference changes.
+    
+    + Add onConferenceChanged() to Connection, so that the Connection can
+    make act on changes to the conference.
+    + Add a utility function to PhoneCapabilities to remove a capability
+    from a PhoneCapabilities bitmask. Figure this abstracts some bit
+    logic away to make things more readable.
+    
+    Bug: 17429707
+    Change-Id: I0c97731a95dd6573488cd10f094a63abe2428bce
+    
+    Add helper method for checking phone capabilities.
+    
+    I'm figuring this can help standardize phone capability checks when
+    need to do all over the place.
+    
+    Bug: 17429707
+    Change-Id: I97327fd08158de3c18d186b6092597a1d4abcf14
+    
+    Conference event package performance improvement.
+    
+    - Instead of sending each participant to the telephony conference
+    controller, all participants are sent at once.  This way the conference
+    only needs to be recalculated once.
+    
+    Bug: 18057361
+    Change-Id: I86205fc7f1d2648bb180fc7eaf3ad611955952f9
+    
+    Make add-call a global property of telecom. (1/4)
+    
+    ADD_CALL didn't make sense as a property of Connection or Call.
+    This changes it to be a global property instead.
+    
+    Bug: 18285352
+    Change-Id: I658e7a6977a848600272cde2914612c8691bb801
+    
+    Add telephony.DisconnectCause for merged IMS call.
+    
+    When merged, IMS calls are consolidated into one call. Thus they
+    "disconnect", even though the user can continue to comminucate
+    with the party on that call.
+    
+    We want to recognize this scenario so we can control relevant
+    behaviors (ie.don't play the "end call" tone in this case).
+    
+    Bug: 18291234
+    Change-Id: I93247f88ed74467470504bec88fcfb7ed714f0ff
+    
+    Change Connections to allow setting conferenceable with conferences.
+    
+    - Added IConferenceable interface used so that connections and conferences
+    can both be considered candidates as "conferenceable" with a connection.
+    - Fixed ConnectionService#conference to support cases where either call 1
+    or call 2 is a conference and the other is a connection.  Previously did
+    not support cases where call 2 is a conference.
+    
+    Bug: 18200934
+    Change-Id: I32a8dd30a154d6280f2ae89fd147817235998465
+    
+    Add GENERIC_CONFERENCE to phone capabilities.
+    
+    This is a temporary capability to recognize CDMA conference calls
+    so we can show the right strings in the InCallUi. This should be
+    moved to CallProperties when possible. b/18434985
+    
+    Bug: 18284408
+    Change-Id: Ia3e2ff91c8f8a91ff0123df4d3e6a581bdf85895
+    
+    Propagating isMultiParty indicator from RIL up into Telephony layer.
+    
+    - Adding isMultiParty() method to IImsCallSession AIDL.
+    
+    Bug: 18058253
+    Change-Id: I1c44d3db0f7aa00a3ae6efb1231c5ddd39ab20ac
+    
+    IMS call merge call-back changes.
+    
+    Renaming callSessionMerged to callSessionMergeStarted.
+    Adding callSessionMergeComplete callback for when merge successfully
+    completes.
+    
+    Bug: 18056632
+    Change-Id: I8fc73b6c9db5e7970de81d8c3e09abc80f1a262f
+    
+    Communicating participant changes to conference controller.
+    
+    - Add new ConferenceParticipant parcelable class which represents a
+    single participant contained in the conference event package.
+    - Adding callbacks/listeners to Connection to handle changes to
+    participant state.
+    
+    Bug: 18057361
+    Change-Id: Iadfebe84959f30f8e835f282aa994c0b92768aa6
+    
+    IMS: Add support for HD icon display related information
+    
+    Added support to pass the restrict cause associated with the peer
+    in order to enable display of the HD icon when necessary.Added
+    support to pass local audio codec information and defined values
+    for new codecs not defined.
+    
+    Change-Id: If05d46bdb3907a0ec7efdde48337a7932a7a5c21
+    
+    Change-Id: Iadfebe84959f30f8e835f282aa994c0b92768aa6
+
+commit 509115546560515da3916544777c46ca2863cc9e
+Merge: d779d34 0b76c9e
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Dec 3 16:30:42 2014 -0800
+
+    Merge "IMS: Clean up Conference URI system property."
+
+commit d779d34001ca56fd3980e52348d55a392b6c0496
+Merge: 54e7b36 9f9cf0f
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Dec 3 01:33:38 2014 -0800
+
+    Merge "Wifi: Add a flag to indicate duplicate network"
+
+commit 54e7b363b6aaf4d26e51af5ef56dabd29cc4c917
+Merge: e16630d 23b95c3
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Dec 3 01:33:31 2014 -0800
+
+    Merge "Revert "wlan: Provide runtime option to enable or disable rssi threshold (base)""
+
+commit 0b76c9e80ceb9b9fdc375b038b034a7b8c4ad1a2
+Author: Suchand Ghosh <suchan@codeaurora.org>
+Date:   Wed Sep 24 10:53:25 2014 +0530
+
+    IMS: Clean up Conference URI system property.
+    
+    Remove system property "persist.dbg.ims_volte_enable".
+    Add ADD_PARTICIPANT in PhoneCapabilities.toString().
+    
+    Change-Id: Ic9410ff65319a52d7127c47885e1ce56805fe47a
+    CRs-Fixed: 727689
+
+commit 4a3052e2c5d01f0ee803d4ae62443833bae83f3d
+Author: Ayan Ghosh <abghosh@codeaurora.org>
+Date:   Thu Nov 27 18:45:47 2014 +0530
+
+    Move media player list management to Audioservice
+    
+    Move media player list management to Audioservice so that
+    list is retained even after BT restart.
+    
+    Change-Id: Ia2455e6def1900b4af2225c50e1b5325a7ce1a98
+
+commit 56408f24ed3c337cd1780a3b650095915a274b83
+Author: jiadongz <jiadongz@codeaurora.org>
+Date:   Thu Nov 6 18:14:35 2014 +0800
+
+    Add constants in voLteServiceState for IMS registration
+    
+    These constants will be used in the notification of
+    volte service state when IMS registered/deregistered.
+    
+    CRs-Fixed: 752266
+    
+    Change-Id: If6ec8a58ff0270d11fdf95f69ca9da39fdb9a954
+
+commit e16630dd97e7aa56a11e6958f37ac9b9d7cd86b2
+Merge: f2aaba1 afe3353
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Sun Nov 30 02:31:04 2014 -0800
+
+    Merge "frameworks/base:InCallUI is not coming in but ring is coming in DSDA"
+
+commit 8936b23e413941fac6ec95273ed511f51cd3d939
+Author: Panneer Arumugam <panneera@codeaurora.org>
+Date:   Wed Jun 12 14:39:16 2013 -0700
+
+    Display: Initialize mRotation to panel orientation.
+    
+        - Fixes the homescreen layout to be prepared based on the panel
+          orientation.
+        - Disables the rotation animation from 0 to panel orientation after
+          bootup.
+    
+    Change-Id: Ie77e53ade087df05e102c45bf9d12bdaf09583f7
+
+commit f2aaba1d9e66866e4d95723d48e30a6c3b48b26b
+Merge: 3404ce3 ef94d6c
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Nov 27 21:53:21 2014 -0800
+
+    Merge "Bluetooth: Sync Bluetooth Adapter and Manager Service."
+
+commit 3404ce3b36f07c44ea09e4d71236ee83cb94e207
+Merge: e513d1a 79fbdfa
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Nov 27 21:53:17 2014 -0800
+
+    Merge "Fix the carrier text font size in Keyguard status bar."
+
+commit e513d1a75b7f8a4a69d5fcb8999134f158cda701
+Merge: ae3ed8e 27f5f8d
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Nov 27 21:53:16 2014 -0800
+
+    Merge "frameworks/base: Fix to avoid UI freeze issue."
+
+commit ae3ed8eb6c2abdb69aaced02a1c6de2413a73024
+Merge: fd2097f 4e09073
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Nov 27 21:53:06 2014 -0800
+
+    Merge "IMS Call End Reason Info Code Additions"
+
+commit fd2097fba6fe6bb0cd2a2f96ffd972a66bf45a7a
+Merge: 817a60c bc1a040
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Nov 27 18:28:46 2014 -0800
+
+    Merge "WiFi : Fix to DHCP to static IP configuration problem"
+
+commit 817a60c7cabb553df896e44386b99516bb39f6c3
+Merge: e7fc743 0e57858
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Nov 27 18:28:34 2014 -0800
+
+    Merge "MediaMuxer: handle expection for add track"
+
+commit e7fc743acfc164353cd674383e6d5770318ab2f7
+Merge: a70d166 73fa1ec
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Nov 27 18:28:25 2014 -0800
+
+    Merge "Bluetooth: Enforce BT state check during GATT close/disconnect"
+
+commit a70d166c2ade8c9bb70f6bf64c9567ed91a47792
+Merge: 5ad123f fd258c2
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Nov 27 15:16:02 2014 -0800
+
+    Merge "Revert "camera2-legacy: Workaround max jpeg/preview size AR mismatch""
+=========>/home/zhangxd/work/Lollipop-CS/modem_proc<========
+commit d9fcad93b25c03ccb61146a52bc7f8907143e2b8
+Author: Thundersoft_songkw0613 <songkw0613@thundersoft.com>
+Date:   Wed Dec 17 17:00:22 2014 +0800
+
+    [R41990][8974LBU] fix compile error
+    
+    Modification ID: 8974LBU-LEDS-FID2501
+    Scratch or Copy [S/C]: C
+    Copy from: MDRV_MPSS_7035_001
+    Other Info:
+    
+    Change-Id: I9f87baf316682473c7604fae3bd5b41dd7e3cf66
+
+commit f3056789ce1ea7e7f29ab33c5902981f3fce2ad7
+Author: Thundersoft_songkw0613 <songkw0613@thundersoft.com>
+Date:   Thu Dec 11 21:30:38 2014 +0800
+
+    [R41990][8974LBU] LED notifications for sleep mode when suspend
+    
+    Modification ID: 8974LBU-LEDS-FID2501
+    Scratch or Copy [S/C]: C
+    Copy from: MDRV_TCXO_7035_001, MDRV_TCXO_7035_002
+    Other Info:
+    
+    Change-Id: I32974b940332175dc3d63dc8e588196bc1834f89
+
+commit 2eacef6a61240cec155b1bf6d044ed1fb5c6262b
+Author: QC Publisher <qcpublisher@qti.qualcomm.com>
+Date:   Fri Dec 12 19:09:49 2014 -0800
+
+    Commit label r4230.1
+
+commit 977e054d2c1d57816158b2b0e6ddeb78e5569929
+Author: QC Publisher <qcpublisher@qti.qualcomm.com>
+Date:   Fri Dec 5 18:47:22 2014 -0800
+
+    Commit label r4220A.1
+
+commit a83d97180d6ae68092291580118b4774f4fb4222
+Author: QC Publisher <qcpublisher@qti.qualcomm.com>
+Date:   Fri Nov 21 19:31:53 2014 -0800
+
+    Commit label r4215.1
+
+commit 90cad3d5a5abfe68949fca5d7ed0c8b6d6e7f2ba
+Author: QC Publisher <qcpublisher@qti.qualcomm.com>
+Date:   Wed Nov 5 11:53:00 2014 -0800
+
+    Commit label r4210.1
+
+commit 3898ee8fe8d702e03dcd8ab6fbfd87bbefc8f78c
+Author: Gito Z <gitoz@qualcomm.com>
+Date:   Sat Jun 29 04:25:43 2013 -0700
+
+    init
+=========>/home/zhangxd/work/Lollipop-CS/LINUX/android/vendor/qcom/proprietary/diag<========
+commit 84dec7bd75903740b4de09fc2243a3abdea8bc4e
+Author: zhangxd <zhangxd1224@thundersoft.com>
+Date:   Mon Dec 8 16:01:56 2014 +0800
+
+    [R42061][8974LBU] FTA log Porting
+    
+    Modification ID:   8974LBU-BSP-FID3001
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: I8c0e41ec01ed34fbefb485677283a8e5c6b0c862
+
+commit 1fa80dccdb6b04ed142e8d592a26883d68df6b64
+Author: QC Publisher <qcpublisher@qti.qualcomm.com>
+Date:   Wed Nov 5 11:53:00 2014 -0800
+
+    Commit label r4210.1
+
+commit 3898ee8fe8d702e03dcd8ab6fbfd87bbefc8f78c
+Author: Gito Z <gitoz@qualcomm.com>
+Date:   Sat Jun 29 04:25:43 2013 -0700
+
+    init
+=========>/home/zhangxd/work/Lollipop-CS/LINUX/android/dalvik<========
+commit 686ba2f7df36fb28876526f55a403559a8f85ac2
+Author: zhangxd <zhangxd1224@thundersoft.com>
+Date:   Mon Dec 8 16:00:04 2014 +0800
+
+    [R42061][8974LBU] FTA log Porting
+    
+    Modification ID:   8974LBU-BSP-FID3001
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: I1f3c6224e36e6d76ef4a61eecabcab49a42d308e
+
+commit 443ca72ad4d47625e606a2c15e0a3bc0175b327a
+Merge: d10a49a ac7d0bf
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 21 17:43:15 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit ac7d0bfea6ad868aba47b63bac6c785bacda55cb
+Merge: d10a49a aef320c
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 21 06:09:55 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit aef320ce01149d337b146784836022d4ea6d52a8
+Merge: d10a49a f366da2
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Oct 19 17:08:25 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit f366da2618bd96ea506c2a0a3a58facaea8d7095
+Merge: d10a49a 808809d
+Author: The Android Automerger <android-build@google.com>
+Date:   Thu Oct 16 06:10:13 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit 808809d610eabf5957c758f0e4272609b3c8f850
+Merge: d10a49a 7ca6650
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Oct 15 06:09:55 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit 7ca66500bd486ba6ebfd92975a0e6543310507e4
+Merge: d10a49a 73ed3be
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 14 06:09:52 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit 73ed3befbeb2d3e36616a962687b204cfa89c824
+Merge: d10a49a a75e6be
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Oct 13 06:09:51 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit a75e6be6574ffff0312f7116afd0b4e5a5429b72
+Merge: d10a49a c04c832
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Oct 12 06:09:59 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit c04c832ae7fb52a45d28302aee49bf3200b8df87
+Merge: d10a49a e3b6860
+Author: The Android Automerger <android-build@google.com>
+Date:   Thu Oct 9 06:09:47 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit e3b686062c98f7f6525dcb9f6d9d9555ed1867d9
+Merge: d10a49a a35577c
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Oct 8 06:11:16 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit a35577c903172d3720efb1ced8f609c33ef745be
+Merge: d10a49a 6c44c56
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Oct 7 06:09:49 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit 6c44c56b20bae938bf622fc902adf67aa805a613
+Merge: d10a49a 16a19e8
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Oct 6 06:10:39 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit 16a19e85d07654a8d6426cee393cf5b1abc30336
+Merge: d10a49a 0006719
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Oct 5 06:10:31 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit 0006719308844300849ea8591a4847db576a4a6a
+Merge: d10a49a b860cf2
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Oct 1 06:11:36 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit b860cf228bacf36cd0375769ca79be1c623bde47
+Merge: d10a49a ee72194
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Sep 30 06:12:32 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit ee72194ff20eae046859a978408b042c096f70be
+Merge: d10a49a 4c9d47e
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Sep 29 06:12:13 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit 4c9d47eeaf8296bbbb1a5fde923b76d3a43d1169
+Merge: d10a49a 98ab95a
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Sep 28 06:10:29 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit 98ab95afce9ca8cf24591d98ec0b3acf61108f02
+Merge: d10a49a 0992f05
+Author: The Android Automerger <android-build@google.com>
+Date:   Thu Sep 25 06:12:59 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit 0992f05d272813e5b7eb6862565d6524c276c6d1
+Merge: d10a49a 413d2b7
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Sep 24 06:11:27 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit 413d2b794b81f517e950eafe8ed4bcc6a972782a
+Merge: d10a49a 0ee3eb2
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Sep 23 06:11:41 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit 0ee3eb2f2455a34f50c5753ecae274db58f34c54
+Merge: d10a49a 644f953
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Sep 22 06:10:31 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit 644f953ed0852ab8e3891311bd18430c8e492e78
+Merge: d10a49a db27b7b
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Sep 21 06:09:41 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit db27b7b6276994c76bc314caf548b74763a0f12a
+Merge: fbc1390 f4e4a3a
+Author: The Android Automerger <android-build@google.com>
+Date:   Sat Sep 20 21:00:49 2014 -0700
+
+    merge in lmp-release history after reset to fbc139069732673a00885db5365c45951dc1fc71
+
+commit f4e4a3a57978dac2550ef1d9706b03fbb8db5a61
+Merge: d10a49a fbc1390
+Author: The Android Automerger <android-build@google.com>
+Date:   Sat Sep 20 06:10:11 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit fbc139069732673a00885db5365c45951dc1fc71
+Merge: d10a49a 2f557d2
+Author: The Android Automerger <android-build@google.com>
+Date:   Thu Sep 18 06:09:41 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit 2f557d211344a4edd094209e17c9184841703dfd
+Merge: d10a49a 0b5e2b6
+Author: The Android Automerger <android-build@google.com>
+Date:   Wed Sep 17 06:10:33 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit 0b5e2b6e0e575763394da18a95c3d3085786e973
+Merge: d10a49a ef9cbe8
+Author: The Android Automerger <android-build@google.com>
+Date:   Tue Sep 16 06:10:21 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit ef9cbe8a3c165a1526ecf17d33232dea5e6ed2af
+Merge: d10a49a c76b792
+Author: The Android Automerger <android-build@google.com>
+Date:   Mon Sep 15 06:10:32 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+
+commit c76b792a0166aca81c5474c0ffdf1607fa94914c
+Merge: d10a49a f2f0048
+Author: The Android Automerger <android-build@google.com>
+Date:   Sun Sep 14 06:10:02 2014 -0700
+
+    merge in lmp-release history after reset to d10a49ad6a38478cffe206a8a34c5c54fbc018b9
+=========>/home/zhangxd/work/Lollipop-CS/LINUX/android/device/qcom/common<========
+commit a4ad4e99291f7a244a12de93cd527f76d2295c7b
+Author: zhangxd1224 <zhangxd1224@thundersoft.com>
+Date:   Tue Dec 23 18:03:44 2014 +0800
+
+    [R42892][8974LBU] Add Japanese language support
+    
+    Modification ID: 8974LBU-LANGUAGE-FID3201
+    Scratch or Copy [S/C]: S
+    Other Info: Add Japanese language option at [Setting][Language&input][Language]
+    
+    Change-Id: Icd117e3c5ada24cb33ebe731dbe477cbe02a465d
+
+commit 2371ea22ec17e4fbb0fec1ec9616cfcc5e7bb971
+Author: zhangxd <zhangxd1224@thundersoft.com>
+Date:   Mon Dec 8 15:54:43 2014 +0800
+
+    [R42061][8974LBU] FTA log Porting
+    
+    Modification ID:   8974LBU-BSP-FID3001
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: If29ef38c0a7ff5dc1c7b0e33bde55eea83aabc95
+
+commit fb9104eeb8e9851a5487c16ba7f49efa168185f4
+Merge: f5bd91e 2a448c9
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Dec 10 15:53:53 2014 -0700
+
+    Merge AU_LINUX_ANDROID_LA.BF.1.1_RB1.05.00.00.002.031 on remote branch
+    
+    Change-Id: I5a82a5d40820943c19000a1541d6b352c7d6ccd8
+
+commit f5bd91eb4acfb8f4de1b6c1622ab926241f404e5
+Merge: cc6df65 fa96474
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Dec 4 14:45:17 2014 -0800
+
+    Merge "init.qcom.rc: create directory for display clients"
+
+commit cc6df65aa908d1e2bb55f1738f21d4082eceae7b
+Merge: 4409e50 5a0afdf
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Dec 3 16:32:11 2014 -0800
+
+    Merge "init.qcom.rc: Restrict external sdcard write permission"
+
+commit 2a448c90c71a2665bc6897ee200f4b389ae9aad8
+Author: Biswajit Paul <biswajitpaul@codeaurora.org>
+Date:   Tue Sep 30 10:59:15 2014 -0700
+
+    init.qcom.rc: Restrict external sdcard write permission
+    
+    Apps must not be allowed to write to secondary external storage
+    devices, except in their package-specific directories as allowed by
+    synthesized permissions. Restricting writes in this way ensures the
+    system can clean up files when applications are uninstalled
+    
+    Change-Id: I6688dc3f5d81f966fd42a8cf3509c3743474de50
+    CRs-Fixed: 715425
+
+commit fa9647402146df0e1d5627a7b2e0734d39b77dd2
+Author: Nirmal Abraham <nabrah@codeaurora.org>
+Date:   Tue Dec 2 18:45:42 2014 +0530
+
+    init.qcom.rc: create directory for display clients
+    
+    Create a directory '/data/misc/display' to store configuration
+    files used by display clients.
+    
+    Change-Id: I20f62ed6a484172b8765455ccc2456b52ef7ffa0
+
+commit 5a0afdf31e2ee9cfd74b6f21bb55d36503275647
+Author: Biswajit Paul <biswajitpaul@codeaurora.org>
+Date:   Tue Sep 30 10:59:15 2014 -0700
+
+    init.qcom.rc: Restrict external sdcard write permission
+    
+    Apps must not be allowed to write to secondary external storage
+    devices, except in their package-specific directories as allowed by
+    synthesized permissions. Restricting writes in this way ensures the
+    system can clean up files when applications are uninstalled
+    
+    Change-Id: I6688dc3f5d81f966fd42a8cf3509c3743474de50
+    CRs-Fixed: 715425
+
+commit 4409e5099bc74cc9c83e8afccf196df653e61140
+Merge: a9757d9 b3658da
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Dec 1 18:41:34 2014 -0800
+
+    Merge "Enable multi-user support by default"
+
+commit b3658da42cb6fd9bf27a4d80a9abe32bb0936cb1
+Author: David Ng <dave@codeaurora.org>
+Date:   Wed Oct 22 15:00:32 2014 -0700
+
+    Enable multi-user support by default
+    
+    Allow a maximum of 4 users.
+    
+    Change-Id: Ica0ac3e07a54bbdfb4c322d7199b603ead374124
+
+commit a9757d96d089aa389f3290e93842538f8b8298ae
+Merge: 6e2e2b6 47a0e27
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Nov 27 08:40:33 2014 -0800
+
+    Merge "Enable iwlan flag"
+
+commit 47a0e27193e51e1749cd7bd3e6f63a3b6d885015
+Author: Susheel nyamala <snyamala@codeaurora.org>
+Date:   Sun Nov 23 12:24:12 2014 +0530
+
+    Enable iwlan flag
+    
+    Iwlan flag is commented out during bring up, due to which
+    Iwlan data call is not working in airplane mode.
+    Uncomment the iwlan flag.
+    
+    Change-Id: Ifbefb7c8612bcfa2032358b26bb7eee4a4a1ef87
+    CRs-Fixed: 755252
+
+commit 6e2e2b6bec148da2ac897f559108eed23ec48587
+Merge: 6dc8002 a58ad2f
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Nov 25 10:40:19 2014 -0800
+
+    Merge "init.qcom.rc: Restrict external sdcard write permission"
+
+commit a58ad2f29f9348317b1c9c76cd12d128eca6d25c
+Author: padarshr <padarshr@codeaurora.org>
+Date:   Tue Nov 25 12:22:46 2014 +0530
+
+    init.qcom.rc: Restrict external sdcard write permission
+    
+    Apps must not be allowed to write to secondary external storage
+    devices, except in their package-specific directories as allowed by
+    synthesized permissions. Restricting writes in this way ensures the
+    system can clean up files when applications are uninstalled.
+    
+    Change-Id: I4f3322e1c94ad31092313f7527d6b0738286cb3f
+
+commit 6dc8002fb2854ec746e7a47ff371471cb8500da9
+Merge: 44248b5 797a9de
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Nov 24 15:30:48 2014 -0800
+
+    Merge "Enable VoLTE/VT for Verizon carrier"
+
+commit 797a9def82c0443f56f85d34b33c12f6842a1fd1
+Author: Muhammed Siju <msiju@codeaurora.org>
+Date:   Mon Nov 24 15:44:27 2014 +0530
+
+    Enable VoLTE/VT for Verizon carrier
+    
+      Add overlay config items to enable VoLTE and VT support for
+      Verizon operator.
+    
+    (cherry picked from commit Ic460e62585799cb89b20eacdb4f8a2eb99bd652d)
+    
+    Config item to speed up the audio mode
+    
+      This config item will be used to set the audio mode to IN_CALL
+      prior to RIL sending ACTIVE state for a MT call.
+    
+    (cherry picked from commit Ia67fea607d90b612a3ad1f4ce195354dfe185ff2)
+    CRs-Fixed: 726708
+    
+    Add tcpbuffer parameters into overlay.
+    
+      - Add the various RAT values in config_mobile_tcp_buffer array.
+      - These values are from init.qcom.rc.
+    
+    (cherry picked from commit Ie675c410915029d9ef1a2ef7ebad396201771c27)
+    
+    Change-Id: I43f1e0564a29ed70931c1ff97bf93421422e66a6
+
+commit 44248b5ebab9bc3144ea4c8695204ec37362eeca
+Merge: e79fe8f b098c70
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Thu Nov 20 10:45:56 2014 -0800
+
+    Merge "SEAndroid: Removing unused binaries from init.qcom.rc"
+
+commit b098c7085558e013972f9ad4e58024ab937fd8dc
+Author: Rajshekar Eashwarappa <reashw@codeaurora.org>
+Date:   Thu Nov 20 14:51:31 2014 +0530
+
+    SEAndroid: Removing unused binaries from init.qcom.rc
+    
+    - removing unused binaries from init.qcom.rc which are obsolete
+      bridgemgr, prot-bridge, ds_fmc_appd, qmiproxy.
+    
+    Change-Id: I2d1eb25ea20135c68f6dbb7bafd246c1d99fb050
+
+commit e79fe8f52ef45a6b0ec542866b8f8d038d30a8ce
+Merge: 69360bb a36cfd5
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Nov 19 07:41:29 2014 -0800
+
+    Merge "Add paths for DRM  to work with SEAndroid"
+
+commit 69360bb4a809a981e71a9f833e75844129e243e6
+Merge: 7ecbf5c 7f6ee99
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Mon Nov 17 12:33:34 2014 -0800
+
+    Merge "Fix: CTS android.text.format.cts.TimeTests Failure"
+
+commit 7f6ee99363fae44d90a8648ecce02b171e50fbb1
+Author: Maunik Shah <mshah@codeaurora.org>
+Date:   Wed Nov 12 19:42:04 2014 +0530
+
+    Fix: CTS android.text.format.cts.TimeTests Failure
+    
+    In CTS test, it is searching for french, japanise, UK language
+    support which was missing ealier. Adding these locales to fix CTS
+    failures
+    
+    Change-Id: I4ce02a73dd6baaed43a5ca0499514d22ab9c0c85
+
+commit 7ecbf5cea55de288d92ac79e6d3402557fa99eff
+Merge: 9805ca6 2cf7307
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Nov 12 13:58:33 2014 -0800
+
+    Merge "init.qcom.rc: grant world read and execute perms to perfd socket"
+
+commit 9805ca6ae13eedaaa52939f5d4f3777c1705a287
+Merge: 9369a07 35189d2
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Tue Nov 11 07:37:03 2014 -0800
+
+    Merge "init.qcom.rc: Revised permissions for /storage"
+
+commit 2cf7307b240c9720825524113bb49ce1c39bc69b
+Author: Vince Leung <vincentl@codeaurora.org>
+Date:   Mon Nov 3 15:02:55 2014 -0800
+
+    init.qcom.rc: grant world read and execute perms to perfd socket
+    
+    Grant world read and execute permissions to perfd socket
+    directory to allow apps to write into the socket file
+    in that directory
+    
+    Change-Id: I53e7645001c1163ef2971e93453dbdaba6fe475d
+
+commit 9369a0741662ef36b8cd5fad1a9b156d55b91016
+Merge: bb73a8f 6360387
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Fri Nov 7 10:20:04 2014 -0800
+
+    Merge "Add tcmiface in PRODUCT_PACKAGES"
+
+commit a36cfd57938cf2316663a162b053fd755429b47d
+Author: Dinesh K Garg <dineshg@codeaurora.org>
+Date:   Wed Oct 29 20:09:02 2014 -0700
+
+    Add paths for DRM  to work with SEAndroid
+    
+    Widevine and playready store data under app_ms directory under
+    data filesystem. These paths should be created for DRM to work
+    with SEAndroid.
+    
+    Change-Id: I05b8c1ce9f5f4d2fd3dd23a2db5fffc9062c8aa1
+
+commit 6360387c5554a2868e65001454faecc8d37c5577
+Author: Bhavya Sokke Mallikarjunappa <bsokke@codeaurora.org>
+Date:   Thu Nov 6 17:22:25 2014 -0800
+
+    Add tcmiface in PRODUCT_PACKAGES
+    
+    Add tcmiface library in PRODUCT_PACKAGES
+    
+    Change-Id: I76964ff11e5c964a080b1a95c1c58ce286dde0b2
+
+commit bb73a8f17a2fd1d6b25cdde84b826ea967aabca1
+Merge: fe68fb9 ab03e5d
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Nov 5 10:50:00 2014 -0800
+
+    Merge "common: releasetools: Do not distinguish between nand and emmc devices"
+
+commit fe68fb96ee9bd54c4571b37f144ddde34d380d2c
+Merge: 05d6623 b8ff411
+Author: Linux Build Service Account <lnxbuild@localhost>
+Date:   Wed Nov 5 10:49:51 2014 -0800
+
+    Merge "Config item to speed up the audio mode"
+
+commit ab03e5dae1f96bc767e9f73644996fac82f358cf
+Author: Ameya Thakur <ameyat@codeaurora.org>
+Date:   Tue Jul 1 12:05:45 2014 -0700
+
+    common: releasetools: Do not distinguish between nand and emmc devices
+    
+    Code cleanup. We no longer support nand based devices on mainline.
+    
+    Change-Id: Ie2291f82fc6b0fc1972fccd825ce9b1686d1d3cb
+=========>/home/zhangxd/work/Lollipop-CS/common<========
+commit 8f9b1ff04e6f34f889c191849da3a19b1cec5f02
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Tue Dec 9 19:38:21 2014 +0800
+
+    [R41658][8974LBU] Fix the issue of SDDL image name is incorrect
+    
+    Modification ID: 8974LBU-BSP-FID0010
+    Scratch or Copy [S/C]: S
+    Copy from:
+    Other Info:Change the 1ppon outfile name to F05F_core.bin
+    
+    Change-Id: I05075c03e2e7da857d8c7ecd450e6119b4bfe86f
+
+commit eecd993d6a4c496fd2841d96973e30ab0cf6898a
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Tue Dec 9 19:23:47 2014 +0800
+
+    Update build script.
+    
+    Change-Id: Ibdd9f8116c9b8b964d903f473ee88199c6d774b7
+
+commit 2e6bafb2d0389f04a8e932f1cc6313eae57aae01
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Tue Dec 9 11:41:00 2014 +0800
+
+    [R41658][8974LBU] Modified for mmdata and kitting partition.
+    
+    Modification ID: 8974LBU-BSP-FID0010
+    Scratch or Copy [S/C]: S
+    Copy from:
+    Other Info:
+    
+    Change-Id: Iceae75da99b7d81ea88660ada98fa6a763d65d3b
+
+commit 2e40b16671dad94f4e0e5254ca59a36c0eae8d51
+Author: Thundersoft_lutx0528 <lutx0528@thundersoft.com>
+Date:   Mon Dec 8 07:19:54 2014 -0500
+
+    add build script all in one
+    
+    Change-Id: Ic725dd0e1669904be429041b68ed2034e3528d05
+
+commit 3b2ac1e4b037925cd46e820dea522eefd595128c
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Thu Dec 4 10:23:00 2014 +0800
+
+    [R41658][8974LBU] Fix the build_amss.sh error
+    
+    Modification ID: 8974LBU-BSP-FID0010
+    Scratch or Copy [S/C]: S
+    Copy from:
+    Other Info:
+    
+    Change-Id: I9069181f5df86a19b13b75831c34098c379404d4
+
+commit 7bed8fa2013860d8251b06d9d4619fad72e030b9
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Wed Dec 3 18:26:09 2014 +0800
+
+    [R41658][8974LBU] Add the binary images for 1ppon
+    
+    Modification ID: 8974LBU-BSP-FID0010
+    Scratch or Copy [S/C]: S
+    Copy from:
+    Other Info: Those binary images were copied from vanilla
+    
+    Change-Id: If7a00e0484f1d92d8bf4280f5d1bd152bd7b5f7d
+
+commit 9f67412cc59b0c95ddb4260d30a0dafb439da599
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Wed Dec 3 18:23:21 2014 +0800
+
+    [R41658][8974LBU] Deleted the unused partitions
+    
+    Modification ID: 8974LBU-BSP-FID0010
+    Scratch or Copy [S/C]: S
+    Copy from:
+    Other Info:
+    
+    Change-Id: Ifdfe75ace1e25892a395662f482f4808f456d88e
+
+commit 379f2dcc73ff91ede2215c59c88fb8ed5016f75c
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Wed Dec 3 17:36:00 2014 +0800
+
+    [R41658][8974LBU] Add 1ppon tools
+    
+    Modification ID: 8974LBU-BSP-FID0010
+    Scratch or Copy [S/C]: S
+    Copy from:
+    Other Info:
+    
+    Change-Id: If01a9708efed0b0b3dea36154f0ed25daf566dda
+
+commit 94e8a619bb637867d8db7cf1a9632cea27a576fa
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Wed Dec 3 16:40:41 2014 +0800
+
+    [R41658][8974LBU] Merged partition.xml
+    
+    Modification ID: 8974LBU-BSP-FID0010
+    Scratch or Copy [S/C]: S
+    Copy from:
+    Other Info:
+    
+    Change-Id: I440d59d1b295c13aeab952ee45ef2105fc1f7889
+
+commit 39589d4233d95bf6162c8236713e3114035b7c4b
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Wed Dec 3 16:15:20 2014 +0800
+
+    [R41658][8974LBU] Add amss build script
+    
+    Modification ID: 8974LBU-BSP-FID0010
+    Scratch or Copy [S/C]: S
+    Copy from:
+    Other Info:
+    
+    Change-Id: Ia5506a09441f54f643d7d75827e8a0af3b5175cb
+
+commit a19864078962fa2e9bb1e4d7131e5cbf9e128b3f
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Wed Dec 3 16:07:13 2014 +0800
+
+    [R41658][8974LBU] Add copy_images.sh
+    
+    Modification ID: 8974LBU-BSP-FID0010
+    Scratch or Copy [S/C]: S
+    Copy from:
+    Other Info:
+    
+    Change-Id: I2181b87937fb4289227f5159cb54e1e39eae5c46
+
+commit 95bc4c66d7b075943f991770a64a738eaae69785
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Wed Dec 3 15:51:44 2014 +0800
+
+    [R41658][8974LBU] Update the file_path of EMMC_BOOTLOADER to fjdev
+    
+    Modification ID: 8974LBU-BSP-FID0010
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:
+    
+    Change-Id: I21a8fbf91157f7e64b8ada2eb37ec1049c2be396
+
+commit 3636cea41b7f8af7957b2c16861ccac78e9d8d2c
+Author: Thundersoft_jiaoln0505 <jiaoln0505@thundersoft.com>
+Date:   Wed Dec 3 15:55:21 2014 +0800
+
+    [R41658][8974LBU] Add flash.xml
+    
+    Modification ID: 8974LBU-BSP-FID0010
+    Scratch or Copy [S/C]: S
+    Copy from:
+    Other Info:
+    
+    Change-Id: I6ebf8b9e88408779cb8183019767900da8380498
+
+commit 6ef3b10f9280ae4697c4212c00d0b92683ee4981
+Author: Wang Zhenhua <wangzh@thundersoft.com>
+Date:   Tue Nov 11 22:36:36 2014 +0800
+
+    [R41658][8974LBU] delete the modemlite flavor
+    
+    Modification ID: 8974LBU-BSP-FID0010
+    Scratch or Copy [S/C]:
+    Copy from:
+    Other Info:delete the modemlite flavor to avoid error when build NON-HLOS.bin
+
+commit 9ad1734fabef1c5efbee21e42131e60b30af2f98
+Author: Thundersoft_lutx0528 <lutx0528@thundersoft.com>
+Date:   Wed Nov 12 01:49:23 2014 -0500
+
+    append same file from qcom
+    
+    Change-Id: Ic0b45d42db728832f943a48ffd8d44289c044ddb
+
+commit df522afca3346387dc34362a6bbbc35e6f93af5b
+Author: QC Publisher <qcpublisher@qti.qualcomm.com>
+Date:   Fri Nov 21 19:31:53 2014 -0800
+
+    Commit label r4215.1
+
+commit 0daea11d99fda9ca4a9eee00387e209b53bb5e80
+Author: QC Publisher <qcpublisher@qti.qualcomm.com>
+Date:   Wed Nov 5 11:53:00 2014 -0800
+
+    Commit label r4210.1
+
+commit 3898ee8fe8d702e03dcd8ab6fbfd87bbefc8f78c
+Author: Gito Z <gitoz@qualcomm.com>
+Date:   Sat Jun 29 04:25:43 2013 -0700
+
+    init

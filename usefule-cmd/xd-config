@@ -1,0 +1,15 @@
+#!/bin/sh
+
+#check arguments
+
+if [ $# -le 1 ] ; then
+	echo "please use cmd as : xd-config xxx/Makefile xxx/defconfig"
+fi
+
+# get the Makefile config arg
+#awk -F '[()]' '{if(NF>=3)print $2}' $1 > $1.$$
+
+awk -F '=' '!/^#/{print $1}' $2 > $2.$$
+
+awk -F '[()]' '{if(NR==FNR)a[$0]++;else{if(NF>=3)if($2 in a)print $0}}' $2.$$  $1
+rm -rf $2.$$

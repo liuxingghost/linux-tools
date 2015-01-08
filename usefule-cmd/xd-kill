@@ -1,0 +1,17 @@
+#!/bin/sh
+process_name=""
+kill_id=0
+if [ $# -lt 1 ] ; then 
+   echo "please input the process name which you want kill"
+fi
+process_name=$1
+if [ $# -gt 1 ] ;then
+   kill_id=$2
+fi
+#echo "$process_name ,$kill_id"
+if [ "$kill_id" == "1" ];then
+	ps -aux | grep "$process_name" | awk -F ' +' '{print $2;exit}'| xargs kill
+else
+	ps -aux | grep "$process_name" | awk -F ' +' '{print $2}' | xargs kill
+
+fi

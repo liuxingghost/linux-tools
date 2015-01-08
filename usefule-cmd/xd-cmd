@@ -1,0 +1,26 @@
+#!/bin/bash
+
+CMD_FILE='/home/zxd/bin/cmd.txt'
+MAX_CMD_NUM=20
+
+function use_info () {
+	echo "===>use $0 xxx<====="
+	awk -F'+' -v max_id=$MAX_CMD_NUM 'BEGIN{i =1;}!/^#/&&!/^$/{if(i<=max_id)print i++,$0}' $CMD_FILE
+}
+
+function get_all_cmd(){
+	#echo "=====$1"
+	awk -F"+" -v id=$1 -v max_id=$MAX_CMD_NUM 'BEGIN{i=1}!/^#/&&!/^$/{if(i<=max_id)CMD_DATA[i++]=$0 }END{
+         if(id+1 <= i ) \
+            {print "------------------>"CMD_DATA[id]"<------------------"} \
+            system(CMD_DATA[id]);
+         }' $CMD_FILE
+
+}
+
+if [ $# -le 0 ] ; then
+ 	use_info;
+else
+	get_all_cmd $1;
+fi
+

@@ -1,0 +1,111 @@
+#!/bin/bash
+
+flash_boot=0
+flash_system=0
+flash_recovery=0
+flash_sbl1=0
+flash_aboot=0
+flash_tz=0
+flash_userdata=0
+flash_all=0
+moreoptions=1
+
+FASTBOOT=~/bin/fastboot
+function help()
+{
+	echo "$0 boot(-b)|aboot(-a)|sbl1(-sb)|recovery(-r)|system(-sy)|userdata(-u)|tz(-t)|help(-h)|all(-a)"
+}
+
+while [ "$moreoptions" = 1 -a $# -gt 0 ]; do
+	case $1 in
+		-h) help; exit ;;
+	    boot | -b ) flash_boot=1 ;;
+		aboot | -a) flash_aboot=1 ;;
+		sbl1 | -sb) flash_sbl1=1 ;;
+		recovery | -r) flash_recovery=1 ;;
+		system | -sy) flash_system=1 ;;
+		tz | -t) flash_tz=1 ;;
+		userdata | -u) flash_userdata=1 ;;
+		all | -a) flash_all = 1 ;;
+		*) moreoptions=0 ; help &&exit ;;
+	esac
+	[ "$moreoptions" = 0 ] && [ $# -gt 1 ] && help && exit
+	[ "$moreoptions" = 1 ] && shift
+done
+
+
+if [ $flash_boot -ne 0  ] ;then
+	BOOT=`pwd`"/boot.img"
+	if [ -f $BOOT ];then
+		echo "$FASTBOOT flash boot boot.img"
+		$FASTBOOT flash boot boot.img
+	else
+		echo "$BOOT is not exist"
+	fi
+	
+fi
+
+if [ $flash_aboot -ne 0  ] ;then
+	ABOOT=`pwd`"/aboot emmc_appsboot.mbn"
+	if [ -f $ABOOT ];then
+		echo "$FASTBOOT flash aboot emmc_appsboot.mbn"
+		$FASTBOOT flash aboot emmc_appsboot.mbn
+	else
+		echo "$ABOOT is not exist"
+	fi
+fi
+
+if [ $flash_tz -ne 0  ] ;then
+	echo "flash_tz"
+	# $FASTBOOT flash tz tz.mbn
+fi
+
+if [ $flash_system -ne 0  ] ;then
+	SYSTEM=`pwd`"/system.img"
+	if [ -f $SYSTEM ];then
+		echo "$FASTBOOT flash system system.img"
+		$FASTBOOT flash system system.img
+	else
+		echo "$SYSTEM is not exist"
+	fi
+fi
+
+if [ $flash_recovery -ne 0  ] ;then
+	RECOVERY=`pwd`"/recovery.img"
+	if [ -f $RECOVERY ] ; then
+		echo "$FASTBOOT flash recovery recovery.img"
+		$FASTBOOT flash recovery recovery.img
+	else
+		echo "$RECOVERY is not exist"
+	fi
+fi
+
+if [ $flash_sbl1 -ne 0  ] ;then
+	SBL=`pwd`"/sbl1.img"
+	if [ -f $SBL ] ; then
+		echo "$FASTBOOT flash sbl1 sbl1.mbn"
+		$FASTBOOT flash sbl1 sbl1.mbn
+	else
+		echo "$SBL is not exist"
+	fi
+	
+fi
+
+if [ $flash_userdata -ne 0  ] ;then
+	echo "flash_userdata"
+	# $FASTBOOT flash userdata userdata.img
+fi
+
+
+if [ $flash_all -ne 0 ];then
+ $FASTBOOT flash modem NON-HLOS.bin 
+# $FASTBOOT flash sbl1 sbl1.mbn
+# $FASTBOOT flash rpm rpm.mbn
+# $FASTBOOT flash tz tz.mbn
+# $FASTBOOT flash aboot emmc_appsboot.mbn
+# $FASTBOOT flash boot boot.img
+# $FASTBOOT flash system system.img
+# $FASTBOOT flash userdata userdata.img
+# $FASTBOOT flash persist persist.img
+# $FASTBOOT flash recovery recovery.img
+fi

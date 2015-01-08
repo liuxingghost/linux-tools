@@ -1,0 +1,13 @@
+ls -alh | sort -k7 -nr
+adb reboot bootloader
+fastboot reboot
+
+fastboot flash sbl1 sbl1.mbn
+fastboot flash boot boot.img
+fastboot flash aboot emmc_appsboot.mbn
+fastboot flash system system.img
+
+scp zhangxd@192.168.11.115:/home/zhangxd/work/Lollipop-CS/boot_images/build/ms/bin/8974/sbl1.mbn ./
+scp zhangxd@192.168.11.115:/home/zhangxd/work/Lollipop-CS/LINUX/android/out/target/product/msm8974/boot.img ./
+scp zhangxd@192.168.11.115:/home/zhangxd/work/Lollipop-CS/LINUX/android/out/target/product/msm8974/system.img ./
+scp zhangxd@192.168.11.115:/home/zhangxd/work/Lollipop-CS/LINUX/android/out/target/product/msm8974/emmc_appsboot.mbn ./

@@ -1,0 +1,22 @@
+长按电源键+指纹键 →使用SD卡烧机
+
+长按电源键+指纹键+音量下 →进入factory data reset画面
+
+长按电源键+指纹键+音量上 →进入MC模式（可以被MC tool识别）
+
+长按电源键+音量下 →进入fastboot模式（使用fastboot命令烧机）
+
+
+
+-------------------**----------------------------
+fastboot flash modem <path to NON-HLOS.bin> 
+fastboot flash sbl1 <path to sbl1.mbn>
+fastboot flash rpm <path to rpm.mbn>
+fastboot flash tz <path to tz.mbn>
+fastboot flash aboot <path to emmc_appsboot.mbn >
+fastboot flash boot <path to boot.img>
+fastboot flash system <path to system.img>
+fastboot flash userdata <path to userdata.img>
+fastboot flash persist <path to persist.img>
+fastboot flash recovery <path to recovery.img>
+--------------------------------------------------

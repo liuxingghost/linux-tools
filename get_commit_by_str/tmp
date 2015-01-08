@@ -1,0 +1,1479 @@
+<6>[    0.000000] Booting Linux on physical CPU 0
+<6>[    0.000000] Initializing cgroup subsys cpu
+<5>[    0.000000] Linux version 3.4.0-g7cc3561-00007-gf60acfa (builder@pfscm4.mp.css.fujitsu.com) (gcc version 4.7 (GCC) ) #1 SMP PREEMPT Tue Apr 15 03:52:52 JST 2014
+<4>[    0.000000] CPU: ARMv7 Processor [512f06f1] revision 1 (ARMv7), cr=10c5387d
+<4>[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, PIPT instruction cache
+<6>[    0.000000] Machine: FJDEV, model: Qualcomm MSM 8974Pro FJDEV018 Revf
+<6>[    0.000000] qcom,ion-heap@28 reserved EBI1 size 614000
+<6>[    0.000000] qcom,mdss_fb_primary reserved EBI1 size 1000000
+<6>[    0.000000] Node qcom,mdss_fb_primary memblock_reserve memory 3200000-5000000
+<6>[    0.000000] qcom,msm-rtb reserved EBI1 size 100000
+<6>[    0.000000] qcom,msm-contig-mem reserved EBI1 size 280000
+<6>[    0.000000] Node qcom,msm-mem-hole removed memory 5a00000-d200000
+<6>[    0.000000] Node qcom,msm-mem-hole removed memory fa00000-ff00000
+<6>[    0.000000] memory pool 3 (start 0x7e600000 size 1a00000) initialized
+<6>[    0.000000] cma: CMA: reserved 16 MiB at 29400000
+<6>[    0.000000] cma: Found secure_region, memory base 0, size 252 MiB
+<6>[    0.000000] cma: CMA: reserved 252 MiB at 6e800000
+<6>[    0.000000] cma: Found adsp_region, memory base 0, size 101 MiB
+<6>[    0.000000] cma: CMA: reserved 104 MiB at 68000000
+<6>[    0.000000] cma: Found qsecom_region, memory base 0, size 17 MiB
+<6>[    0.000000] cma: CMA: reserved 20 MiB at 66c00000
+<4>[    0.000000] Memory policy: ECC disabled, Data cache writealloc
+<6>[    0.000000] IMEM DT static mapping successful
+<7>[    0.000000] On node 0 totalpages: 485632
+<7>[    0.000000] free_area_init_node: node 0, pgdat c10d0c80, node_mem_map c2098000
+<7>[    0.000000]   Normal zone: 1356 pages used for memmap
+<7>[    0.000000]   Normal zone: 0 pages reserved
+<7>[    0.000000]   Normal zone: 140212 pages, LIFO batch:31
+<7>[    0.000000]   HighMem zone: 2740 pages used for memmap
+<7>[    0.000000]   HighMem zone: 341324 pages, LIFO batch:31
+<6>[    0.000000] PERCPU: Embedded 10 pages/cpu @c30f3000 s16512 r8192 d16256 u40960
+<7>[    0.000000] pcpu-alloc: s16512 r8192 d16256 u40960 alloc=10*4096
+<7>[    0.000000] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 
+<4>[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 481536
+<5>[    0.000000] Kernel command line: androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 vmalloc=330M androidboot.emmc=true androidboot.serialno=798459cd androidboot.baseband=msm system_rev=7f restart.download_mode=1
+<6>[    0.000000] PID hash table entries: 4096 (order: 2, 16384 bytes)
+<6>[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+<6>[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+<6>[    0.000000] Memory: 90MB 40MB 1767MB = 1897MB total
+<5>[    0.000000] Memory: 1471168k/1471168k available, 497984k reserved, 991232K highmem
+<5>[    0.000000] Virtual kernel memory layout:
+<5>[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+<5>[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+<5>[    0.000000]     vmalloc : 0xea800000 - 0xff000000   ( 328 MB)
+<5>[    0.000000]     lowmem  : 0xc0000000 - 0xea600000   ( 678 MB)
+<5>[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+<5>[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+<5>[    0.000000]       .text : 0xc0008000 - 0xc0e22a0c   (14443 kB)
+<5>[    0.000000]       .init : 0xc0f00000 - 0xc100e080   (1081 kB)
+<5>[    0.000000]       .data : 0xc1010000 - 0xc110a7bc   (1002 kB)
+<5>[    0.000000]        .bss : 0xc110a7e0 - 0xc128fc60   (1558 kB)
+<6>[    0.000000] SLUB: Genslabs=11, HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+<6>[    0.000000] Preemptible hierarchical RCU implementation.
+<6>[    0.000000] 	RCU dyntick-idle grace-period acceleration is enabled.
+<6>[    0.000000] NR_IRQS:16 nr_irqs:16 16
+<6>[    0.000000] sched_clock: 32 bits at 19MHz, resolution 52ns, wraps every 223696ms
+<6>[    0.000000] Switching to timer-based delay loop
+<6>[    0.000044] Calibrating delay loop (skipped), value calculated using timer frequency.. 38.40 BogoMIPS (lpj=192000)
+<6>[    0.000072] pid_max: default: 32768 minimum: 301
+<6>[    0.000246] Security Framework initialized
+<6>[    0.000276] SELinux:  Initializing.
+<7>[    0.000322] SELinux:  Starting in permissive mode
+<6>[    0.000396] Mount-cache hash table entries: 512
+<6>[    0.001330] Initializing cgroup subsys debug
+<6>[    0.001346] Initializing cgroup subsys cpuacct
+<6>[    0.001360] Initializing cgroup subsys freezer
+<6>[    0.001411] CPU: Testing write buffer coherency: ok
+<6>[    0.001614] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+<6>[    0.001737] hw perfevents: enabled with ARMv7 Krait PMU driver, 5 counters available
+<6>[    0.005165] Setting up static identity map for 0x9cfcf0 - 0x9cfd78
+<6>[    0.005255] Configuring XPU violations to be fatal errors
+<6>[    0.005271] MSM Memory Dump table set up
+<6>[    0.007021] CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+<6>[    0.007971] CPU2: thread -1, cpu 2, socket 0, mpidr 80000002
+<6>[    0.008928] CPU3: thread -1, cpu 3, socket 0, mpidr 80000003
+<6>[    0.009147] Brought up 4 CPUs
+<6>[    0.009165] SMP: Total of 4 processors activated (153.60 BogoMIPS).
+<6>[    0.021896] dummy: 
+<6>[    0.040115] NET: Registered protocol family 16
+<6>[    0.042520] DMA: preallocated 256 KiB pool for atomic coherent allocations
+<6>[    0.044144] KPI: Bootloader start count = 247468998
+<6>[    0.044159] KPI: Bootloader end count = 127966743
+<6>[    0.044172] KPI: Bootloader display count = 847485944
+<6>[    0.044184] KPI: Bootloader load kernel count = 344611840
+<6>[    0.044198] KPI: Kernel MPM timestamp = 93512
+<6>[    0.044209] KPI: Kernel MPM Clock frequency = 32768
+<6>[    0.044230] socinfo_print: v8, id=218, ver=1.1, raw_id=1976, raw_ver=1, hw_plat=49, hw_plat_ver=65536
+<6>[    0.044240]  accessory_chip=0, hw_plat_subtype=0, pmic_model=65537, pmic_die_revision=196609
+<6>[    0.044510] msm_8974_init_gpiomux:1853 socinfo_get_version 10001
+<6>[    0.063958] gpiochip_add: registered GPIOs 0 to 145 on device: msmgpio
+<6>[    0.087578] msm_watchdog f9017000.qcom,wdt: MSM Watchdog Initialized
+<6>[    0.111618] 8841_s1: 675 <--> 1050 mV at 0 mV normal idle 
+<6>[    0.112232] 8841_s1_ao: 675 <--> 1050 mV at 0 mV normal idle 
+<6>[    0.112800] 8841_s1_so: 675 <--> 1050 mV at 675 mV normal idle 
+<6>[    0.113400] 8841_s2: 500 <--> 1050 mV at 0 mV normal idle 
+<6>[    0.113976] 8841_s2_corner: 0 <--> 0 mV at 0 mV normal idle 
+<6>[    0.114541] 8841_s2_corner_ao: 0 <--> 0 mV at 0 mV normal idle 
+<6>[    0.115103] 8841_s2_floor_corner: 0 <--> 0 mV at 0 mV normal idle 
+<6>[    0.115742] 8841_s3: 1050 mV normal idle 
+<6>[    0.116341] 8841_s4: 815 <--> 900 mV at 0 mV normal idle 
+<6>[    0.116888] 8841_s4_corner: 0 <--> 0 mV at 0 mV normal idle 
+<6>[    0.117451] 8841_s4_floor_corner: 0 <--> 0 mV at 0 mV normal idle 
+<6>[    0.118056] 8941_s1: 1300 mV normal idle 
+<6>[    0.118644] 8941_s2: 2150 mV normal idle 
+<6>[    0.119245] 8941_s3: 1800 mV normal idle 
+<6>[    0.119839] 8941_l1: 1225 mV normal idle 
+<6>[    0.120439] 8941_l2: 1200 mV normal idle 
+<6>[    0.121037] 8941_l3: 1200 mV normal idle 
+<6>[    0.121626] 8941_l4: 1225 mV normal idle 
+<6>[    0.122254] 8941_l5: 1800 mV normal idle 
+<6>[    0.122871] 8941_l6: 1800 mV normal idle 
+<6>[    0.123462] 8941_l7: 1800 mV normal idle 
+<6>[    0.124063] 8941_l8: 1800 mV normal idle 
+<6>[    0.124665] 8941_l9: 1800 <--> 2950 mV at 2950 mV normal idle 
+<6>[    0.125262] 8941_l10: 1800 <--> 2950 mV at 1800 mV normal idle 
+<6>[    0.125868] 8941_l11: 1300 <--> 1350 mV at 1300 mV normal idle 
+<6>[    0.126479] 8941_l12: 1800 mV normal idle 
+<6>[    0.127028] 8941_l12_ao: 1800 mV normal idle 
+<6>[    0.127652] 8941_l13: 1800 <--> 2950 mV at 2950 mV normal idle 
+<6>[    0.128258] 8941_l14: 1800 mV normal idle 
+<6>[    0.128850] 8941_l15: 2050 mV normal idle 
+<6>[    0.129462] 8941_l16: 2600 <--> 2750 mV at 2750 mV normal idle 
+<6>[    0.130074] 8941_l17: 2800 <--> 2900 mV at 2800 mV normal idle 
+<6>[    0.130675] 8941_l18: 2800 <--> 3000 mV at 2850 mV normal idle 
+<6>[    0.131290] 8941_l19: 2900 <--> 3300 mV at 2900 mV normal idle 
+<6>[    0.131940] 8941_l20: 2950 mV normal idle 
+<6>[    0.132573] 8941_l21: 2500 <--> 3100 mV at 2950 mV normal idle 
+<6>[    0.133196] 8941_l22: 2700 <--> 3000 mV at 3000 mV normal idle 
+<6>[    0.133776] 8941_l23: 3000 <--> 3300 mV at 3000 mV normal idle 
+<6>[    0.134382] 8941_l24: 3075 mV normal idle 
+<6>[    0.134974] 8941_lvs1: 
+<6>[    0.135489] 8941_lvs2: 
+<6>[    0.136027] 8941_lvs3: 
+<6>[    0.138686] PDN krait_pdn_phase_scaling_init: eFuse phase scaling factor = 1/4
+<6>[    0.138704] PDN krait_pdn_phase_scaling_init: initial phase scaling factor = 1/4
+<6>[    0.139092] krait0: 500 <--> 1120 mV at 900 mV fast normal idle 
+<6>[    0.139739] krait1: 500 <--> 1120 mV at 900 mV fast normal idle 
+<6>[    0.140368] krait2: 500 <--> 1120 mV at 900 mV fast normal idle 
+<6>[    0.140996] krait3: 500 <--> 1120 mV at 900 mV fast normal idle 
+<6>[    0.187754] msm-thermal qcom,msm-thermal.70: probe_psm:Failed reading node=/soc/qcom,msm-thermal, key=qcom,pmic-sw-mode-temp. KTM continues
+<6>[    0.188619] vdd_restriction_reg_init:Defer vdd rstr freq init
+<6>[    0.188641] msm-thermal qcom,msm-thermal.70: probe_ocr:Failed reading node=/soc/qcom,msm-thermal, key=qti,pmic-opt-curr-temp. KTM continues
+<6>[    0.189380] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+<6>[    0.189398] hw-breakpoint: maximum watchpoint size is 8 bytes.
+<6>[    0.190134] msm-jtag-fuse fc4be024.jtagfuse: JTag Fuse initialized
+<6>[    0.194066] 8941_boost: 5000 mV 
+<6>[    0.194659] 8941_mvs1: 
+<3>[    0.194731] qcom,qpnp-regulator qpnp-regulator-e9141000: Failed to find supply parent
+<6>[    0.194932] spmi qpnp-regulator-e9141000: Driver qcom,qpnp-regulator requests probe deferral
+<6>[    0.195268] 8941_mvs2: 
+<6>[    0.195316] 8941_mvs2: supplied by 8941_boost
+<6>[    0.201886] sps:BAM 0xf9984000 (va:0xea8e0000) enabled: ver:0x6, number of pipes:20
+<6>[    0.201906] sps:BAM 0xf9984000 is registered.
+<6>[    0.201932] sps:sps is ready.
+<6>[    0.203983] gdsc_venus: 
+<6>[    0.204388] gdsc_mdss: 
+<6>[    0.204817] gdsc_jpeg: 
+<6>[    0.205268] gdsc_vfe: 
+<6>[    0.205668] gdsc_oxili_gx: 
+<6>[    0.205745] gdsc_oxili_gx: supplied by 8841_s4_corner
+<6>[    0.206190] gdsc_oxili_cx: 
+<6>[    0.206542] gdsc_usb_hsic: 
+<6>[    0.208695] msm_bus_fabric fc478000.msm-mmss-noc: msmbus_coresight initialized
+<6>[    0.210056] msm_bus_fabric fc460000.msm-sys-noc: msmbus_coresight initialized
+<6>[    0.211451] msm_bus_fabric fc468000.msm-periph-noc: msmbus_coresight initialized
+<4>[    0.213214] AXI: msm_bus_fabric_probe(): Coresight support absent for bus: 5120
+<6>[    0.213958] msm_bus_fabric fc380000.msm-bimc: msmbus_coresight initialized
+<4>[    0.214268] AXI: msm_bus_fabric_probe(): Coresight support absent for bus: 6144
+<6>[    0.215045] msm_bus_fabric fc470000.msm-ocmem-noc: msmbus_coresight initialized
+<6>[    0.216111] msm_ocmem fdd00000.qcom,ocmem: OCMEM Virtual addr eaa00000
+<6>[    0.216768] Physical OCMEM zone layout:
+<6>[    0.216786]  zone graphics	: 0xfec00000 - 0xfecfffff (1024 KB)
+<6>[    0.216804]  zone lp_audio	: 0xfed00000 - 0xfed7ffff ( 512 KB)
+<6>[    0.216822]  zone video	: 0xfed00000 - 0xfed7ffff ( 512 KB)
+<6>[    0.251876] bio: create slab <bio-0> at 0
+<6>[    0.253570] cma: Assigned CMA region at 0 to 8.qcom,ion-heap device
+<3>[    0.253677] ION-heap mm: Cannot specify alignment for this type of heap
+<6>[    0.253795] cma: Assigned CMA region at 0 to 16.qcom,ion-heap device
+<3>[    0.253899] ION-heap adsp: Cannot specify alignment for this type of heap
+<6>[    0.254030] cma: Assigned CMA region at 0 to 1b.qcom,ion-heap device
+<6>[    0.254794] ION heap system created
+<6>[    0.254930] ION heap kmalloc created
+<6>[    0.254971] ION heap mm created at 0x6e800000 with size fc00000
+<6>[    0.255007] ION heap adsp created at 0x68000000 with size 6500000
+<6>[    0.255048] ION heap qsecom created at 0x66c00000 with size 1100000
+<6>[    0.255106] ION heap audio created at 0x7e600000 with size 614000
+<6>[    0.255145] ION heap pil_1 created at 0x05a00000 with size 2100000
+<6>[    0.255184] ION heap pil_2 created at 0x08000000 with size 5000000
+<5>[    0.256779] SCSI subsystem initialized
+<6>[    0.256955] usbcore: registered new interface driver usbfs
+<6>[    0.257065] usbcore: registered new interface driver hub
+<6>[    0.257198] usbcore: registered new device driver usb
+<6>[    0.257771] Linux media interface: v0.10
+<6>[    0.257834] Linux video capture interface: v2.00
+<6>[    0.261173] msm_iommu_v1 fda64000.qcom,iommu: device jpeg_iommu mapped at eaba0000, with 3 ctx banks
+<6>[    0.262497] msm_iommu_v1 fd928000.qcom,iommu: device mdp_iommu mapped at eabc0000, with 3 ctx banks
+<6>[    0.264540] msm_iommu_v1 fdc84000.qcom,iommu: device venus_iommu mapped at eabe0000, with 5 ctx banks
+<6>[    0.265801] msm_iommu_v1 fdb10000.qcom,iommu: device kgsl_iommu mapped at eac00000, with 3 ctx banks
+<6>[    0.266968] msm_iommu_v1 fda44000.qcom,iommu: device vfe_iommu mapped at eac20000, with 3 ctx banks
+<6>[    0.268154] msm_iommu_ctx_v1 fda6c000.qcom,iommu-ctx: context jpeg_enc0 using bank 0
+<6>[    0.268315] msm_iommu_ctx_v1 fda6d000.qcom,iommu-ctx: context jpeg_enc1 using bank 1
+<6>[    0.268462] msm_iommu_ctx_v1 fda6e000.qcom,iommu-ctx: context jpeg_dec using bank 2
+<6>[    0.268621] msm_iommu_ctx_v1 fd930000.qcom,iommu-ctx: context mdp_0 using bank 0
+<6>[    0.268784] msm_iommu_ctx_v1 fd931000.qcom,iommu-ctx: context mdp_1 using bank 1
+<6>[    0.268933] msm_iommu_ctx_v1 fd932000.qcom,iommu-ctx: context mdp_2 using bank 2
+<6>[    0.269091] msm_iommu_ctx_v1 fdc8c000.qcom,iommu-ctx: context venus_ns using bank 0
+<6>[    0.269250] msm_iommu_ctx_v1 fdc8d000.qcom,iommu-ctx: context venus_sec_bitstream using bank 1
+<6>[    0.269403] msm_iommu_ctx_v1 fdc8e000.qcom,iommu-ctx: context venus_fw using bank 2
+<6>[    0.269549] msm_iommu_ctx_v1 fdc8f000.qcom,iommu-ctx: context venus_sec_pixel using bank 3
+<6>[    0.269694] msm_iommu_ctx_v1 fdc90000.qcom,iommu-ctx: context venus_sec_non_pixel using bank 4
+<6>[    0.269883] msm_iommu_ctx_v1 fdb18000.qcom,iommu-ctx: context gfx3d_user using bank 0
+<6>[    0.270033] msm_iommu_ctx_v1 fdb19000.qcom,iommu-ctx: context gfx3d_priv using bank 1
+<6>[    0.270177] msm_iommu_ctx_v1 fdb1a000.qcom,iommu-ctx: context gfx3d_spare using bank 2
+<6>[    0.270335] msm_iommu_ctx_v1 fda4c000.qcom,iommu-ctx: context vfe0 using bank 0
+<6>[    0.270481] msm_iommu_ctx_v1 fda4d000.qcom,iommu-ctx: context vfe1 using bank 1
+<6>[    0.270625] msm_iommu_ctx_v1 fda4e000.qcom,iommu-ctx: context cpp using bank 2
+<6>[    0.272677] APPNV: init_early_init_item() start
+<6>[    0.272759] APPNV: init_early_init_item() num = 58 size = 1473
+<6>[    0.272891] Advanced Linux Sound Architecture Driver Version 1.0.25.
+<6>[    0.273507] Bluetooth: Core ver 2.16
+<6>[    0.273565] NET: Registered protocol family 31
+<6>[    0.273578] Bluetooth: HCI device and connection manager initialized
+<6>[    0.273596] Bluetooth: HCI socket layer initialized
+<6>[    0.273612] Bluetooth: L2CAP socket layer initialized
+<6>[    0.273839] Bluetooth: SCO socket layer initialized
+<6>[    0.274252] cfg80211: Calling CRDA to update world regulatory domain
+<6>[    0.274985] Switching to clocksource arch_sys_counter
+<6>[    0.316990] NET: Registered protocol family 2
+<6>[    0.317237] IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+<6>[    0.317941] TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+<6>[    0.319650] TCP bind hash table entries: 65536 (order: 8, 1310720 bytes)
+<6>[    0.321384] TCP: Hash tables configured (established 131072 bind 65536)
+<6>[    0.321402] TCP: reno registered
+<6>[    0.321440] UDP hash table entries: 512 (order: 2, 24576 bytes)
+<6>[    0.321507] UDP-Lite hash table entries: 512 (order: 2, 24576 bytes)
+<6>[    0.322032] NET: Registered protocol family 1
+<6>[    0.322427] Trying to unpack rootfs image as initramfs...
+<6>[    0.361665] Freeing initrd memory: 604K
+<6>[    0.365307] Detected 9 counters on the L2CC PMU.
+<7>[    0.367352] gpiochip_find_base: found new base at 992
+<6>[    0.367483] gpiochip_add: registered GPIOs 992 to 1023 on device: smp2p
+<7>[    0.368201] gpiochip_find_base: found new base at 960
+<6>[    0.368323] gpiochip_add: registered GPIOs 960 to 991 on device: smp2p
+<7>[    0.368382] gpiochip_find_base: found new base at 928
+<6>[    0.368509] gpiochip_add: registered GPIOs 928 to 959 on device: smp2p
+<7>[    0.369241] gpiochip_find_base: found new base at 896
+<6>[    0.369361] gpiochip_add: registered GPIOs 896 to 927 on device: smp2p
+<7>[    0.369417] gpiochip_find_base: found new base at 864
+<6>[    0.369544] gpiochip_add: registered GPIOs 864 to 895 on device: slave-kernel
+<7>[    0.370305] gpiochip_find_base: found new base at 832
+<6>[    0.370427] gpiochip_add: registered GPIOs 832 to 863 on device: master-kernel
+<7>[    0.370523] gpiochip_find_base: found new base at 800
+<6>[    0.370659] gpiochip_add: registered GPIOs 800 to 831 on device: smp2p
+<7>[    0.371425] gpiochip_find_base: found new base at 768
+<6>[    0.371546] gpiochip_add: registered GPIOs 768 to 799 on device: smp2p
+<7>[    0.371602] gpiochip_find_base: found new base at 736
+<6>[    0.371731] gpiochip_add: registered GPIOs 736 to 767 on device: slave-kernel
+<7>[    0.372527] gpiochip_find_base: found new base at 704
+<6>[    0.372648] gpiochip_add: registered GPIOs 704 to 735 on device: master-kernel
+<7>[    0.372731] gpiochip_find_base: found new base at 672
+<6>[    0.372852] gpiochip_add: registered GPIOs 672 to 703 on device: smp2p
+<7>[    0.373661] gpiochip_find_base: found new base at 640
+<6>[    0.373783] gpiochip_add: registered GPIOs 640 to 671 on device: smp2p
+<7>[    0.373837] gpiochip_find_base: found new base at 608
+<6>[    0.373958] gpiochip_add: registered GPIOs 608 to 639 on device: slave-kernel
+<7>[    0.374781] gpiochip_find_base: found new base at 576
+<6>[    0.374910] gpiochip_add: registered GPIOs 576 to 607 on device: master-kernel
+<7>[    0.375007] gpiochip_find_base: found new base at 544
+<6>[    0.375169] gpiochip_add: registered GPIOs 544 to 575 on device: rdbg
+<7>[    0.376015] gpiochip_find_base: found new base at 512
+<6>[    0.376187] gpiochip_add: registered GPIOs 512 to 543 on device: rdbg
+<7>[    0.376245] gpiochip_find_base: found new base at 480
+<6>[    0.376362] gpiochip_add: registered GPIOs 480 to 511 on device: rdbg
+<7>[    0.377219] gpiochip_find_base: found new base at 448
+<6>[    0.377343] gpiochip_add: registered GPIOs 448 to 479 on device: rdbg
+<6>[    0.379672] pil-q6v5-lpass fe200000.qcom,lpass: using secure boot
+<6>[    0.384092] pil_pronto fb21b000.qcom,pronto: using secure boot
+<6>[    0.386091] pil_venus fdce0000.qcom,venus: using secure boot
+<6>[    0.397495] NET: Registered protocol family 27
+<6>[    0.403968] clock-krait-8974 f9016000.qcom,clock-krait: PVS config version: 1
+<6>[    0.404005] clock-krait-8974 f9016000.qcom,clock-krait: Speed bin: 1
+<6>[    0.404023] clock-krait-8974 f9016000.qcom,clock-krait: PVS bin: 13
+<6>[    0.404038] clock-krait-8974 f9016000.qcom,clock-krait: PVS version: 1
+<6>[    0.408559] L2 @ 729600 KHz
+<6>[    0.408850] CPU0 @ 960000 KHz
+<6>[    0.408863] CPU1 @ unknown rate. Forcing new rate.
+<6>[    0.409022] CPU1 @ 300000 KHz
+<6>[    0.409035] CPU2 @ unknown rate. Forcing new rate.
+<6>[    0.409187] CPU2 @ 300000 KHz
+<6>[    0.409200] CPU3 @ unknown rate. Forcing new rate.
+<6>[    0.409354] CPU3 @ 300000 KHz
+<5>[    0.415741] msm_rpm_log_probe: OK
+<3>[    0.420949] ocmem: Client sensors (id: 6) not allowed to use OCMEM
+<3>[    0.420966] OCMEM notifier registration failed
+<3>[    0.420980] sns_ocmem_main: sns_ocmem_init failed -14
+<6>[    0.425497] mpm_counter: [    0.425489]:(106005)
+<6>[    0.429404] audit: initializing netlink socket (disabled)
+<5>[    0.429430] type=2000 audit(0.420:1): initialized
+<4>[    0.494080] highmem bounce pool size: 64 pages
+<6>[    0.498569] fuse init (API version 7.18)
+<6>[    0.498792] msgmni has been set to 970
+<7>[    0.498820] SELinux:  Registering netfilter hooks
+<6>[    0.500346] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 246)
+<6>[    0.500354] io scheduler noop registered
+<6>[    0.500361] io scheduler deadline registered
+<6>[    0.500374] io scheduler row registered (default)
+<6>[    0.500468] io scheduler cfq registered
+<7>[    0.500614] gpiochip_find_base: found new base at 444
+<6>[    0.500679] gpiochip_add: registered GPIOs 444 to 447 on device: pm8841-mpp
+<7>[    0.500893] qcom,qpnp-pin qpnp-pin-e910e600: qpnp_pin_probe: gpio_chip registered between 444-447
+<7>[    0.501643] gpiochip_find_base: found new base at 408
+<6>[    0.501700] gpiochip_add: registered GPIOs 408 to 443 on device: pm8941-gpio
+<7>[    0.502781] qcom,qpnp-pin qpnp-pin-e910fe00: qpnp_pin_probe: gpio_chip registered between 408-443
+<7>[    0.505113] gpiochip_find_base: found new base at 401
+<6>[    0.505171] gpiochip_add: registered GPIOs 401 to 407 on device: pm8941-mpp
+<7>[    0.505538] qcom,qpnp-pin qpnp-pin-e9140000: qpnp_pin_probe: gpio_chip registered between 401-407
+<6>[    0.506181] mdss_mdp_probe: MDP HW Base phy_Address=0xfd900000 virt=0xeac80000
+<6>[    0.506208] mdss_mdp_probe: MDSS VBIF HW Base phy_Address=0xfd924000 virt=0xeac1c000
+<3>[    0.506366] mdss_mdp_parse_bootarg: mdss_mdp_parse_bootarg:1463:cmdline panel not set disp_idx=[  (null)]
+<6>[    0.507802] mdss_dsi_ctrl_probe: DSI Ctrl name = MDSS DSI CTRL->0
+<6>[    0.507847] [LCD]mdss_dsi_get_logo_status boot on
+<6>[    0.507854] [LCD]mdss_dsi_get_dt_panel_poweron_seq enter
+<6>[    0.507861] [LCD]mdss_dsi_get_dt_panel_poweron_seq custom_power_seq found. count=7
+<6>[    0.507869] [LCD]mdss_dsi_get_dt_panel_poweron_seq leave
+<6>[    0.507875] [LCD]mdss_dsi_get_dt_panel_poweroff_seq enter
+<6>[    0.507882] [LCD]mdss_dsi_get_dt_panel_poweroff_seq custom_power_seq found. count=6
+<6>[    0.507889] [LCD]mdss_dsi_get_dt_panel_poweroff_seq leave
+<6>[    0.507895] [LCD]mdss_dsi_get_dt_panel_power_data enter
+<6>[    0.508002] [LCD]mdss_dsi_get_dt_panel_power_data leave
+<4>[    0.508010] mdss_dsi_ctrl_probe:1576:dsi specific cfg not present
+<6>[    0.508023] mdss_dsi_panel_init: Panel Name = nt35595 1080p command mode dsi panel
+<3>[    0.508175] mdss_dsi_parse_dcs_cmds: failed, key=fj,mdss-dsi-custom1-command
+<3>[    0.508183] mdss_dsi_parse_dcs_cmds: failed, key=fj,mdss-dsi-custom2-command
+<6>[    0.508192] mdss_dsi_panel_init:1208 Continuous splash flag not found.
+<6>[    0.508201] [LCD]mdss_dsi_get_logo_status boot on
+<6>[    0.508209] mdss_dsi_panel_init:1226 Partial update disabled.
+<6>[    0.508215] [LCD]lcd_set_voltage voltage level(0xe)
+<6>[    0.508223] [LCD]lcd_set_voltage get success name:[QUP I2C adapter]
+<6>[    0.508824] [LCD]lcd_set_voltage: i2c_transfer() ok. ret=2 addr=0x0 data=0xe
+<6>[    0.508832] [LCD]lcd_set_voltage: Initial value already written.
+<6>[    0.508839] [LCD]dsi_panel_device_register panel state gpio(33)
+<6>[    0.508849] [LCD]dsi_panel_device_register gpio(33) pull down ret(0)
+<3>[    0.509090] dsi_panel_device_register:1880, Disp_en gpio not specified
+<3>[    0.509111] dsi_panel_device_register:1938, reset gpio not specified
+<6>[    0.509146] mdss_dsi_retrieve_ctrl_resources: dsi base=eac58800 size=600
+<6>[    0.509705] mdss_register_panel: adding framebuffer device fd922800.qcom,mdss_dsi
+<6>[    0.509890] mdss_dsi_ctrl_probe: DSI Ctrl name = MDSS DSI CTRL->1
+<6>[    0.509939] [LCD]mdss_dsi_get_logo_status boot on
+<6>[    0.509945] [LCD]mdss_dsi_get_dt_panel_poweron_seq enter
+<6>[    0.509952] [LCD]mdss_dsi_get_dt_panel_poweroff_seq enter
+<6>[    0.509959] [LCD]mdss_dsi_get_dt_panel_power_data enter
+<4>[    0.509966] mdss_dsi_ctrl_probe:1576:dsi specific cfg not present
+<3>[    0.509973] mdss_dsi_pref_prim_panel:can't find panel phandle
+<3>[    0.509979] mdss_dsi_ctrl_probe: can't find panel node 
+<6>[    0.511151] mdss_register_panel: adding framebuffer device qcom,mdss_wb_panel.5
+<6>[    0.511831] mdss_fb_alloc_fbmem_iommu: mdss_fb_alloc_fbmem_iommu frame buffer reserve_size=0x1000000
+<6>[    0.512054] mdss_fb_alloc_fbmem_iommu: allocating 16777216 bytes at eb000000 (7ee00000 phys) for fb 0
+<6>[    0.526014] mdss_fb_register: FrameBuffer[0] 1080x1920 size=16777216 registered successfully!
+<4>[    0.526043] mdss_mdp_overlay_init: mdss_mdp_overlay_init: unable to add event timer
+<7>[    0.526103] Registered led device: lcd-backlight
+<6>[    0.526201] mdss_fb_register: FrameBuffer[1] 1920x1080 size=0 registered successfully!
+<4>[    0.526224] mdss_mdp_overlay_init: mdss_mdp_overlay_init: unable to add event timer
+<6>[    0.527020] msm_serial_hsl_probe: detected port #0 (ttyHSL3)
+<6>[    0.527113] f991e000.serial: ttyHSL3 at MMIO 0xf991e000 (irq = 140) is a MSM
+<6>[    0.529568] msm_serial_hsl_probe: detected port #1 (ttyHSL2)
+<6>[    0.529655] f9960000.serial: ttyHSL2 at MMIO 0xf9960000 (irq = 148) is a MSM
+<6>[    0.531996] msm_serial_hsl_probe: detected port #2 (ttyHSL1)
+<6>[    0.532082] f9961000.serial: ttyHSL1 at MMIO 0xf9961000 (irq = 149) is a MSM
+<6>[    0.534590] msm_serial_hsl_init: driver initialized
+<6>[    0.536935] diagchar initialized nowkgsl bus ib [0] = 2456000000
+<4>[    0.538537] kgsl bus ib [1] = 3680000000
+<4>[    0.538544] kgsl bus ib [2] = 4912000000
+<4>[    0.538550] kgsl bus ib [3] = 6400000000
+<4>[    0.538556] kgsl bus ib [4] = 7464000000
+<4>[    0.538562] kgsl bus index is 4 for pwrlevel 0
+<4>[    0.538567] kgsl bus index is 3 for pwrlevel 1
+<4>[    0.538573] kgsl bus index is 2 for pwrlevel 2
+<4>[    0.538579] kgsl bus index is 1 for pwrlevel 3
+<4>[    0.538584] kgsl bus index is 0 for pwrlevel 4
+<6>[    0.539218] kgsl kgsl-3d0: |kgsl_iommu_init| MMU type set for device is IOMMU
+<4>[    0.539845] kgsl: num bus is 5
+<6>[    0.544094] brd: module loaded
+<6>[    0.545908] loop: module loaded
+<4>[    0.546343] i2c-core: driver [isa1200] using legacy suspend method
+<4>[    0.546350] i2c-core: driver [isa1200] using legacy resume method
+<4>[    0.546613] QSEECOM: qseecom_probe: bam_pipe_pair=0x2
+<4>[    0.546621] QSEECOM: qseecom_probe: qsee-ce-hw-instance=0x0
+<4>[    0.546628] QSEECOM: qseecom_probe: hlos-ce-hw-instance=0x1
+<4>[    0.546672] QSEECOM: qseecom_probe: secure app region addr=0x7b00000 size=0x500000
+<4>[    0.547371] i2c-core: driver [tabla-i2c-core] using legacy suspend method
+<4>[    0.547379] i2c-core: driver [tabla-i2c-core] using legacy resume method
+<4>[    0.547459] i2c-core: driver [wcd9xxx-i2c-core] using legacy suspend method
+<4>[    0.547465] i2c-core: driver [wcd9xxx-i2c-core] using legacy resume method
+<6>[    0.547712] SCSI Media Changer driver v0.25 
+<3>[    0.548119] sps: BAM device 0xf9904000 is not registered yet.
+<6>[    0.548132] sps:BAM 0xf9904000 is registered.
+<6>[    0.548352] sps:BAM 0xf9904000 (va:0xead00000) enabled: ver:0x13, number of pipes:24
+<6>[    0.548708] spi_qsd f9923000.spi: master is unqueued, this is deprecated
+<6>[    0.553035] tun: Universal TUN/TAP device driver, 1.6
+<6>[    0.553042] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+<6>[    0.553110] rmnet_init: BAM devices[9]
+<6>[    0.556859] SLIP: version 0.8.4-NET3.019-NEWTTY (dynamic channels, max=256) (6 bit encapsulation enabled).
+<6>[    0.556868] CSLIP: code copyright 1989 Regents of the University of California.
+<6>[    0.557095] _fj_wlan_fem_init: begin
+<6>[    0.557108] _fj_wlan_fem_init: return:0
+<6>[    0.557114] wcnss_wlan probed in built-in mode
+<6>[    0.557746] usbcore: registered new interface driver asix
+<6>[    0.557797] usbcore: registered new interface driver cdc_ether
+<6>[    0.557829] usbcore: registered new interface driver net1080
+<6>[    0.557864] usbcore: registered new interface driver cdc_subset
+<6>[    0.557896] usbcore: registered new interface driver zaurus
+<6>[    0.557985] usbcore: registered new interface driver cdc_ncm
+<6>[    0.811382] usbcore: registered new interface driver cdc_acm
+<6>[    0.811390] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+<6>[    0.811398] Initializing USB Mass Storage driver...
+<6>[    0.811442] usbcore: registered new interface driver usb-storage
+<6>[    0.811448] USB Mass Storage support registered.
+<6>[    0.811477] usbcore: registered new interface driver ums-alauda
+<6>[    0.811505] usbcore: registered new interface driver ums-cypress
+<6>[    0.811534] usbcore: registered new interface driver ums-datafab
+<6>[    0.811562] usbcore: registered new interface driver ums_eneub6250
+<6>[    0.811591] usbcore: registered new interface driver ums-freecom
+<6>[    0.811619] usbcore: registered new interface driver ums-isd200
+<6>[    0.811648] usbcore: registered new interface driver ums-jumpshot
+<6>[    0.811677] usbcore: registered new interface driver ums-karma
+<6>[    0.811709] usbcore: registered new interface driver ums-onetouch
+<6>[    0.811738] usbcore: registered new interface driver ums-sddr09
+<6>[    0.811768] usbcore: registered new interface driver ums-sddr55
+<6>[    0.811796] usbcore: registered new interface driver ums-usbat
+<6>[    0.812164] mbim_init: initialize 1 instances
+<6>[    0.812217] mbim_init: Initialized 1 ports
+<6>[    0.813207] rndis_qc_init: initialize rndis QC instance
+<6>[    0.813449]  gadget: Mass Storage Function, version: 2009/09/11
+<6>[    0.813457]  gadget: Number of LUNs=1
+<6>[    0.813464]  lun0: LUN: removable file: (no medium)
+<6>[    0.813676]  gadget: android_usb ready
+<6>[    0.814079] [gadget/debug_usb.c] debugusb_get_pid_from_nv
+<6>[    0.814087] APPNV: init_nv_item() start
+<6>[    0.814111] APPNV_INFO: block_finddev(): block_read
+<6>[    0.814117] APPNV_INFO: eMMC device not ready.
+<6>[    0.814124] APPNV: get_nonvolatile_sub() end:(id = 41039, result = 1)
+<6>[    0.814131] APPNV: get_nonvolatile() id = 41039, buffer_size = 1, ret = 1
+<6>[    0.814138] [gadget/debug_usb.c] debugusb_get_pid_from_nv pid=0x0 nv_ope=0x0
+<6>[    0.814144] debugusb_init : debugusb_get_pid_from_nv() = 0
+<6>[    0.814261] mousedev: PS/2 mouse device common for all mice
+<6>[    0.814502] usbcore: registered new interface driver xpad
+<6>[    0.814897] [TPD]_cyttsp5_fj_get_all_nor_info :[IN]
+<6>[    0.814905] APPNV: init_nv_item() start
+<6>[    0.814921] APPNV_INFO: block_finddev(): block_read
+<6>[    0.814927] APPNV_INFO: eMMC device not ready.
+<6>[    0.814934] APPNV: get_nonvolatile_sub() end:(id = 41060, result = 16)
+<6>[    0.814941] APPNV: get_nonvolatile() id = 41060, buffer_size = 16, ret = 16
+<6>[    0.814948] APPNV: init_nv_item() start
+<6>[    0.814964] APPNV_INFO: block_finddev(): block_read
+<6>[    0.814970] APPNV_INFO: eMMC device not ready.
+<6>[    0.814976] APPNV: get_nonvolatile_sub() end:(id = 41061, result = 8)
+<6>[    0.814983] APPNV: get_nonvolatile() id = 41061, buffer_size = 8, ret = 8
+<6>[    0.814990] APPNV: init_nv_item() start
+<6>[    0.815005] APPNV_INFO: block_finddev(): block_read
+<6>[    0.815012] APPNV_INFO: eMMC device not ready.
+<6>[    0.815018] APPNV: get_nonvolatile_sub() end:(id = 41062, result = 64)
+<6>[    0.815025] APPNV: get_nonvolatile() id = 41062, buffer_size = 64, ret = 64
+<6>[    0.815031] [TPD]_cyttsp5_fj_get_all_nor_info :[OUT]
+<6>[    0.815079] cyttsp5_core_init: Cypress TTSP v5 Core Driver (Built 20131108) rc=0
+<6>[    0.815111] cyttsp5_i2c_adapter 2-0026: [TPD] fj_devtree_chk_boot_touchIC [2-3]: boot touch IC Gen5, s_rev=0x7F.
+<6>[    0.815120] cyttsp5_i2c_adapter 2-0026: cyttsp5_devtree_register_devices: Deteced.
+<4>[    0.815143] 8941_lvs2: Failed to create debugfs directory
+<4>[    0.815160] 8941_l18: Failed to create debugfs directory
+<6>[    0.827230] cyttsp5_core main_ttsp_core.cyttsp5_i2c_adapter: cyttsp5_init: INIT CYTTSP RST gpio=132 and IRQ gpio=102 r=0
+<3>[    0.827509] qup_i2c f9924000.i2c: QUP: I2C status flags :0x91143c8, irq:128
+<3>[    0.827532] qup_i2c f9924000.i2c: I2C slave addr:0x26 not connected
+<6>[    0.827551] [TPD] E:cyttsp5_fj_i2c_read_default_nosize_: i2c read nosize fail (ret=-107), try=0/4, er(0, 1)
+<6>[    0.935109] cyttsp5_core main_ttsp_core.cyttsp5_i2c_adapter: cyttsp5_xres: RESET CYTTSP gpio=132 r=0
+<6>[    1.146315] cyttsp5_core main_ttsp_core.cyttsp5_i2c_adapter: cyttsp5_startup_: Operational mode
+<6>[    1.146325] cyttsp5_core main_ttsp_core.cyttsp5_i2c_adapter: cyttsp5_startup_: Reading report descriptor
+<6>[    1.423745] [TPD] dump [sysinfo_cydata] size = 28
+<6>[    1.423756] [TPD] 00000000 | 01 01 02 00 01 00 A6 E3 08 00 20 00 02 00 99 11 
+<6>[    1.423765] [TPD] 00000010 | 15 09 9A 29 42 0F 4F 21 05 00 1E 03 
+<6>[    1.423773] [TPD] dump [sysinfo_cydata_mfgid] size = 8
+<6>[    1.423781] [TPD] 00000000 | 9A 29 42 0F 4F 21 05 00 
+<6>[    1.432459] [TPD] dump [design_data] size = 36
+<6>[    1.432469] [TPD] 00000000 | 24 00 7E 00 02 00 21 00 00 00 00 00 00 00 00 00 
+<6>[    1.432479] [TPD] 00000010 | 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+<6>[    1.432486] [TPD] 00000020 | 00 00 00 00 
+<6>[    1.432494] [TPD_Sy] r = 0, panel_code = 0x2, projct_id = 0x21, lcd_code = 0x0.
+<6>[    1.433348] [TPD] H:cyttsp5_fj_core_get_information_: rc=0.
+<6>[    1.440626] cyttsp5_core main_ttsp_core.cyttsp5_i2c_adapter: cyttsp5_get_config_ver_: CONFIG_VER:0020
+<6>[    1.450904] cyttsp5_core main_ttsp_core.cyttsp5_i2c_adapter: cyttsp5_get_ic_crc_ : r = 0, CRC: ebid:0, stored_crc:0x9033, calculated_crc:0x9033.
+<6>[    1.470244] [TPD] :cyttsp5_fj_plform_get_platform_info r=0, model=07, trial=0F.lcd_maker_id=FF.
+<4>[    1.470253] cyttsp5_fj_core_register_charger_callback : register skip.
+<4>[    1.470327] i2c-core: driver [cyttsp5_i2c_adapter] using legacy suspend method
+<4>[    1.470336] i2c-core: driver [cyttsp5_i2c_adapter] using legacy resume method
+<6>[    1.470350] cyttsp5_i2c_init: Cypress TTSP v5 I2C Driver (Built 20131108) rc=0
+<6>[    1.470511] input: cyttsp5_mt as /devices/f9924000.i2c/i2c-2/2-0026/main_ttsp_core.cyttsp5_i2c_adapter/cyttsp5_mt.main_ttsp_core/input/input0
+<6>[    1.491184] cyttsp5_mt_init: Cypress TTSP v5 Multi-Touch B Driver (Built 20131108), rc=0
+<6>[    1.491193] cyttsp5_device_access_init: Registering device access device for core_id: main_ttsp_core
+<6>[    1.511312] cyttsp5_device_access_init: Cypress TTSP Device Access Driver (Built 20131108) rc=0
+<6>[    1.511321] cyttsp5_loader_init: Registering loader device for core_id: main_ttsp_core
+<6>[    1.511406] cyttsp5_loader cyttsp5_loader.main_ttsp_core: cyttsp5_loader_probe: Successful probe cyttsp5_loader
+<6>[    1.511428] cyttsp5_loader_init: Cypress TTSP FW Loader Driver (Built 20131108) rc=0
+<6>[    1.511436] cyttsp5_debug_init: Registering debug device for core_id: main_ttsp_core
+<6>[    1.531549] cyttsp5_debug_init: Cypress TTSP Debug Driver (Built 20131108) rc=0
+<6>[    1.531557] cyttsp5_devtree_init: Cypress TTSP v5 DeviceTree Driver (Built 20131108) rc=0
+<6>[    1.531596] [TPD]_cyttsp4_get_all_nor_info :[IN]
+<6>[    1.531604] APPNV: init_nv_item() start
+<6>[    1.531622] APPNV_INFO: block_finddev(): block_read
+<6>[    1.531629] APPNV_INFO: eMMC device not ready.
+<6>[    1.531635] APPNV: get_nonvolatile_sub() end:(id = 41060, result = 16)
+<6>[    1.531642] APPNV: get_nonvolatile() id = 41060, buffer_size = 16, ret = 16
+<6>[    1.531649] APPNV: init_nv_item() start
+<6>[    1.531665] APPNV_INFO: block_finddev(): block_read
+<6>[    1.531671] APPNV_INFO: eMMC device not ready.
+<6>[    1.531677] APPNV: get_nonvolatile_sub() end:(id = 41061, result = 8)
+<6>[    1.531684] APPNV: get_nonvolatile() id = 41061, buffer_size = 8, ret = 8
+<6>[    1.531690] APPNV: init_nv_item() start
+<6>[    1.531706] APPNV_INFO: block_finddev(): block_read
+<6>[    1.531712] APPNV_INFO: eMMC device not ready.
+<6>[    1.531719] APPNV: get_nonvolatile_sub() end:(id = 41062, result = 64)
+<6>[    1.531725] APPNV: get_nonvolatile() id = 41062, buffer_size = 64, ret = 64
+<6>[    1.531732] [TPD]_cyttsp4_get_all_nor_info :[OUT]
+<6>[    1.531755] cyttsp4_core_init: Cypress TTSP v4 core driver (Built 20130612) rc=0
+<6>[    1.531780] cyttsp4_i2c_adapter 2-0024: cyttsp4_i2c_probe: Starting cyttsp4_i2c_adapter probe...
+<6>[    1.531795] cyttsp4_i2c_adapter 2-0024: [TPD] fj_devtree_chk_boot_touchIC [2-3]: boot touch IC Gen5, s_rev=0x7F.
+<3>[    1.531803] cyttsp4_i2c_adapter 2-0024: cyttsp4_i2c_probe: Regist devices error rc=-19
+<6>[    1.531842] cyttsp4_i2c_init: Cypress TTSP I2C Touchscreen Driver (Built 20130612) rc=0
+<6>[    1.531865] cyttsp4_mt_init: Cypress TTSP MT v4 multi-touch (Built 20130612), rc=0
+<6>[    1.531873] cyttsp4_device_access_init: Registering device access device for core_id: main_ttsp_core
+<6>[    1.531897] cyttsp4_device_access_init: Cypress TTSP Device Access (Built 20130612) rc=0
+<6>[    1.531905] cyttsp4_ioctl_init: Registering ioctl device for core_id: main_ttsp_core
+<6>[    1.531931] cyttsp4_ioctl_init: Cypress TTSP IOCTL (Built 20130612) rc=0
+<6>[    1.531939] cyttsp4_loader_init: Registering loader device for core_id: main_ttsp_core
+<6>[    1.531963] cyttsp4_loader_init: Cypress TTSP FW loader (Built 20130612) rc=0
+<6>[    1.531971] cyttsp4_debug_init: Registering debug device for core_id: main_ttsp_core
+<6>[    1.531994] cyttsp4_debug_init: Cypress TTSP Debug (Built 20130612) rc=0
+<6>[    1.532574] using rtc device, qpnp_rtc, for alarms
+<6>[    1.532595] qcom,qpnp-rtc qpnp-rtc-e9140200: rtc core: registered qpnp_rtc as rtc0
+<6>[    1.532725] i2c /dev entries driver
+<6>[    1.533769] ocmem: Notifier registered for 1
+<7>[    1.533872] msm_vidc: 1: Failed to read qcom,load-freq-tbl from device tree
+<7>[    1.533880] msm_vidc: 1: no elements in frequency table
+<7>[    1.533887] msm_vidc: 1: Failed to read qcom,reg-presets from device tree
+<7>[    1.533942] msm_vidc: 1: Failed to read qcom,buffer-type-tz-usage-table from device tree
+<7>[    1.533954] msm_vidc: 1: Q6 hfi device probe called
+<7>[    1.534140] msm_vidc: 1: debugfs_create_file: fail
+<6>[    1.534888] DVB: registering new adapter (Qualcomm DVB adapter)
+<3>[    1.540198] msm_cci_probe: pdev e9151800 device id = -1
+<6>[    1.543274] s5k3l1yx_init_module:141
+<3>[    1.543597] s5k3l1yx_init_module:146 rc -19
+<6>[    1.543631] imx135_init_module:141
+<3>[    1.543955] imx135_init_module:146 rc -19
+<6>[    1.543992] ov2720_init_module:123
+<3>[    1.544320] ov2720_init_module:128 rc -19
+<6>[    1.544354] mt9m114_init_module:1155
+<3>[    1.544674] mt9m114_init_module:1160 rc -19
+<3>[    1.545924] __msm_jpeg_init:947] Jpeg Device id 0
+<3>[    1.546052] __msm_jpeg_init:947] Jpeg Device id 1
+<3>[    1.546170] __msm_jpeg_init:947] Jpeg Device id 2
+<6>[    1.562530] lirc_dev: IR Remote Control driver registered, major 233 
+<6>[    1.562539] IR NEC protocol handler initialized
+<6>[    1.562546] IR RC5(x) protocol handler initialized
+<6>[    1.562552] IR RC6 protocol handler initialized
+<6>[    1.562559] IR JVC protocol handler initialized
+<6>[    1.562567] IR Sony protocol handler initialized
+<6>[    1.562573] IR RC5 (streamzap) protocol handler initialized
+<6>[    1.562580] IR SANYO protocol handler initialized
+<6>[    1.562586] IR MCE Keyboard/mouse protocol handler initialized
+<6>[    1.562594] IR LIRC bridge handler initialized
+<6>[    1.562665] usbcore: registered new interface driver uvcvideo
+<6>[    1.562672] USB Video Class driver (1.1.1)
+<6>[    1.563391] [max17050_batt] [max17050_init] MAX17050 is not implemented.
+<6>[    1.563429] bq28400_init:  bq28400 driver rev 1.0.
+<6>[    1.563469] BMS: qpnp_bms_init: QPNP BMS INIT
+<6>[    1.563553] spmi qpnp-bms-e910f400: Driver qcom,qpnp-bms requests probe deferral
+<6>[    1.563683] spmi qpnp-charger-e910fc00: Driver qcom,qpnp-charger requests probe deferral
+<6>[    1.563774] spmi fj_chg_adc-e9140a00: Driver fj_chg_adc requests probe deferral
+<6>[    1.615345] device-mapper: ioctl: 4.22.0-ioctl (2011-10-19) initialised: dm-devel@redhat.com
+<6>[    1.615436] Bluetooth: HCI UART driver ver 2.2
+<6>[    1.615443] Bluetooth: HCIATH3K protocol initialized
+<6>[    1.616544] cpuidle: using governor ladder
+<6>[    1.616553] cpuidle: using governor menu
+<6>[    1.616580] sdhci: Secure Digital Host Controller Interface driver
+<6>[    1.616586] sdhci: Copyright(c) Pierre Ossman
+<6>[    1.616966] sdhci-pltfm: SDHCI platform and OF driver helper
+<6>[    1.620849] mmc0: no vmmc regulator found
+<7>[    1.621919] Registered led device: mmc0::
+<6>[    1.626495] mmc0: SDHCI controller on msm_sdcc.1 [msm_sdcc.1] using ADMA
+<6>[    1.631502] sdhci_msm_probe: create status workqueue done
+<6>[    1.632541] mmc1: no vmmc regulator found
+<7>[    1.633606] Registered led device: mmc1::
+<6>[    1.637908] mmc1: SDHCI controller on msm_sdcc.2 [msm_sdcc.2] using ADMA
+<6>[    1.638241] [BKL]fjbkl_i2c_init enter
+<6>[    1.638275] [BKL]fjbkl_probe enter
+<6>[    1.638285] [BKL]fjbkl_probe enable_gpio get failed(-22).
+<6>[    1.638292] [BKL]fjbkl_parce_cnv_tbl convert table found.
+<7>[    1.638359] Registered led device: led-fjbkl
+<6>[    1.638370] [BKL]fjbkl_probe leave. initial state=1
+<6>[    1.638415] [BKL]fjbkl_i2c_init leave
+<7>[    1.638571] Registered led device: led:rgb_red
+<7>[    1.638665] Registered led device: led:rgb_green
+<3>[    1.638743] qcom,leds-qpnp leds-qpnp-e9141600: Regulator get failed(-517)
+<3>[    1.638751] qcom,leds-qpnp leds-qpnp-e9141600: Unable to read flash config data
+<6>[    1.638765] spmi leds-qpnp-e9141600: Driver qcom,leds-qpnp requests probe deferral
+<4>[    1.638789] qcom,leds-qpnp: probe of leds-qpnp-e9141800 failed with error -10
+<7>[    1.641471] Registered led device: notification
+<6>[    1.641490] APPNV: init_nv_item() start
+<6>[    1.641514] APPNV_INFO: block_finddev(): block_read
+<6>[    1.641521] APPNV_INFO: eMMC device not ready.
+<6>[    1.641529] APPNV: get_nonvolatile_sub() end:(id = 41055, result = 1)
+<6>[    1.641536] APPNV: get_nonvolatile() id = 41055, buffer_size = 1, ret = 1
+<6>[    1.641543] LED driver: L1657: notification_led_probe() [led_getNvData=2]
+<7>[    1.641593] Registered led device: mobile-light
+<4>[    1.643130] QCE50: __qce_get_device_tree_data: bam_pipe_pair=0x1
+<4>[    1.643161] QCE50: __qce_get_device_tree_data: ce_phy_reg_base=0xfd440000  
+<4>[    1.643168] QCE50: __qce_get_device_tree_data: ce_virt_reg_base=0xec0c0000
+<4>[    1.643174] QCE50: __qce_get_device_tree_data: ce_bam_phy_reg_base=0xfd444000  
+<4>[    1.643181] QCE50: __qce_get_device_tree_data: CRYPTO BAM IRQ = 268.
+<6>[    1.643433] qce qcedev.0: Qualcomm Crypto 5.1.0 device found @0xfd440000
+<6>[    1.643442] qce qcedev.0: IO base, CE = 0xec0c0000
+<6>[    1.643445] , Consumer (IN) PIPE 2,    Producer (OUT) PIPE 3
+<6>[    1.643448] IO base BAM = 0x0
+<6>[    1.643451] BAM IRQ 268
+<6>[    1.643491] sps:BAM 0xfd444000 is registered.
+<6>[    1.643707] sps:BAM 0xfd444000 (va:0xeafe0000) enabled: ver:0x20, number of pipes:8
+<6>[    1.643960] QCE50: qce_sps_init:  Qualcomm MSM CE-BAM at 0x00000000fd444000 irq 268
+<6>[    1.644602] usbcore: registered new interface driver usbhid
+<6>[    1.644610] usbhid: USB HID core driver
+<6>[    1.644919] ashmem: initialized
+<6>[    1.644973] logger: created 256K log 'log_main'
+<6>[    1.645021] logger: created 256K log 'log_events'
+<6>[    1.645095] logger: created 256K log 'log_radio'
+<6>[    1.645144] logger: created 256K log 'log_system'
+<6>[    1.645152] logger: created 16K log '(null)'
+<6>[    1.645159] logger: created 16K log '(null)'
+<6>[    1.645659] sps:BAM 0xf9304000 is registered.
+<6>[    1.645681] sps:BAM 0xf9a44000 is registered.
+<3>[    1.645689] usb_bam_ipa_create_resources: Failed to create USB_PROD resource
+<6>[    1.645922] PMIC@SID0 Power-on reason: Triggered from Hard Reset and 'cold' boot
+<6>[    1.646084] input: qpnp_pon as /devices/virtual/input/input1
+<6>[    1.647214] qpnp_coincell_charger_show_state: enabled=Y, voltage=3000 mV, resistance=800 ohm
+<6>[    1.647348] PMIC@SID4: PM8841 v2.1 options: 0, 0, 2, 2
+<6>[    1.647440] PMIC@SID0: PM8941 v3.1 options: 0, 0, 0, 0
+<6>[    1.647986] coresight-fuse fc4be024.fuse: Fuse initialized
+<6>[    1.648535] coresight-cti fc308000.cti: CTI initialized
+<6>[    1.648635] coresight-cti fc309000.cti: CTI initialized
+<6>[    1.648731] coresight-cti fc30a000.cti: CTI initialized
+<6>[    1.648828] coresight-cti fc30b000.cti: CTI initialized
+<6>[    1.648922] coresight-cti fc30c000.cti: CTI initialized
+<6>[    1.649019] coresight-cti fc30d000.cti: CTI initialized
+<6>[    1.649114] coresight-cti fc30e000.cti: CTI initialized
+<6>[    1.649210] coresight-cti fc30f000.cti: CTI initialized
+<6>[    1.649305] coresight-cti fc310000.cti: CTI initialized
+<6>[    1.649403] coresight-cti fc340000.cti: CTI initialized
+<6>[    1.649497] coresight-cti fc341000.cti: CTI initialized
+<6>[    1.649598] coresight-cti fc342000.cti: CTI initialized
+<6>[    1.649691] coresight-cti fc343000.cti: CTI initialized
+<6>[    1.649790] coresight-cti fc344000.cti: CTI initialized
+<6>[    1.649885] coresight-cti fc348000.cti: CTI initialized
+<6>[    1.649984] coresight-cti fc34d000.cti: CTI initialized
+<6>[    1.650079] coresight-cti fc350000.cti: CTI initialized
+<6>[    1.650178] coresight-cti fc354000.cti: CTI initialized
+<6>[    1.650277] coresight-cti fc358000.cti: CTI initialized
+<6>[    1.650665] coresight-csr fc302000.csr: CSR initialized
+<6>[    1.651553] coresight-tmc fc322000.tmc: Byte Counter feature enabled
+<6>[    1.651588] sps:BAM 0xfc37c000 is registered.
+<6>[    1.651707] coresight-tmc fc322000.tmc: TMC initialized
+<6>[    1.651900] coresight-tmc fc307000.tmc: TMC initialized
+<3>[    1.652642] coresight-tpiu fc318000.tpiu: seta gpios not specified
+<3>[    1.652650] coresight-tpiu fc318000.tpiu: setb gpios not specified
+<6>[    1.652706] coresight-tpiu fc318000.tpiu: TPIU initialized
+<6>[    1.653155] coresight-funnel fc31b000.funnel: FUNNEL initialized
+<6>[    1.653248] coresight-funnel fc319000.funnel: FUNNEL initialized
+<6>[    1.653343] coresight-funnel fc31a000.funnel: FUNNEL initialized
+<6>[    1.653436] coresight-funnel fc345000.funnel: FUNNEL initialized
+<6>[    1.653534] coresight-funnel fc364000.funnel: FUNNEL initialized
+<6>[    1.653925] coresight-replicator fc31c000.replicator: REPLICATOR initialized
+<6>[    1.654406] coresight-stm fc321000.stm: STM initialized
+<6>[    1.654817] coresight-hwevent fdf30018.hwevent: Hardware Event driver initialized
+<6>[    1.655328] coresight-etm fc33c000.etm: ETM initialized
+<6>[    1.655342] coresight-etm fc33c000.etm: PC save enabled
+<6>[    1.655506] coresight-etm fc33d000.etm: ETM initialized
+<6>[    1.655522] coresight-etm fc33d000.etm: PC save enabled
+<6>[    1.655687] coresight-etm fc33e000.etm: ETM initialized
+<6>[    1.655702] coresight-etm fc33e000.etm: PC save enabled
+<6>[    1.655871] coresight-etm fc33f000.etm: ETM initialized
+<6>[    1.655887] coresight-etm fc33f000.etm: PC save enabled
+<6>[    1.656279] coresight-audio-etm audio_etm0.0: Audio ETM initialized
+<6>[    1.656657] coresight-modem-etm modem_etm0.1: Modem ETM initialized
+<6>[    1.657033] coresight-wcn-etm wcn_etm0.2: Wireless ETM initialized
+<6>[    1.657406] coresight-rpm-etm rpm_etm0.3: RPM ETM initialized
+<6>[    1.657794] control_trace: Module Registered
+<6>[    1.662716] auddsp_power_ready:AUDDSP Power Ready on=1
+<7>[    1.664034] audio_log_init start
+<6>[    1.665159] input: fj-walkmotion as /devices/virtual/input/input2
+<4>[    1.665579] fj_walkmotion_probe : motion_irq(0)
+<4>[    1.665874] fj_walkmotion_probe : gpio(66)
+<4>[    1.665896] fj_walkmotion_probe : motion_irq(332)
+<6>[    1.665982] [fj_det] fj_det_driver_probe start
+<6>[    1.729254] mmc0: BKOPS_EN bit = 1
+<6>[    1.729261] eMMC info LifeTime typeA:1 typeB:1
+<6>[    1.735701] mmc0: new DDR MMC card at address 0001
+<6>[    1.735969] mmcblk0: mmc0:0001 BWBC3R 29.1 GiB 
+<6>[    1.736140] mmcblk0rpmb: mmc0:0001 BWBC3R partition 3 4.00 MiB
+<6>[    1.738099]  mmcblk0: p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 p11 p12 p13 p14 p15 p16 p17 p18 p19 p20 p21 p22 p23 p24 p25 p26 p27 p28 p29 p30 p31 p32 p33 p34 p35 p36 p37 p38
+<6>[    2.208240] APPNV: init_nv_item() start
+<6>[    2.218053] [BOOT]boot_reason=0x00000011
+<6>[    2.244233] APPNV: init_nv_item() end ret = 0
+<6>[    2.244246] APPNV: get_nonvolatile_sub() end: invalid id.(id = 49004, result = 0)
+<6>[    2.244253] APPNV: get_nonvolatile() id = 49004, buffer_size = 2, ret = -3
+<6>[    2.244262] APPNV: get_nonvolatile() id = 41053, buffer_size = 2, ret = 2
+<6>[    2.244272] APPNV: get_nonvolatile() id = 41040, buffer_size = 1, ret = 1
+<6>[    2.244279] [max17048_batt][max17048_get_vbat_adjust] get NV value batt_offset = 0x00
+<6>[    2.244287] [max17048_batt][max17048_set_vbat_adjust] batt_offset = 0x00 
+<6>[    2.419195] [fj_det]:fj_det_check_ovp chatt_count=30
+<6>[    2.420134] start ftadrv 0
+<6>[    2.420563] mkdrv_drv_probe sucess
+<6>[    2.421298] input: edc as /devices/virtual/input/input3
+<4>[    2.423025] [EDC] GPIO_KO_JMIC_ONOFF not set
+<4>[    2.423032] [EDC] GPIO_KO_JMIC_ONOFF not set
+<6>[    2.423046] APPNV: get_nonvolatile() id = 48007, buffer_size = 16, ret = 16
+<4>[    2.423053] [EDC] adc_threshold_headset_low  = 0x60dd
+<4>[    2.423059] [EDC] adc_threshold_headset_high = 0x74d7
+<4>[    2.423064] [EDC] adc_threshold_pierce_low   = 0x75d8
+<4>[    2.423070] [EDC] adc_threshold_pierce_high  = 0x8658
+<4>[    2.423076] [EDC] adc_threshold_mic_low      = 0x8662
+<4>[    2.423081] [EDC] adc_threshold_mic_high     = 0xa2a6
+<4>[    2.423087] [EDC] adc_threshold_antenna_low  = 0xa2a7
+<4>[    2.423093] [EDC] adc_threshold_antenna_high = 0xa8f1
+<6>[    2.423700] usbcore: registered new interface driver snd-usb-audio
+<6>[    2.432811] msm-compr-dsp msm-compr-dsp: msm_compr_probe: dev name msm-compr-dsp
+<6>[    2.433331] msm-pcm-lpa msm-pcm-lpa: msm_pcm_probe: dev name msm-pcm-lpa
+<6>[    2.434048] platform qcom,msm-voip-dsp.50: Driver msm-voip-dsp requests probe deferral
+<6>[    2.434408] platform qcom,msm-pcm-voice.51: Driver msm-pcm-voice requests probe deferral
+<6>[    2.437469] ocmem: Notifier registered for 5
+<6>[    2.437995] msm8974-asoc-taiko fe02c000.sound: msm8974_asoc_machine_probe(): No hdmi audio support
+<6>[    2.438074] platform fe02c000.sound: Driver msm8974-asoc-taiko requests probe deferral
+<6>[    2.439376] oprofile: using arm/armv7-krait
+<6>[    2.439439] u32 classifier
+<6>[    2.439445]     Actions configured
+<6>[    2.439454] Netfilter messages via NETLINK v0.30.
+<6>[    2.439503] nf_conntrack version 0.5.0 (16384 buckets, 65536 max)
+<6>[    2.439859] ctnetlink v0.93: registering with nfnetlink.
+<6>[    2.439903] NF_TPROXY: Transparent proxy support initialized, version 4.1.0
+<6>[    2.439910] NF_TPROXY: Copyright (c) 2006-2007 BalaBit IT Ltd.
+<6>[    2.440055] xt_time: kernel timezone is -0000
+<6>[    2.440271] ip_tables: (C) 2000-2006 Netfilter Core Team
+<6>[    2.440433] arp_tables: (C) 2002 David S. Miller
+<6>[    2.440484] TCP: cubic registered
+<6>[    2.440490] Initializing XFRM netlink socket
+<6>[    2.440890] NET: Registered protocol family 10
+<6>[    2.442449] Mobile IPv6
+<6>[    2.442474] ip6_tables: (C) 2000-2006 Netfilter Core Team
+<6>[    2.442596] IPv6 over IPv4 tunneling driver
+<6>[    2.442909] NET: Registered protocol family 17
+<5>[    2.442967] Bridge firewalling registered
+<6>[    2.442981] Ebtables v2.0 registered
+<6>[    2.443098] Bluetooth: RFCOMM TTY layer initialized
+<6>[    2.443121] Bluetooth: RFCOMM socket layer initialized
+<6>[    2.443128] Bluetooth: RFCOMM ver 1.11
+<6>[    2.443134] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+<6>[    2.443140] Bluetooth: BNEP filters: protocol multicast
+<6>[    2.443148] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+<6>[    2.443424] VFP support v0.3: implementor 51 architecture 64 part 6f variant 2 rev 1
+<5>[    2.443452] Registering SWP/SWPB emulation handler
+<6>[    2.452463] gdsc_oxili_gx: disabling
+<6>[    2.452487] gdsc_mdss: disabling
+<6>[    2.452506] gdsc_venus: disabling
+<6>[    2.453124] msm8974-asoc-taiko fe02c000.sound: msm8974_asoc_machine_probe(): No hdmi audio support
+<6>[    2.453229] platform fe02c000.sound: Driver msm8974-asoc-taiko requests probe deferral
+<3>[    2.453861] qcom,leds-qpnp leds-qpnp-e9141600: Regulator get failed(-517)
+<3>[    2.453870] qcom,leds-qpnp leds-qpnp-e9141600: Unable to read flash config data
+<6>[    2.453883] spmi leds-qpnp-e9141600: Driver qcom,leds-qpnp requests probe deferral
+<7>[    2.456550] gpio_set_debounce: gpio-74 status -22
+<7>[    2.456679] gpio_set_debounce: gpio-73 status -22
+<7>[    2.456754] gpio_set_debounce: gpio-414 status -22
+<6>[    2.457035] input: gpio-keys as /devices/gpio_keys.86/input/input4
+<6>[    2.457101] gpio_keys_scan_keys: key 1-73, (74) changed to 0
+<6>[    2.457122] gpio_keys_scan_keys: key 1-72, (73) changed to 0
+<6>[    2.457130] gpio_keys_scan_keys: key 1-f9, (414) changed to 0
+<6>[    2.457386] qcom,qpnp-rtc qpnp-rtc-e9140200: setting system clock to 1970-08-24 01:44:07 UTC (20310247)
+<4>[    2.457451] i2c-core: driver [smb347] using legacy suspend method
+<4>[    2.457460] i2c-core: driver [smb347] using legacy resume method
+<6>[    2.457512] APPNV: get_nonvolatile() id = 41053, buffer_size = 2, ret = 2
+<6>[    2.457532] APPNV: get_nonvolatile() id = 41040, buffer_size = 1, ret = 1
+<3>[    2.457755] [max17048_batt][max17048_get_battery_temp] max17048 not initialized 
+<3>[    2.457765] [fj_batt] [fj_battery_get_battery_temp] FAILURE!! Get Battery Temperature -1
+<3>[    2.457773] [bq24192_chg] [bq24192_probe] get BATT_TEMP error -1
+<3>[    2.457781] [max17048_batt][max17048_set_battery_temp] max17048 not initialized 
+<3>[    2.457789] [fj_batt] [fj_battery_set_battery_temp] FAILURE!! Set Battery Temperature -1
+<3>[    2.457797] [bq24192_chg] [bq24192_probe] set BATT_TEMP error -1
+<6>[    2.457841] APPNV: get_nonvolatile() id = 41041, buffer_size = 1, ret = 1
+<6>[    2.458540] 8941_smbb_otg: 
+<6>[    2.458572] 8941_smbb_otg: supplied by 8941_boost
+<6>[    2.458900] 8941_smbb_boost: 5000 mV 
+<4>[    2.462447] i2c-core: driver [bq24192] using legacy suspend method
+<4>[    2.462455] i2c-core: driver [bq24192] using legacy resume method
+<6>[    2.463005] clock_late_init: Removing enables held for handed-off clocks
+<4>[    2.464749] dsi_pll_disable: mdss GDSC disabled before disabling DSI PLL
+<6>[    2.467757] msm-dwc3 msm_dwc3: ****** PMIC VBUS-IN Notify:[VBUS Valid] ****** w(^o^)w ******
+<6>[    2.467777] [fj_det]:fj_det_work_usbin_proc_bh start
+<6>[    2.468395] ALSA device list:
+<6>[    2.468403]   No soundcards found.
+<4>[    2.471965] Warning: unable to open an initial console.
+<6>[    2.473008] msm-dwc3 msm_dwc3: ****** PMIC VBUS-IN Notify:[VBUS Valid] ****** w(^o^)w ******
+<6>[    2.477068] qpnp_charger_probe: success chg_dis = 0, bpd = 1, usb = 1, dc = 0 b_health = 1 batt_present = 1
+<4>[    2.485702] BMS: set_battery_data: No available batterydata, using palladium 1500
+<4>[    2.523353] [fj_det]:detect device=6 adc=0xa800 chatt=3
+<4>[    2.523361] [fj_det]:FJ_DET_STATE_USB dwc3_msm_vbusin(1,1)
+<6>[    2.523372] msm-dwc3 msm_dwc3: ****** dwc3_msm_vbusin() USB:[Device], VBUS:[Connect] ******
+<6>[    2.523383] [fj_det]:fj_det_state_update usbin=1 device=6
+<6>[    2.523391] [fj_det]:fj_det_work_usbin_proc_bh start
+<4>[    2.556254] [fj_det]:detect device=6 adc=0xa800 chatt=3
+<4>[    2.565475] [max17048_batt][max17048_get_property]not handle power_supply_property(15)
+<4>[    2.574363] [max17048_batt][max17048_get_property]not handle power_supply_property(4)
+<6>[    2.574372] [max17048_batt][max17048_get_property]old status(UNKNOWN) -> new status(DISCHARGING)
+<4>[    2.681719] wq exec time: 70 ms(recalculate_work+0x0/0x8)
+<6>[    2.758947] BMS: qpnp_bms_probe: probe success: soc =100 vbatt = 4326916 ocv = 4333232 r_sense_uohm = 10000 warm_reset = 0
+<6>[    2.759148] 8941_mvs1: 
+<6>[    2.759176] 8941_mvs1: supplied by 8941_smbb_otg
+<6>[    2.759583] msm8974-asoc-taiko fe02c000.sound: msm8974_asoc_machine_probe(): No hdmi audio support
+<6>[    2.759737] platform fe02c000.sound: Driver msm8974-asoc-taiko requests probe deferral
+<7>[    2.760249] Registered led device: led:flash_0
+<7>[    2.760642] Registered led device: led:flash_1
+<7>[    2.760820] Registered led device: led:flash_torch
+<6>[    2.761078] msm8974-asoc-taiko fe02c000.sound: msm8974_asoc_machine_probe(): No hdmi audio support
+<6>[    2.761220] platform fe02c000.sound: Driver msm8974-asoc-taiko requests probe deferral
+<6>[    2.775105] Freeing init memory: 56K
+<7>[    2.778690] SELinux: 512 avtab hash slots, 1320 rules.
+<7>[    2.779021] SELinux: 512 avtab hash slots, 1320 rules.
+<7>[    2.779035] SELinux:  1 users, 2 roles, 288 types, 1 bools, 1 sens, 1024 cats
+<7>[    2.779049] SELinux:  84 classes, 1320 rules
+<7>[    2.779498] SELinux:  Completing initialization.
+<7>[    2.779505] SELinux:  Setting up existing superblocks.
+<7>[    2.779520] SELinux: initialized (dev sysfs, type sysfs), uses genfs_contexts
+<7>[    2.779538] SELinux: initialized (dev rootfs, type rootfs), uses genfs_contexts
+<7>[    2.779649] SELinux: initialized (dev bdev, type bdev), not configured for labeling
+<7>[    2.779664] SELinux: initialized (dev proc, type proc), uses genfs_contexts
+<7>[    2.779687] SELinux: initialized (dev tmpfs, type tmpfs), uses transition SIDs
+<7>[    2.779706] SELinux: initialized (dev debugfs, type debugfs), uses genfs_contexts
+<6>[    2.785214] dwc3 f9200000.dwc3: ****** dwc3_otg_set_power ( Charge start ): [SDP] Charger, [500] mA ******
+<6>[    2.785225] [bq24192_chg] [fj_bq_chg_source_req] 1 mA=500
+<6>[    2.785237] dwc3 f9200000.dwc3: Avail curr from USB = 500
+<7>[    2.790747] SELinux: initialized (dev sockfs, type sockfs), uses task SIDs
+<7>[    2.790765] SELinux: initialized (dev pipefs, type pipefs), uses task SIDs
+<7>[    2.790780] SELinux: initialized (dev anon_inodefs, type anon_inodefs), not configured for labeling
+<7>[    2.790796] SELinux: initialized (dev devpts, type devpts), uses transition SIDs
+<7>[    2.790820] SELinux: initialized (dev selinuxfs, type selinuxfs), uses genfs_contexts
+<7>[    2.790922] SELinux: initialized (dev tmpfs, type tmpfs), uses transition SIDs
+<7>[    2.790957] SELinux: initialized (dev sysfs, type sysfs), uses genfs_contexts
+<6>[    2.795635] [max17048_batt][max17048_effect_battery_capacity] capacity = 99, old_capacity = 99, read_soc = 99
+<5>[    2.801457] type=1403 audit(20310247.830:2): policy loaded auid=4294967295 ses=4294967295
+<4>[    2.801584] SELinux: Loaded policy from /sepolicy
+<5>[    2.803168] type=1404 audit(20310247.830:3): enforcing=1 old_enforcing=0 auid=4294967295 ses=4294967295
+<6>[    2.824239] [max17048_batt][max17048_get_property]old health(UNKNOWN) -> new health(GOOD)
+<6>[    2.824254] [max17048_batt][max17048_get_property]old soc(0) -> new soc(99)
+<6>[    2.824446] [max17048_batt][max17048_delayed_init] chip->soc = 99 chip->vbat_raw = 0xd880 
+<6>[    2.824453] [max17048_batt][max17048_delayed_init] chip->temp_batt = 24 chip->temp_batt2 = 25 
+<6>[    2.824461] [max17048_batt][max17048_delayed_init] chip->temp_ambient = 26 chip->temp_case = 26
+<6>[    2.824468] [max17048_batt][max17048_delayed_init] chip->temp_charge = 25 chip->temp_center = 26
+<6>[    2.824475] [max17048_batt][max17048_delayed_init] chip->temp_pa_therm = 24
+<6>[    2.875083] [bq24192_chg] [fj_bq_chg_connect_info_update] charger connect state 0 -> 1
+<6>[    2.875093] [bq24192_chg] [fj_bq_chg_power_supply_update_all] update online chg_src=0x0002
+<3>[    2.910831] [fj_batt] [fj_battery_get_battery_age] FAILURE!! Get Battery Age
+<3>[    2.910840] [bq24192_chg] [fj_bq_chg_batt_setup] AGE reg get error -1
+<3>[    2.910848] [fj_batt] [fj_battery_set_battery_fullsocthr] FAILURE!! Set Battery FULLSOCTHR
+<3>[    2.910855] [bq24192_chg] [fj_bq_chg_batt_setup] FULLSOCTHR set error -1
+<6>[    2.911208] [bq24192_chg_hw] [fj_bq_chg_hw_set_wdt_kick] Chg-IC Dog Kick, ret=0
+<6>[    2.945764] [max17048_batt][max17048_set_status] status DISCHARGING > CHARGING capa:99 volt:4330mV
+<6>[    2.946330] [max17048_batt][max17048_set_status] now:4294937590, expire:4294943590
+<6>[    2.946356] [max17048_batt][max17048_get_property]old status(DISCHARGING) -> new status(CHARGING)
+<6>[    2.946646] [bq24192_chg] [fj_bq_chg_start_safetimer] set chg_safetimer = 50400000ms
+<6>[    2.946655] [bq24192_chg] [fj_bq_chg_thread] event:2 old state:0 -> new state:1
+<4>[    2.999482] wq exec time: 210 ms(power_supply_changed_work+0x0/0xd4)
+<6>[    3.084858] mmc1: Disable CMD23 manfid:27 oemid:21325
+<6>[    3.088855] mmc1: Disable SDR104 manfid:27 oemid:21325
+<4>[    3.098411] SD info: OCR:c0ff8000
+<4>[    3.098419] SD info: CID:1b534d303030303010005d294900cb00
+<4>[    3.098426] SD info: CSD:400e00325b5900001d9b7f800a400000
+<4>[    3.098433] SD info: SCR:0235800000000000
+<6>[    3.098450] mmc1: new high speed SDHC card at address 0002
+<6>[    3.098752] mmcblk1: mmc1:0002 00000 3.70 GiB 
+<6>[    3.099996]  mmcblk1: p4
+<6>[    3.100659] msm8974-asoc-taiko fe02c000.sound: msm8974_asoc_machine_probe(): No hdmi audio support
+<6>[    3.100867] platform fe02c000.sound: Driver msm8974-asoc-taiko requests probe deferral
+<6>[    3.415084] [EDC] edc_hw_gpio_plug_loop() st 
+<4>[    3.475110] [EDC] HEADPHONE: Remove_W
+<4>[    3.475120] [EDC] HEADPHONE: Headset 00000000
+<6>[    3.706970] [max17048_batt][max17048_effect_battery_capacity] capacity = 99, old_capacity = 99, read_soc = 100
+<6>[    4.475083] [EDC] edc_hw_gpio_plug_loop() st 
+<6>[    4.665094] APPNV: get_nonvolatile() id = 41070, buffer_size = 1, ret = 1
+<4>[    5.214960] init (1): /proc/1/oom_adj is deprecated, please use /proc/1/oom_score_adj instead.
+<3>[    5.217348] init: invalid uid 'fm_radio'
+<3>[    5.217502] init: invalid uid 'fm_radio'
+<7>[    5.675230] SELinux: initialized (dev cgroup, type cgroup), uses genfs_contexts
+<7>[    5.675510] SELinux: initialized (dev tmpfs, type tmpfs), uses transition SIDs
+<7>[    5.677429] SELinux: initialized (dev tmpfs, type tmpfs), uses transition SIDs
+<7>[    5.677575] SELinux: initialized (dev tmpfs, type tmpfs), uses transition SIDs
+<7>[    5.678811] SELinux: initialized (dev cgroup, type cgroup), uses genfs_contexts
+<6>[    5.689042] EXT4-fs (mmcblk0p21): mounted filesystem with ordered data mode. Opts: barrier=1,discard
+<7>[    5.689061] SELinux: initialized (dev mmcblk0p21, type ext4), uses xattr
+<6>[    5.698669] EXT4-fs (mmcblk0p37): mounted filesystem with ordered data mode. Opts: nomblk_io_submit,errors=remount-ro
+<7>[    5.698685] SELinux: initialized (dev mmcblk0p37, type ext4), uses xattr
+<6>[    5.705222] fs_mgr: Running /system/bin/e2fsck on /dev/block/platform/msm_sdcc.1/by-name/userdata
+<6>[    5.741983] e2fsck: e2fsck 1.41.14 (22-Dec-2010)
+<6>[    5.742014] e2fsck: /dev/block/platform/msm_sdcc.1/by-name/userdata: clean, 1117/1566720 files, 162500/6263771 blocks
+<6>[    5.751209] EXT4-fs (mmcblk0p37): mounted filesystem with ordered data mode. Opts: barrier=1,noauto_da_alloc,discard
+<7>[    5.751228] SELinux: initialized (dev mmcblk0p37, type ext4), uses xattr
+<6>[    5.760064] EXT4-fs (mmcblk0p23): mounted filesystem with ordered data mode. Opts: barrier=1
+<7>[    5.760081] SELinux: initialized (dev mmcblk0p23, type ext4), uses xattr
+<6>[    5.768718] EXT4-fs (mmcblk0p22): mounted filesystem with ordered data mode. Opts: barrier=1
+<7>[    5.768733] SELinux: initialized (dev mmcblk0p22, type ext4), uses xattr
+<7>[    5.776010] SELinux: initialized (dev mmcblk0p1, type vfat), uses genfs_contexts
+<6>[    5.784592] EXT4-fs (mmcblk0p27): mounted filesystem with ordered data mode. Opts: barrier=1
+<7>[    5.784607] SELinux: initialized (dev mmcblk0p27, type ext4), uses xattr
+<6>[    5.793223] EXT4-fs (mmcblk0p28): mounted filesystem with ordered data mode. Opts: barrier=1
+<7>[    5.793239] SELinux: initialized (dev mmcblk0p28, type ext4), uses xattr
+<6>[    5.800888] EXT4-fs (mmcblk0p19): mounted filesystem with ordered data mode. Opts: barrier=1
+<7>[    5.800903] SELinux: initialized (dev mmcblk0p19, type ext4), uses xattr
+<6>[    5.808894] EXT4-fs (mmcblk0p20): mounted filesystem with ordered data mode. Opts: barrier=1
+<7>[    5.808909] SELinux: initialized (dev mmcblk0p20, type ext4), uses xattr
+<6>[    5.817579] EXT4-fs (mmcblk0p32): mounted filesystem with ordered data mode. Opts: barrier=1
+<7>[    5.817594] SELinux: initialized (dev mmcblk0p32, type ext4), uses xattr
+<6>[    5.826249] EXT4-fs (mmcblk0p33): mounted filesystem with ordered data mode. Opts: barrier=1
+<7>[    5.826262] SELinux: initialized (dev mmcblk0p33, type ext4), uses xattr
+<6>[    5.834908] EXT4-fs (mmcblk0p36): mounted filesystem with ordered data mode. Opts: barrier=1
+<7>[    5.834923] SELinux: initialized (dev mmcblk0p36, type ext4), uses xattr
+<3>[    5.876653] init: Detected MSM SOC ID=218 SOC VER=65536 BOARD TYPE=FJDEV
+<3>[    5.876796] init: failed to open '/sys/class/graphics/fb2/msm_fb_type'
+<6>[    5.876930] APPNV: IOCTL_GET_NONVOLATILE id = 41039, buffer_size = 1, ret = 1
+<3>[    5.877041] init: property 'persist.sys.ssr.enable_debug' doesn't exist while expanding '${persist.sys.ssr.enable_debug}'
+<3>[    5.877053] init: cannot expand '${persist.sys.ssr.enable_debug}' while writing to '/sys/module/subsystem_restart/parameters/enable_debug'
+<6>[    5.879665] pil-q6v5-lpass fe200000.qcom,lpass: adsp: loading from 0x05a00000 to 0x06e00000
+<6>[    6.158625] pil-q6v5-lpass fe200000.qcom,lpass: adsp: Brought out of reset
+<6>[    6.214817] pil-q6v5-lpass fe200000.qcom,lpass: adsp: Power/Clock ready interrupt received
+<6>[    6.236641] pil-q6v5-lpass fe200000.qcom,lpass: Subsystem error monitoring/handling services are up
+<6>[    6.237384] apr_tal:Q6 Is Up
+<6>[    6.238172] msm8974-asoc-taiko fe02c000.sound: msm8974_asoc_machine_probe(): No hdmi audio support
+<6>[    6.238344] platform fe02c000.sound: Driver msm8974-asoc-taiko requests probe deferral
+<6>[    6.238454] adsp-loader qcom,msm-adsp-loader.42: adsp_loader_do: Q6/ADSP image is loaded
+<6>[    6.238566] usb_id_debug_store : set D-PID succeeded = 0x144e
+<3>[    6.239658] diag: In diag_send_msg_mask_update, invalid status 0
+<3>[    6.239667] diag: In diag_send_log_mask_update, invalid status 0
+<5>[    6.243129] type=1400 audit(20310251.260:4): avc:  denied  { entrypoint } for  pid=225 comm="init" path="/sbin/healthd" dev="rootfs" ino=5204 scontext=u:r:healthd:s0 tcontext=u:object_r:rootfs:s0 tclass=file
+<3>[    6.243869] healthd: wakealarm_init: timerfd_create failed
+<6>[    6.245703] binder: 225:225 transaction failed 29189, size 0-0
+<3>[    6.259511] init: cannot find '/system/etc/install-recovery.sh', disabling 'flash_recovery'
+<6>[    6.297431] warning: `qrngd' uses 32-bit capabilities (legacy support in use)
+<6>[    6.323876] 'opened /dev/adsprpc-smd c 242 0'
+<6>[    6.347132] Slimbus QMI NGD CB received event:2
+<6>[    6.347952] msm8974-asoc-taiko fe02c000.sound: msm8974_asoc_machine_probe(): No hdmi audio support
+<6>[    6.348127] platform fe02c000.sound: Driver msm8974-asoc-taiko requests probe deferral
+<6>[    6.354870] SLIM SAT: Received master capability
+<6>[    6.354913] sps:BAM 0xfe104000 (va:0xedd40000) enabled: ver:0x13, number of pipes:31
+<6>[    6.354924] sps:BAM 0xfe104000 is registered.
+<6>[    6.357164] SLIM SAT: capability exchange successful
+<6>[    6.357369] taiko-slim taiko-slim-pgd: Platform data from device tree
+<6>[    6.357480] taiko-slim taiko-slim-pgd: cdc-vdd-buck: vol=[2150000 2150000]uV, curr=[650000]uA, ond 0
+<6>[    6.357512] taiko-slim taiko-slim-pgd: cdc-vdd-tx-h: vol=[1800000 1800000]uV, curr=[25000]uA, ond 0
+<6>[    6.357543] taiko-slim taiko-slim-pgd: cdc-vdd-rx-h: vol=[1800000 1800000]uV, curr=[25000]uA, ond 0
+<6>[    6.357573] taiko-slim taiko-slim-pgd: cdc-vddpx-1: vol=[1800000 1800000]uV, curr=[10000]uA, ond 0
+<6>[    6.357606] taiko-slim taiko-slim-pgd: cdc-vdd-a-1p2v: vol=[1225000 1225000]uV, curr=[10000]uA, ond 0
+<6>[    6.357638] taiko-slim taiko-slim-pgd: cdc-vddcx-1: vol=[1225000 1225000]uV, curr=[10000]uA, ond 0
+<6>[    6.357669] taiko-slim taiko-slim-pgd: cdc-vddcx-2: vol=[1225000 1225000]uV, curr=[10000]uA, ond 0
+<3>[    6.367461] init: service 'console' requires console
+<6>[    6.403718] pil-q6v5-mss fc880000.qcom,mss: mba: loading from 0x0d100000 to 0x0d139000
+<3>[    6.415379] init: set usb mtp,adb
+<6>[    6.415550] slimbus:1 laddr:0xcb, EAPC:0x1:0xa0
+<6>[    6.416073] slimbus:1 laddr:0xca, EAPC:0x0:0xa0
+<3>[    6.417892] init: cannot find '/system/bin/mm-gesture-daemon', disabling 'qgesturesvr'
+<3>[    6.420662] init: property 'sys.powerctl' doesn't exist while expanding '${sys.powerctl}'
+<3>[    6.420677] init: powerctl: cannot expand '${sys.powerctl}'
+<3>[    6.420708] init: property 'sys.sysctl.extra_free_kbytes' doesn't exist while expanding '${sys.sysctl.extra_free_kbytes}'
+<3>[    6.420724] init: cannot expand '${sys.sysctl.extra_free_kbytes}' while writing to '/proc/sys/vm/extra_free_kbytes'
+<3>[    6.420754] init: service 'console' requires console
+<6>[    6.421816] taiko-slim taiko-slim-pgd: wcd9xxx_slim_device_up: slim device up
+<6>[    6.421895] enable_store: enable_store: enabled=0
+<3>[    6.421904] enable_store: android_usb: already disabled
+<6>[    6.422237] enable_store: enable_store: enabled=1
+<6>[    6.422255] [gadget/debug_usb.c] debugusb_set_pid
+<6>[    6.422264] [gadget/debug_usb.c] debugusb_set_nv pid=0x144b
+<6>[    6.422271] [gadget/debug_usb.c] debugusb_set_nv NORMAL nv_ope=[0]
+<6>[    6.422640] taiko-slim taiko-slim-pgd: wcd9xxx_check_codec_type: detected taiko_codec, major 0x102, minor 0x1, ver 0x2
+<6>[    6.422655] wcd9xxx_core_res_init: num_irqs = 31, num_irq_regs = 4
+<6>[    6.427426] msm8974-asoc-taiko fe02c000.sound: msm8974_asoc_machine_probe(): No hdmi audio support
+<6>[    6.428345] taiko_codec taiko_codec: taiko_codec_probe()
+<7>[    6.464601] SELinux: initialized (dev fuse, type fuse), uses genfs_contexts
+<6>[    6.465782] EXT4-fs (mmcblk0p21): re-mounted. Opts: (null)
+<4>[    6.514799] QSEECOM: qseecom_release: data: released = false, type = 1, data = 0xe79c4c80
+<4>[    6.514867] QSEECOM: qseecom_release: data: released = false, type = 1, data = 0xe79c4c80
+<6>[    6.515426] APPNV: set_nonvolatile() id = 41039, buffer_size = 1, ret = 1
+<6>[    6.515436] [gadget/debug_usb.c] debugusb_set_nv ret=0001
+<6>[    6.515444] [gadget/debug_usb.c] debugusb_set_pid ret=0x0
+<6>[    6.515454] enable_store: enable_store: nv_set debug pid =[144b]
+<3>[    6.517122] init: same mtp,adb
+<6>[    6.520059] adb_open
+<6>[    6.520071] mtp_bind_config
+<6>[    6.520784] wcnss_wlan triggered by userspace
+<6>[    6.526675] android_work: android_work: did not send uevent (0 0   (null))
+<6>[    6.531399] pil-q6v5-mss fc880000.qcom,mss: mba: Brought out of reset
+<3>[    6.545517] wcnss_trigger_config:  adc get failed
+<6>[    6.547372] pil-q6v5-mss fc880000.qcom,mss: modem: loading from 0x08000000 to 0x0d100000
+<6>[    6.564724] pil_pronto fb21b000.qcom,pronto: wcnss: loading from 0x06e00000 to 0x0737e000
+<3>[    6.630745] taiko_codec taiko_codec: Failed to add route LDO_H->MIC BIAS1 Internal1
+<7>[    6.665146] audio_log_func_workqueue start
+<6>[    6.676302] asoc: snd-soc-dummy-dai <-> MultiMedia1 mapping ok
+<6>[    6.676762] asoc: snd-soc-dummy-dai <-> MultiMedia2 mapping ok
+<6>[    6.678255] asoc: snd-soc-dummy-dai <-> CS-VOICE mapping ok
+<6>[    6.678943] asoc: snd-soc-dummy-dai <-> VoIP mapping ok
+<6>[    6.679978] asoc: snd-soc-dummy-dai <-> MultiMedia3 mapping ok
+<6>[    6.680779] asoc: snd-soc-dummy-dai <-> SLIMBUS0_HOSTLESS mapping ok
+<6>[    6.681457] asoc: snd-soc-dummy-dai <-> INT_FM_HOSTLESS mapping ok
+<6>[    6.682071] asoc: msm-stub-rx <-> msm-dai-q6-dev.241 mapping ok
+<6>[    6.682705] asoc: msm-stub-tx <-> msm-dai-q6-dev.240 mapping ok
+<6>[    6.685432] compress asoc: snd-soc-dummy-dai <-> MultiMedia4 mapping ok
+<6>[    6.685771] asoc: snd-soc-dummy-dai <-> AUXPCM_HOSTLESS mapping ok
+<6>[    6.686450] asoc: snd-soc-dummy-dai <-> SLIMBUS1_HOSTLESS mapping ok
+<6>[    6.687175] asoc: snd-soc-dummy-dai <-> SLIMBUS3_HOSTLESS mapping ok
+<6>[    6.687295] EXT4-fs (mmcblk0p21): re-mounted. Opts: (null)
+<6>[    6.687936] asoc: snd-soc-dummy-dai <-> SLIMBUS4_HOSTLESS mapping ok
+<6>[    6.691127] asoc: snd-soc-dummy-dai <-> VoLTE mapping ok
+<6>[    6.691906] asoc: snd-soc-dummy-dai <-> MultiMedia5 mapping ok
+<6>[    6.692537] asoc: snd-soc-dummy-dai <-> LSM mapping ok
+<6>[    6.693371] asoc: snd-soc-dummy-dai <-> MultiMedia6 mapping ok
+<6>[    6.694078] asoc: snd-soc-dummy-dai <-> MultiMedia7 mapping ok
+<6>[    6.694718] asoc: snd-soc-dummy-dai <-> MultiMedia8 mapping ok
+<6>[    6.695419] asoc: snd-soc-dummy-dai <-> QCHAT mapping ok
+<6>[    6.696019] asoc: snd-soc-dummy-dai <-> HDMI_HOSTLESS mapping ok
+<6>[    6.696646] asoc: snd-soc-dummy-dai <-> Voice2 mapping ok
+<6>[    6.697242] asoc: snd-soc-dummy-dai <-> INT_HFP_BT_HOSTLESS mapping ok
+<6>[    6.697883] asoc: snd-soc-dummy-dai <-> MultiMedia6 mapping ok
+<6>[    6.699490] asoc: taiko_vifeedback <-> msm-dai-q6-dev.16393 mapping ok
+<6>[    6.699645] wq exec time: 210 ms(power_supply_changed_work+0x0/0xd4)
+<6>[    6.699923] msm_thermal: enabled = 0
+<6>[    6.700189] asoc: taiko_rx2 <-> msm-dai-q6-dev.16388 mapping ok
+<6>[    6.700820] asoc: taiko_tx2 <-> msm-dai-q6-dev.16389 mapping ok
+<6>[    6.701385] asoc: msm-stub-rx <-> msm-dai-q6-dev.12288 mapping ok
+<6>[    6.701950] asoc: msm-stub-tx <-> msm-dai-q6-dev.12289 mapping ok
+<6>[    6.702408] android_work: android_work: did not send uevent (0 0   (null))
+<6>[    6.702498] asoc: msm-stub-rx <-> msm-dai-q6-dev.12292 mapping ok
+<6>[    6.703102] asoc: msm-stub-tx <-> msm-dai-q6-dev.12293 mapping ok
+<6>[    6.703647] asoc: msm-stub-rx <-> msm-dai-q6-dev.224 mapping ok
+<6>[    6.704167] asoc: msm-stub-tx <-> msm-dai-q6-dev.225 mapping ok
+<6>[    6.704688] asoc: msm-stub-rx <-> msm-dai-q6-auxpcm.1 mapping ok
+<6>[    6.705248] asoc: msm-stub-tx <-> msm-dai-q6-auxpcm.1 mapping ok
+<6>[    6.705813] asoc: msm-stub-rx <-> msm-dai-q6-auxpcm.2 mapping ok
+<6>[    6.706391] asoc: msm-stub-tx <-> msm-dai-q6-auxpcm.2 mapping ok
+<6>[    6.706919] msm_audrx_init(), dev_namemsm-dai-q6-dev.16384
+<6>[    6.710403] asoc: taiko_rx1 <-> msm-dai-q6-dev.16384 mapping ok
+<6>[    6.711929] asoc: taiko_tx1 <-> msm-dai-q6-dev.16385 mapping ok
+<6>[    6.712461] asoc: taiko_rx1 <-> msm-dai-q6-dev.16386 mapping ok
+<6>[    6.712993] asoc: taiko_tx1 <-> msm-dai-q6-dev.16387 mapping ok
+<6>[    6.713557] asoc: taiko_rx1 <-> msm-dai-q6-dev.16390 mapping ok
+<6>[    6.714141] asoc: taiko_tx1 <-> msm-dai-q6-dev.16391 mapping ok
+<6>[    6.714708] asoc: taiko_rx1 <-> msm-dai-q6-dev.16392 mapping ok
+<6>[    6.715915] asoc: msm-stub-tx <-> msm-dai-q6-dev.32772 mapping ok
+<6>[    6.716469] asoc: msm-stub-tx <-> msm-dai-q6-dev.32771 mapping ok
+<6>[    6.718137] asoc: taiko_mad1 <-> msm-dai-q6-dev.16395 mapping ok
+<6>[    6.718693] asoc: msm-stub-rx <-> msm-dai-q6-dev.32773 mapping ok
+<3>[    6.718781] msm8974-asoc-taiko fe02c000.sound: Failed to add route MIC BIAS1 Internal1->AMIC1
+<6>[    6.743386] msm8974-asoc-taiko fe02c000.sound: property qcom,us-euro-gpios not detected in node /soc/sound
+<6>[    6.776320] android_work: android_work: sent uevent USB_STATE=CONNECTED
+<6>[    6.776569] android_usb gadget: high-speed config #1: fe8050c8.android_usb
+<6>[    6.836412] android_work: android_work: sent uevent USB_STATE=CONFIGURED
+<6>[    6.836432] wq exec time: 60 ms(android_work+0x0/0x338)
+<6>[    7.004294] pil_pronto fb21b000.qcom,pronto: wcnss: Brought out of reset
+<6>[    7.135265] APPNV: IOCTL_GET_NONVOLATILE id = 41020, buffer_size = 4, ret = 4
+<6>[    7.353205] pil_pronto fb21b000.qcom,pronto: wcnss: Power/Clock ready interrupt received
+<6>[    7.386424] pil_pronto fb21b000.qcom,pronto: Subsystem error monitoring/handling services are up
+<6>[    7.387055] no log(a)
+<6>[    7.387207] no log(m)
+<6>[    7.387329] alarm_set_rtc: Failed to set RTC, time will be lost on reboot
+<6>[    7.387535] wq exec time: 130 ms(smd_channel_probe_worker+0x0/0xb4)
+<3>[    7.387944] diag: In diag_send_msg_mask_update, invalid status 0
+<3>[    7.387954] diag: In diag_send_log_mask_update, invalid status 0
+<6>[    7.392355] APPNV: IOCTL_GET_NONVOLATILE id = 41021, buffer_size = 4, ret = 4
+<6>[    7.392396] APPNV: IOCTL_GET_NONVOLATILE id = 41022, buffer_size = 4, ret = 4
+<6>[    7.392431] APPNV: IOCTL_GET_NONVOLATILE id = 41023, buffer_size = 4, ret = 4
+<6>[    7.392467] APPNV: IOCTL_GET_NONVOLATILE id = 41024, buffer_size = 4, ret = 4
+<6>[    7.392505] APPNV: IOCTL_GET_NONVOLATILE id = 41025, buffer_size = 4, ret = 4
+<6>[    7.392540] APPNV: IOCTL_GET_NONVOLATILE id = 41026, buffer_size = 4, ret = 4
+<6>[    7.392574] APPNV: IOCTL_GET_NONVOLATILE id = 41027, buffer_size = 4, ret = 4
+<6>[    7.392609] APPNV: IOCTL_GET_NONVOLATILE id = 41028, buffer_size = 1, ret = 1
+<6>[    7.392646] APPNV: IOCTL_GET_NONVOLATILE id = 41029, buffer_size = 2, ret = 2
+<6>[    7.392681] APPNV: IOCTL_GET_NONVOLATILE id = 41063, buffer_size = 1, ret = 1
+<6>[    7.392715] APPNV: IOCTL_GET_NONVOLATILE id = 41064, buffer_size = 1, ret = 1
+<6>[    7.392754] APPNV: IOCTL_GET_NONVOLATILE id = 41068, buffer_size = 1, ret = 1
+<6>[    7.392793] APPNV: IOCTL_GET_NONVOLATILE id = 41069, buffer_size = 27, ret = 27
+<6>[    7.392826] APPNV: IOCTL_GET_NONVOLATILE id = 41065, buffer_size = 4, ret = 4
+<6>[    7.392857] APPNV: IOCTL_GET_NONVOLATILE id = 41066, buffer_size = 1, ret = 1
+<6>[    7.392890] APPNV: IOCTL_GET_NONVOLATILE id = 41067, buffer_size = 1, ret = 1
+<6>[    7.392922] APPNV: IOCTL_GET_NONVOLATILE id = 48005, buffer_size = 4, ret = 4
+<3>[    7.394312] fj_mdss_mdp_lut_igc_config: fj_mdss_mdp_lut_igc_config(2324) error ctl=0
+<6>[    7.395921] mdss_hw_init: MDP Rev=10020001
+<6>[    7.405895] [LCD]mdss_dsi_on enter
+<6>[    7.476815] [LCD]mdss_dsi_on first on. turnoff_gpio skipped.
+<6>[    7.490767] wcnss_wlan_ctrl_probe: SMD ctrl channel up
+<6>[    7.491038] wcnss: version 01050102
+<6>[    7.491057] wcnss: schedule dnld work for pronto
+<6>[    7.491195] wcnss: build version MSM8974-PR_1_4_c2-00058
+<6>[    7.520054] [LCD]mdss_dsi_on leave
+<6>[    7.520072] [LCD]mdss_dsi_panel_on enter
+<6>[    7.520078] [LCD]mdss_dsi_panel_on first command send skip.
+<6>[    7.539192] MSM-CPP cpp_load_fw:854 MC Bootloader Version: 0x312e3176
+<6>[    7.545110] MSM-CPP cpp_load_fw:866 CPP FW Version: 0x1002000a
+<4>[    7.631906] QSEECOM: qseecom_load_app: App (keymaste) does'nt exist, loading apps for first time
+<4>[    7.633998] QSEECOM: qseecom_load_app: App with id 2 (keymaste) now loaded
+<3>[    7.722527] msm_routing_get_dolby_dap_param_to_get_control, port_id not set, returning error
+<3>[    7.722623] APR: Wrong parameters
+<3>[    7.722631] adm_get_params: Failed to Get Params on port 16385
+<3>[    7.722638] msm_routing_get_rms_value_control: get parameters failed
+<3>[    7.773665] msm_audio_ion_import: DMA Buf name=audio_acdb_client, fd=20 handle=e7a364c0
+<6>[    7.799922] [Fbnotifier unblank] notify call handlers
+<6>[    8.045752] [Fbnotifier unblank] notify call handlers
+<6>[    8.186855] APPNV: IOCTL_GET_NONVOLATILE id = 41031, buffer_size = 1, ret = 1
+<6>[    8.238628] pil-q6v5-mss fc880000.qcom,mss: modem: Brought out of reset
+<3>[    8.305379] Notify: smsm init
+<6>[    8.342602] pil-q6v5-mss fc880000.qcom,mss: mba: Power/Clock ready interrupt received
+<6>[    8.342656] pil-q6v5-mss fc880000.qcom,mss: Subsystem error monitoring/handling services are up
+<7>[    8.367068] SELinux: initialized (dev tmpfs, type tmpfs), uses transition SIDs
+<3>[    8.393464] msm_ipc_router_send_control_msg: xprt_info not initialized
+<6>[    8.541522] APPNV: IOCTL_GET_NONVOLATILE id = 49002, buffer_size = 2, ret = 2
+<3>[    8.545303] diag: In diag_send_msg_mask_update, invalid status 0
+<3>[    8.545313] diag: In diag_send_log_mask_update, invalid status 0
+<6>[    8.612720] APPNV: IOCTL_GET_NONVOLATILE id = 40036, buffer_size = 4, ret = 4
+<6>[    8.666450] apr_tal:Modem Is Up
+<6>[    8.893649] sps:BAM 0xfc834000 is registered.
+<6>[    8.894113] sps:BAM 0xfc834000 (va:0xea810000) enabled: ver:0x20, number of pipes:6
+<6>[   10.035088] wcnss: NV download
+<6>[   10.038355] wcnss: NV bin size: 29812, total_fragments: 10
+<3>[   10.038398] wcnss: no space available for smd frame
+<3>[   10.065151] wcnss: no space available for smd frame
+<6>[   10.085148] ***** pet_watchdog *****
+<3>[   10.095141] wcnss: no space available for smd frame
+<3>[   10.125144] wcnss: no space available for smd frame
+<6>[   10.155174] wq exec time: 2670 ms(wcnss_nvbin_dnld_main+0x0/0x400)
+<3>[   10.156071] wcnss: not setting up vbatt
+<6>[   10.559498] [bq24192_chg] [fj_bq_chg_func_standby_timer_expire] HVDCP charge type 0 [0:Normal 1:Quick]
+<6>[   10.559511] [bq24192_chg] [fj_bq_chg_start_usb_port_charge] start ichg = 500, ilimit = 500
+<6>[   10.676931] [bq24192_chg_hw] [fj_bq_chg_hw_charge_usb_port] adjust ilimit : index = 2, flag = 0
+<6>[   10.677598] [bq24192_chg] [fj_bq_chg_thread] event:3 old state:1 -> new state:2
+<7>[   11.675083] audio_log_func_workqueue start
+<6>[   12.081129] APPNV: IOCTL_GET_NONVOLATILE id = 40067, buffer_size = 1, ret = 1
+<6>[   12.081194] APPNV: IOCTL_GET_NONVOLATILE id = 40136, buffer_size = 1, ret = 1
+<6>[   12.081228] APPNV: IOCTL_GET_NONVOLATILE id = 40137, buffer_size = 1, ret = 1
+<6>[   12.081260] APPNV: IOCTL_GET_NONVOLATILE id = 40138, buffer_size = 1, ret = 1
+<6>[   12.081296] APPNV: IOCTL_GET_NONVOLATILE id = 47121, buffer_size = 1, ret = 1
+<6>[   12.081328] APPNV: IOCTL_GET_NONVOLATILE id = 40139, buffer_size = 1, ret = 1
+<6>[   12.081359] APPNV: IOCTL_GET_NONVOLATILE id = 40140, buffer_size = 1, ret = 1
+<6>[   12.081390] APPNV: IOCTL_GET_NONVOLATILE id = 40141, buffer_size = 1, ret = 1
+<6>[   12.081424] APPNV: IOCTL_GET_NONVOLATILE id = 47122, buffer_size = 1, ret = 1
+<6>[   12.081455] APPNV: IOCTL_GET_NONVOLATILE id = 40142, buffer_size = 1, ret = 1
+<6>[   12.081488] APPNV: IOCTL_GET_NONVOLATILE id = 40143, buffer_size = 1, ret = 1
+<6>[   12.081519] APPNV: IOCTL_GET_NONVOLATILE id = 40144, buffer_size = 1, ret = 1
+<6>[   12.081553] APPNV: IOCTL_GET_NONVOLATILE id = 47123, buffer_size = 1, ret = 1
+<6>[   12.081585] APPNV: IOCTL_GET_NONVOLATILE id = 40145, buffer_size = 1, ret = 1
+<6>[   12.081619] APPNV: IOCTL_GET_NONVOLATILE id = 40146, buffer_size = 1, ret = 1
+<6>[   12.081650] APPNV: IOCTL_GET_NONVOLATILE id = 40147, buffer_size = 1, ret = 1
+<6>[   12.081684] APPNV: IOCTL_GET_NONVOLATILE id = 47124, buffer_size = 1, ret = 1
+<6>[   12.081718] APPNV: IOCTL_GET_NONVOLATILE id = 40148, buffer_size = 1, ret = 1
+<6>[   12.081750] APPNV: IOCTL_GET_NONVOLATILE id = 40149, buffer_size = 1, ret = 1
+<6>[   12.081781] APPNV: IOCTL_GET_NONVOLATILE id = 40150, buffer_size = 1, ret = 1
+<6>[   12.081813] APPNV: IOCTL_GET_NONVOLATILE id = 47125, buffer_size = 1, ret = 1
+<6>[   12.081846] APPNV: IOCTL_GET_NONVOLATILE id = 40151, buffer_size = 1, ret = 1
+<6>[   12.081876] APPNV: IOCTL_GET_NONVOLATILE id = 40152, buffer_size = 1, ret = 1
+<6>[   12.081907] APPNV: IOCTL_GET_NONVOLATILE id = 40153, buffer_size = 1, ret = 1
+<6>[   12.081940] APPNV: IOCTL_GET_NONVOLATILE id = 47126, buffer_size = 1, ret = 1
+<6>[   12.081972] APPNV: IOCTL_GET_NONVOLATILE id = 40157, buffer_size = 1, ret = 1
+<6>[   12.082005] APPNV: IOCTL_GET_NONVOLATILE id = 40158, buffer_size = 1, ret = 1
+<6>[   12.082036] APPNV: IOCTL_GET_NONVOLATILE id = 40159, buffer_size = 1, ret = 1
+<6>[   12.082069] APPNV: IOCTL_GET_NONVOLATILE id = 47127, buffer_size = 1, ret = 1
+<6>[   12.082100] APPNV: IOCTL_GET_NONVOLATILE id = 40160, buffer_size = 1, ret = 1
+<6>[   12.082131] APPNV: IOCTL_GET_NONVOLATILE id = 40161, buffer_size = 1, ret = 1
+<6>[   12.082166] APPNV: IOCTL_GET_NONVOLATILE id = 40162, buffer_size = 1, ret = 1
+<6>[   12.082199] APPNV: IOCTL_GET_NONVOLATILE id = 47128, buffer_size = 1, ret = 1
+<6>[   12.082231] APPNV: IOCTL_GET_NONVOLATILE id = 40154, buffer_size = 2, ret = 2
+<6>[   12.082262] APPNV: IOCTL_GET_NONVOLATILE id = 40155, buffer_size = 2, ret = 2
+<6>[   12.082293] APPNV: IOCTL_GET_NONVOLATILE id = 40156, buffer_size = 2, ret = 2
+<6>[   12.082324] APPNV: IOCTL_GET_NONVOLATILE id = 40163, buffer_size = 2, ret = 2
+<6>[   12.082356] APPNV: IOCTL_GET_NONVOLATILE id = 47139, buffer_size = 1, ret = 1
+<6>[   12.082419] APPNV: IOCTL_GET_NONVOLATILE id = 40083, buffer_size = 1, ret = 1
+<6>[   12.082451] APPNV: IOCTL_GET_NONVOLATILE id = 40084, buffer_size = 1, ret = 1
+<6>[   12.082481] APPNV: IOCTL_GET_NONVOLATILE id = 40085, buffer_size = 1, ret = 1
+<6>[   12.082512] APPNV: IOCTL_GET_NONVOLATILE id = 40086, buffer_size = 1, ret = 1
+<6>[   12.082544] APPNV: IOCTL_GET_NONVOLATILE id = 40087, buffer_size = 1, ret = 1
+<6>[   12.082576] APPNV: IOCTL_GET_NONVOLATILE id = 40088, buffer_size = 1, ret = 1
+<6>[   12.082607] APPNV: IOCTL_GET_NONVOLATILE id = 40089, buffer_size = 1, ret = 1
+<6>[   12.082637] APPNV: IOCTL_GET_NONVOLATILE id = 40097, buffer_size = 1, ret = 1
+<6>[   12.082668] APPNV: IOCTL_GET_NONVOLATILE id = 40098, buffer_size = 1, ret = 1
+<6>[   12.082698] APPNV: IOCTL_GET_NONVOLATILE id = 40099, buffer_size = 1, ret = 1
+<6>[   12.082728] APPNV: IOCTL_GET_NONVOLATILE id = 40100, buffer_size = 1, ret = 1
+<6>[   12.082759] APPNV: IOCTL_GET_NONVOLATILE id = 40101, buffer_size = 1, ret = 1
+<6>[   12.082789] APPNV: IOCTL_GET_NONVOLATILE id = 40102, buffer_size = 1, ret = 1
+<6>[   12.082819] APPNV: IOCTL_GET_NONVOLATILE id = 40103, buffer_size = 1, ret = 1
+<6>[   12.082853] APPNV: IOCTL_GET_NONVOLATILE id = 40111, buffer_size = 1, ret = 1
+<6>[   12.082883] APPNV: IOCTL_GET_NONVOLATILE id = 40112, buffer_size = 1, ret = 1
+<6>[   12.082913] APPNV: IOCTL_GET_NONVOLATILE id = 40113, buffer_size = 1, ret = 1
+<6>[   12.082943] APPNV: IOCTL_GET_NONVOLATILE id = 40114, buffer_size = 1, ret = 1
+<6>[   12.082974] APPNV: IOCTL_GET_NONVOLATILE id = 40115, buffer_size = 1, ret = 1
+<6>[   12.083004] APPNV: IOCTL_GET_NONVOLATILE id = 40116, buffer_size = 1, ret = 1
+<6>[   12.083034] APPNV: IOCTL_GET_NONVOLATILE id = 40117, buffer_size = 1, ret = 1
+<6>[   12.083067] APPNV: IOCTL_GET_NONVOLATILE id = 47105, buffer_size = 1, ret = 1
+<6>[   12.083100] APPNV: IOCTL_GET_NONVOLATILE id = 47106, buffer_size = 1, ret = 1
+<6>[   12.083131] APPNV: IOCTL_GET_NONVOLATILE id = 47107, buffer_size = 1, ret = 1
+<6>[   12.083164] APPNV: IOCTL_GET_NONVOLATILE id = 47108, buffer_size = 1, ret = 1
+<6>[   12.083196] APPNV: IOCTL_GET_NONVOLATILE id = 47109, buffer_size = 1, ret = 1
+<6>[   12.083229] APPNV: IOCTL_GET_NONVOLATILE id = 47110, buffer_size = 1, ret = 1
+<6>[   12.083261] APPNV: IOCTL_GET_NONVOLATILE id = 47111, buffer_size = 1, ret = 1
+<6>[   12.083292] APPNV: IOCTL_GET_NONVOLATILE id = 40090, buffer_size = 1, ret = 1
+<6>[   12.083322] APPNV: IOCTL_GET_NONVOLATILE id = 40091, buffer_size = 1, ret = 1
+<6>[   12.083353] APPNV: IOCTL_GET_NONVOLATILE id = 40092, buffer_size = 1, ret = 1
+<6>[   12.083383] APPNV: IOCTL_GET_NONVOLATILE id = 40093, buffer_size = 1, ret = 1
+<6>[   12.083413] APPNV: IOCTL_GET_NONVOLATILE id = 40094, buffer_size = 1, ret = 1
+<6>[   12.083442] APPNV: IOCTL_GET_NONVOLATILE id = 40095, buffer_size = 1, ret = 1
+<6>[   12.083472] APPNV: IOCTL_GET_NONVOLATILE id = 40096, buffer_size = 1, ret = 1
+<6>[   12.083505] APPNV: IOCTL_GET_NONVOLATILE id = 40104, buffer_size = 1, ret = 1
+<6>[   12.083534] APPNV: IOCTL_GET_NONVOLATILE id = 40105, buffer_size = 1, ret = 1
+<6>[   12.083564] APPNV: IOCTL_GET_NONVOLATILE id = 40106, buffer_size = 1, ret = 1
+<6>[   12.083594] APPNV: IOCTL_GET_NONVOLATILE id = 40107, buffer_size = 1, ret = 1
+<6>[   12.083624] APPNV: IOCTL_GET_NONVOLATILE id = 40108, buffer_size = 1, ret = 1
+<6>[   12.083655] APPNV: IOCTL_GET_NONVOLATILE id = 40109, buffer_size = 1, ret = 1
+<6>[   12.083685] APPNV: IOCTL_GET_NONVOLATILE id = 40110, buffer_size = 1, ret = 1
+<6>[   12.083716] APPNV: IOCTL_GET_NONVOLATILE id = 40118, buffer_size = 1, ret = 1
+<6>[   12.083747] APPNV: IOCTL_GET_NONVOLATILE id = 40119, buffer_size = 1, ret = 1
+<6>[   12.083777] APPNV: IOCTL_GET_NONVOLATILE id = 40120, buffer_size = 1, ret = 1
+<6>[   12.083808] APPNV: IOCTL_GET_NONVOLATILE id = 40121, buffer_size = 1, ret = 1
+<6>[   12.083839] APPNV: IOCTL_GET_NONVOLATILE id = 40122, buffer_size = 1, ret = 1
+<6>[   12.083870] APPNV: IOCTL_GET_NONVOLATILE id = 40123, buffer_size = 1, ret = 1
+<6>[   12.083903] APPNV: IOCTL_GET_NONVOLATILE id = 40124, buffer_size = 1, ret = 1
+<6>[   12.083937] APPNV: IOCTL_GET_NONVOLATILE id = 47112, buffer_size = 1, ret = 1
+<6>[   12.083969] APPNV: IOCTL_GET_NONVOLATILE id = 47113, buffer_size = 1, ret = 1
+<6>[   12.084002] APPNV: IOCTL_GET_NONVOLATILE id = 47114, buffer_size = 1, ret = 1
+<6>[   12.084037] APPNV: IOCTL_GET_NONVOLATILE id = 47115, buffer_size = 1, ret = 1
+<6>[   12.084071] APPNV: IOCTL_GET_NONVOLATILE id = 47116, buffer_size = 1, ret = 1
+<6>[   12.084109] APPNV: IOCTL_GET_NONVOLATILE id = 47117, buffer_size = 1, ret = 1
+<6>[   12.084143] APPNV: IOCTL_GET_NONVOLATILE id = 47118, buffer_size = 1, ret = 1
+<6>[   12.086136] APPNV: IOCTL_GET_NONVOLATILE id = 40040, buffer_size = 1, ret = 1
+<6>[   12.086175] APPNV: IOCTL_GET_NONVOLATILE id = 40041, buffer_size = 1, ret = 1
+<6>[   12.086205] APPNV: IOCTL_GET_NONVOLATILE id = 40042, buffer_size = 1, ret = 1
+<6>[   12.086240] APPNV: IOCTL_GET_NONVOLATILE id = 47097, buffer_size = 1, ret = 1
+<6>[   12.086269] APPNV: IOCTL_GET_NONVOLATILE id = 40043, buffer_size = 1, ret = 1
+<6>[   12.086300] APPNV: IOCTL_GET_NONVOLATILE id = 40044, buffer_size = 1, ret = 1
+<6>[   12.086336] APPNV: IOCTL_GET_NONVOLATILE id = 40045, buffer_size = 1, ret = 1
+<6>[   12.086375] APPNV: IOCTL_GET_NONVOLATILE id = 47098, buffer_size = 1, ret = 1
+<6>[   12.086418] APPNV: IOCTL_GET_NONVOLATILE id = 47073, buffer_size = 1, ret = 1
+<6>[   12.086451] APPNV: IOCTL_GET_NONVOLATILE id = 47074, buffer_size = 1, ret = 1
+<6>[   12.086487] APPNV: IOCTL_GET_NONVOLATILE id = 47075, buffer_size = 1, ret = 1
+<6>[   12.086525] APPNV: IOCTL_GET_NONVOLATILE id = 47131, buffer_size = 1, ret = 1
+<6>[   12.086561] APPNV: IOCTL_GET_NONVOLATILE id = 47076, buffer_size = 1, ret = 1
+<6>[   12.086595] APPNV: IOCTL_GET_NONVOLATILE id = 47077, buffer_size = 1, ret = 1
+<6>[   12.086627] APPNV: IOCTL_GET_NONVOLATILE id = 47078, buffer_size = 1, ret = 1
+<6>[   12.086661] APPNV: IOCTL_GET_NONVOLATILE id = 47132, buffer_size = 1, ret = 1
+<6>[   12.086695] APPNV: IOCTL_GET_NONVOLATILE id = 47079, buffer_size = 1, ret = 1
+<6>[   12.086728] APPNV: IOCTL_GET_NONVOLATILE id = 47080, buffer_size = 1, ret = 1
+<6>[   12.086760] APPNV: IOCTL_GET_NONVOLATILE id = 47081, buffer_size = 1, ret = 1
+<6>[   12.086792] APPNV: IOCTL_GET_NONVOLATILE id = 47133, buffer_size = 1, ret = 1
+<6>[   12.086824] APPNV: IOCTL_GET_NONVOLATILE id = 47082, buffer_size = 1, ret = 1
+<6>[   12.086860] APPNV: IOCTL_GET_NONVOLATILE id = 47083, buffer_size = 1, ret = 1
+<6>[   12.086894] APPNV: IOCTL_GET_NONVOLATILE id = 47084, buffer_size = 1, ret = 1
+<6>[   12.086927] APPNV: IOCTL_GET_NONVOLATILE id = 47134, buffer_size = 1, ret = 1
+<6>[   12.086960] APPNV: IOCTL_GET_NONVOLATILE id = 47088, buffer_size = 1, ret = 1
+<6>[   12.086994] APPNV: IOCTL_GET_NONVOLATILE id = 47089, buffer_size = 1, ret = 1
+<6>[   12.087028] APPNV: IOCTL_GET_NONVOLATILE id = 47090, buffer_size = 1, ret = 1
+<6>[   12.087062] APPNV: IOCTL_GET_NONVOLATILE id = 47136, buffer_size = 1, ret = 1
+<6>[   12.087096] APPNV: IOCTL_GET_NONVOLATILE id = 47091, buffer_size = 1, ret = 1
+<6>[   12.087128] APPNV: IOCTL_GET_NONVOLATILE id = 47092, buffer_size = 1, ret = 1
+<6>[   12.087162] APPNV: IOCTL_GET_NONVOLATILE id = 47093, buffer_size = 1, ret = 1
+<6>[   12.087194] APPNV: IOCTL_GET_NONVOLATILE id = 47137, buffer_size = 1, ret = 1
+<6>[   12.087228] APPNV: IOCTL_GET_NONVOLATILE id = 47094, buffer_size = 1, ret = 1
+<6>[   12.087264] APPNV: IOCTL_GET_NONVOLATILE id = 47095, buffer_size = 1, ret = 1
+<6>[   12.087300] APPNV: IOCTL_GET_NONVOLATILE id = 47096, buffer_size = 1, ret = 1
+<6>[   12.087336] APPNV: IOCTL_GET_NONVOLATILE id = 47138, buffer_size = 1, ret = 1
+<6>[   12.087370] APPNV: IOCTL_GET_NONVOLATILE id = 47085, buffer_size = 1, ret = 1
+<6>[   12.087402] APPNV: IOCTL_GET_NONVOLATILE id = 47086, buffer_size = 1, ret = 1
+<6>[   12.087434] APPNV: IOCTL_GET_NONVOLATILE id = 47087, buffer_size = 1, ret = 1
+<6>[   12.087469] APPNV: IOCTL_GET_NONVOLATILE id = 47135, buffer_size = 1, ret = 1
+<6>[   12.089260] APPNV: IOCTL_GET_NONVOLATILE id = 48022, buffer_size = 1, ret = 1
+<6>[   12.089299] APPNV: IOCTL_GET_NONVOLATILE id = 48023, buffer_size = 1, ret = 1
+<6>[   12.089337] APPNV: IOCTL_GET_NONVOLATILE id = 48024, buffer_size = 1, ret = 1
+<6>[   12.089370] APPNV: IOCTL_GET_NONVOLATILE id = 48025, buffer_size = 1, ret = 1
+<6>[   12.089403] APPNV: IOCTL_GET_NONVOLATILE id = 48026, buffer_size = 1, ret = 1
+<6>[   12.089435] APPNV: IOCTL_GET_NONVOLATILE id = 48027, buffer_size = 1, ret = 1
+<6>[   12.089469] APPNV: IOCTL_GET_NONVOLATILE id = 48028, buffer_size = 1, ret = 1
+<6>[   12.089501] APPNV: IOCTL_GET_NONVOLATILE id = 48029, buffer_size = 1, ret = 1
+<6>[   12.089534] APPNV: IOCTL_GET_NONVOLATILE id = 48030, buffer_size = 1, ret = 1
+<6>[   12.089568] APPNV: IOCTL_GET_NONVOLATILE id = 48031, buffer_size = 1, ret = 1
+<6>[   12.089607] APPNV: IOCTL_GET_NONVOLATILE id = 48032, buffer_size = 1, ret = 1
+<6>[   12.089642] APPNV: IOCTL_GET_NONVOLATILE id = 48033, buffer_size = 1, ret = 1
+<6>[   12.089676] APPNV: IOCTL_GET_NONVOLATILE id = 48034, buffer_size = 1, ret = 1
+<6>[   12.089710] APPNV: IOCTL_GET_NONVOLATILE id = 48035, buffer_size = 1, ret = 1
+<6>[   12.089744] APPNV: IOCTL_GET_NONVOLATILE id = 48036, buffer_size = 1, ret = 1
+<6>[   12.089777] APPNV: IOCTL_GET_NONVOLATILE id = 48037, buffer_size = 1, ret = 1
+<6>[   12.089810] APPNV: IOCTL_GET_NONVOLATILE id = 48042, buffer_size = 1, ret = 1
+<6>[   12.089842] APPNV: IOCTL_GET_NONVOLATILE id = 48043, buffer_size = 1, ret = 1
+<6>[   12.089875] APPNV: IOCTL_GET_NONVOLATILE id = 48044, buffer_size = 1, ret = 1
+<6>[   12.089909] APPNV: IOCTL_GET_NONVOLATILE id = 48045, buffer_size = 1, ret = 1
+<6>[   12.089941] APPNV: IOCTL_GET_NONVOLATILE id = 48046, buffer_size = 1, ret = 1
+<6>[   12.089975] APPNV: IOCTL_GET_NONVOLATILE id = 48047, buffer_size = 1, ret = 1
+<6>[   12.090008] APPNV: IOCTL_GET_NONVOLATILE id = 48048, buffer_size = 1, ret = 1
+<6>[   12.090044] APPNV: IOCTL_GET_NONVOLATILE id = 48049, buffer_size = 1, ret = 1
+<6>[   12.090076] APPNV: IOCTL_GET_NONVOLATILE id = 48050, buffer_size = 1, ret = 1
+<6>[   12.090109] APPNV: IOCTL_GET_NONVOLATILE id = 48051, buffer_size = 1, ret = 1
+<6>[   12.090142] APPNV: IOCTL_GET_NONVOLATILE id = 48052, buffer_size = 1, ret = 1
+<6>[   12.090174] APPNV: IOCTL_GET_NONVOLATILE id = 48053, buffer_size = 1, ret = 1
+<6>[   12.090207] APPNV: IOCTL_GET_NONVOLATILE id = 48038, buffer_size = 1, ret = 1
+<6>[   12.090240] APPNV: IOCTL_GET_NONVOLATILE id = 48039, buffer_size = 1, ret = 1
+<6>[   12.090273] APPNV: IOCTL_GET_NONVOLATILE id = 48040, buffer_size = 1, ret = 1
+<6>[   12.090305] APPNV: IOCTL_GET_NONVOLATILE id = 48041, buffer_size = 1, ret = 1
+<6>[   12.092171] APPNV: IOCTL_GET_NONVOLATILE id = 49006, buffer_size = 1, ret = 1
+<6>[   12.092214] APPNV: IOCTL_GET_NONVOLATILE id = 49007, buffer_size = 1, ret = 1
+<6>[   12.092251] APPNV: IOCTL_GET_NONVOLATILE id = 49008, buffer_size = 1, ret = 1
+<6>[   12.092286] APPNV: IOCTL_GET_NONVOLATILE id = 49009, buffer_size = 1, ret = 1
+<6>[   12.092321] APPNV: IOCTL_GET_NONVOLATILE id = 49010, buffer_size = 1, ret = 1
+<6>[   12.092356] APPNV: IOCTL_GET_NONVOLATILE id = 49011, buffer_size = 1, ret = 1
+<6>[   12.092391] APPNV: IOCTL_GET_NONVOLATILE id = 49012, buffer_size = 1, ret = 1
+<6>[   12.092426] APPNV: IOCTL_GET_NONVOLATILE id = 49013, buffer_size = 1, ret = 1
+<6>[   12.092460] APPNV: IOCTL_GET_NONVOLATILE id = 49014, buffer_size = 1, ret = 1
+<6>[   12.092493] APPNV: IOCTL_GET_NONVOLATILE id = 49015, buffer_size = 1, ret = 1
+<6>[   12.092528] APPNV: IOCTL_GET_NONVOLATILE id = 49016, buffer_size = 1, ret = 1
+<6>[   12.092563] APPNV: IOCTL_GET_NONVOLATILE id = 49017, buffer_size = 1, ret = 1
+<6>[   12.092600] APPNV: IOCTL_GET_NONVOLATILE id = 49018, buffer_size = 1, ret = 1
+<6>[   12.092634] APPNV: IOCTL_GET_NONVOLATILE id = 49019, buffer_size = 1, ret = 1
+<6>[   12.092669] APPNV: IOCTL_GET_NONVOLATILE id = 49020, buffer_size = 1, ret = 1
+<6>[   12.092703] APPNV: IOCTL_GET_NONVOLATILE id = 49021, buffer_size = 1, ret = 1
+<6>[   12.092736] APPNV: IOCTL_GET_NONVOLATILE id = 49026, buffer_size = 1, ret = 1
+<6>[   12.092769] APPNV: IOCTL_GET_NONVOLATILE id = 49027, buffer_size = 1, ret = 1
+<6>[   12.092804] APPNV: IOCTL_GET_NONVOLATILE id = 49028, buffer_size = 1, ret = 1
+<6>[   12.092837] APPNV: IOCTL_GET_NONVOLATILE id = 49029, buffer_size = 1, ret = 1
+<6>[   12.092870] APPNV: IOCTL_GET_NONVOLATILE id = 49030, buffer_size = 1, ret = 1
+<6>[   12.092903] APPNV: IOCTL_GET_NONVOLATILE id = 49031, buffer_size = 1, ret = 1
+<6>[   12.092937] APPNV: IOCTL_GET_NONVOLATILE id = 49032, buffer_size = 1, ret = 1
+<6>[   12.092976] APPNV: IOCTL_GET_NONVOLATILE id = 49033, buffer_size = 1, ret = 1
+<6>[   12.093014] APPNV: IOCTL_GET_NONVOLATILE id = 49034, buffer_size = 1, ret = 1
+<6>[   12.093050] APPNV: IOCTL_GET_NONVOLATILE id = 49035, buffer_size = 1, ret = 1
+<6>[   12.093083] APPNV: IOCTL_GET_NONVOLATILE id = 49036, buffer_size = 1, ret = 1
+<6>[   12.093120] APPNV: IOCTL_GET_NONVOLATILE id = 49037, buffer_size = 1, ret = 1
+<6>[   12.093158] APPNV: IOCTL_GET_NONVOLATILE id = 49022, buffer_size = 1, ret = 1
+<6>[   12.093193] APPNV: IOCTL_GET_NONVOLATILE id = 49023, buffer_size = 1, ret = 1
+<6>[   12.093231] APPNV: IOCTL_GET_NONVOLATILE id = 49024, buffer_size = 1, ret = 1
+<6>[   12.093264] APPNV: IOCTL_GET_NONVOLATILE id = 49025, buffer_size = 1, ret = 1
+<6>[   12.095044] APPNV: IOCTL_GET_NONVOLATILE id = 49038, buffer_size = 1, ret = 1
+<6>[   12.095121] APPNV: IOCTL_GET_NONVOLATILE id = 49039, buffer_size = 1, ret = 1
+<6>[   12.095162] APPNV: IOCTL_GET_NONVOLATILE id = 49040, buffer_size = 1, ret = 1
+<6>[   12.095199] APPNV: IOCTL_GET_NONVOLATILE id = 49041, buffer_size = 1, ret = 1
+<6>[   12.095236] APPNV: IOCTL_GET_NONVOLATILE id = 49042, buffer_size = 1, ret = 1
+<6>[   12.095272] APPNV: IOCTL_GET_NONVOLATILE id = 49043, buffer_size = 1, ret = 1
+<6>[   12.095307] APPNV: IOCTL_GET_NONVOLATILE id = 49044, buffer_size = 1, ret = 1
+<6>[   12.095343] APPNV: IOCTL_GET_NONVOLATILE id = 49045, buffer_size = 1, ret = 1
+<6>[   12.095378] APPNV: IOCTL_GET_NONVOLATILE id = 49046, buffer_size = 1, ret = 1
+<6>[   12.095412] APPNV: IOCTL_GET_NONVOLATILE id = 49047, buffer_size = 1, ret = 1
+<6>[   12.095445] APPNV: IOCTL_GET_NONVOLATILE id = 49048, buffer_size = 1, ret = 1
+<6>[   12.095478] APPNV: IOCTL_GET_NONVOLATILE id = 49049, buffer_size = 1, ret = 1
+<6>[   12.095512] APPNV: IOCTL_GET_NONVOLATILE id = 49050, buffer_size = 1, ret = 1
+<6>[   12.095548] APPNV: IOCTL_GET_NONVOLATILE id = 49051, buffer_size = 1, ret = 1
+<6>[   12.095582] APPNV: IOCTL_GET_NONVOLATILE id = 49052, buffer_size = 1, ret = 1
+<6>[   12.095616] APPNV: IOCTL_GET_NONVOLATILE id = 49053, buffer_size = 1, ret = 1
+<6>[   12.095651] APPNV: IOCTL_GET_NONVOLATILE id = 49058, buffer_size = 1, ret = 1
+<6>[   12.095686] APPNV: IOCTL_GET_NONVOLATILE id = 49059, buffer_size = 1, ret = 1
+<6>[   12.095720] APPNV: IOCTL_GET_NONVOLATILE id = 49060, buffer_size = 1, ret = 1
+<6>[   12.095753] APPNV: IOCTL_GET_NONVOLATILE id = 49061, buffer_size = 1, ret = 1
+<6>[   12.095787] APPNV: IOCTL_GET_NONVOLATILE id = 49062, buffer_size = 1, ret = 1
+<6>[   12.095820] APPNV: IOCTL_GET_NONVOLATILE id = 49063, buffer_size = 1, ret = 1
+<6>[   12.095856] APPNV: IOCTL_GET_NONVOLATILE id = 49064, buffer_size = 1, ret = 1
+<6>[   12.095891] APPNV: IOCTL_GET_NONVOLATILE id = 49065, buffer_size = 1, ret = 1
+<6>[   12.095925] APPNV: IOCTL_GET_NONVOLATILE id = 49066, buffer_size = 1, ret = 1
+<6>[   12.095959] APPNV: IOCTL_GET_NONVOLATILE id = 49067, buffer_size = 1, ret = 1
+<6>[   12.095995] APPNV: IOCTL_GET_NONVOLATILE id = 49068, buffer_size = 1, ret = 1
+<6>[   12.096030] APPNV: IOCTL_GET_NONVOLATILE id = 49069, buffer_size = 1, ret = 1
+<6>[   12.096063] APPNV: IOCTL_GET_NONVOLATILE id = 49054, buffer_size = 1, ret = 1
+<6>[   12.096096] APPNV: IOCTL_GET_NONVOLATILE id = 49055, buffer_size = 1, ret = 1
+<6>[   12.096130] APPNV: IOCTL_GET_NONVOLATILE id = 49056, buffer_size = 1, ret = 1
+<6>[   12.096163] APPNV: IOCTL_GET_NONVOLATILE id = 49057, buffer_size = 1, ret = 1
+<6>[   12.098066] APPNV: IOCTL_GET_NONVOLATILE id = 40068, buffer_size = 1, ret = 1
+<6>[   12.098104] APPNV: IOCTL_GET_NONVOLATILE id = 40071, buffer_size = 1, ret = 1
+<6>[   12.098136] APPNV: IOCTL_GET_NONVOLATILE id = 40074, buffer_size = 1, ret = 1
+<6>[   12.098166] APPNV: IOCTL_GET_NONVOLATILE id = 40069, buffer_size = 1, ret = 1
+<6>[   12.098197] APPNV: IOCTL_GET_NONVOLATILE id = 40072, buffer_size = 1, ret = 1
+<6>[   12.098230] APPNV: IOCTL_GET_NONVOLATILE id = 40075, buffer_size = 1, ret = 1
+<6>[   12.098259] APPNV: IOCTL_GET_NONVOLATILE id = 40070, buffer_size = 1, ret = 1
+<6>[   12.098289] APPNV: IOCTL_GET_NONVOLATILE id = 40073, buffer_size = 1, ret = 1
+<6>[   12.098320] APPNV: IOCTL_GET_NONVOLATILE id = 40076, buffer_size = 1, ret = 1
+<6>[   12.098358] APPNV: IOCTL_GET_NONVOLATILE id = 47101, buffer_size = 1, ret = 1
+<6>[   12.098393] APPNV: IOCTL_GET_NONVOLATILE id = 47102, buffer_size = 1, ret = 1
+<6>[   12.098425] APPNV: IOCTL_GET_NONVOLATILE id = 47103, buffer_size = 1, ret = 1
+<6>[   12.098460] APPNV: IOCTL_GET_NONVOLATILE id = 40077, buffer_size = 1, ret = 1
+<6>[   12.098490] APPNV: IOCTL_GET_NONVOLATILE id = 40078, buffer_size = 1, ret = 1
+<6>[   12.098520] APPNV: IOCTL_GET_NONVOLATILE id = 40079, buffer_size = 1, ret = 1
+<6>[   12.098552] APPNV: IOCTL_GET_NONVOLATILE id = 47104, buffer_size = 1, ret = 1
+<6>[   12.098584] APPNV: IOCTL_GET_NONVOLATILE id = 40080, buffer_size = 1, ret = 1
+<6>[   12.098616] APPNV: IOCTL_GET_NONVOLATILE id = 40081, buffer_size = 1, ret = 1
+<6>[   12.098646] APPNV: IOCTL_GET_NONVOLATILE id = 40082, buffer_size = 1, ret = 1
+<6>[   12.099795] APPNV: IOCTL_GET_NONVOLATILE id = 40046, buffer_size = 1, ret = 1
+<6>[   12.099830] APPNV: IOCTL_GET_NONVOLATILE id = 40047, buffer_size = 1, ret = 1
+<6>[   12.099863] APPNV: IOCTL_GET_NONVOLATILE id = 40048, buffer_size = 1, ret = 1
+<6>[   12.099897] APPNV: IOCTL_GET_NONVOLATILE id = 47099, buffer_size = 1, ret = 1
+<6>[   12.099929] APPNV: IOCTL_GET_NONVOLATILE id = 40049, buffer_size = 1, ret = 1
+<6>[   12.099961] APPNV: IOCTL_GET_NONVOLATILE id = 40050, buffer_size = 1, ret = 1
+<6>[   12.099992] APPNV: IOCTL_GET_NONVOLATILE id = 40051, buffer_size = 1, ret = 1
+<6>[   12.100024] APPNV: IOCTL_GET_NONVOLATILE id = 47100, buffer_size = 1, ret = 1
+<6>[   12.100063] APPNV: IOCTL_GET_NONVOLATILE id = 40125, buffer_size = 1, ret = 1
+<6>[   12.100093] APPNV: IOCTL_GET_NONVOLATILE id = 40126, buffer_size = 1, ret = 1
+<6>[   12.100124] APPNV: IOCTL_GET_NONVOLATILE id = 40127, buffer_size = 1, ret = 1
+<6>[   12.100157] APPNV: IOCTL_GET_NONVOLATILE id = 47119, buffer_size = 1, ret = 1
+<6>[   12.100190] APPNV: IOCTL_GET_NONVOLATILE id = 40128, buffer_size = 1, ret = 1
+<6>[   12.100222] APPNV: IOCTL_GET_NONVOLATILE id = 40129, buffer_size = 1, ret = 1
+<6>[   12.100257] APPNV: IOCTL_GET_NONVOLATILE id = 40130, buffer_size = 1, ret = 1
+<6>[   12.100292] APPNV: IOCTL_GET_NONVOLATILE id = 47120, buffer_size = 1, ret = 1
+<6>[   12.100335] APPNV: IOCTL_GET_NONVOLATILE id = 48009, buffer_size = 1, ret = 1
+<6>[   12.100372] APPNV: IOCTL_GET_NONVOLATILE id = 47067, buffer_size = 1, ret = 1
+<6>[   12.100404] APPNV: IOCTL_GET_NONVOLATILE id = 47068, buffer_size = 1, ret = 1
+<6>[   12.100437] APPNV: IOCTL_GET_NONVOLATILE id = 47069, buffer_size = 1, ret = 1
+<6>[   12.100470] APPNV: IOCTL_GET_NONVOLATILE id = 47129, buffer_size = 1, ret = 1
+<6>[   12.100503] APPNV: IOCTL_GET_NONVOLATILE id = 47070, buffer_size = 1, ret = 1
+<6>[   12.100538] APPNV: IOCTL_GET_NONVOLATILE id = 47071, buffer_size = 1, ret = 1
+<6>[   12.100573] APPNV: IOCTL_GET_NONVOLATILE id = 47072, buffer_size = 1, ret = 1
+<6>[   12.100610] APPNV: IOCTL_GET_NONVOLATILE id = 47130, buffer_size = 1, ret = 1
+<6>[   12.102414] APPNV: IOCTL_GET_NONVOLATILE id = 48010, buffer_size = 1, ret = 1
+<6>[   12.102453] APPNV: IOCTL_GET_NONVOLATILE id = 48011, buffer_size = 1, ret = 1
+<6>[   12.102486] APPNV: IOCTL_GET_NONVOLATILE id = 48012, buffer_size = 1, ret = 1
+<6>[   12.102518] APPNV: IOCTL_GET_NONVOLATILE id = 48013, buffer_size = 1, ret = 1
+<6>[   12.102550] APPNV: IOCTL_GET_NONVOLATILE id = 48014, buffer_size = 1, ret = 1
+<6>[   12.102586] APPNV: IOCTL_GET_NONVOLATILE id = 48015, buffer_size = 1, ret = 1
+<6>[   12.102619] APPNV: IOCTL_GET_NONVOLATILE id = 48016, buffer_size = 1, ret = 1
+<6>[   12.102652] APPNV: IOCTL_GET_NONVOLATILE id = 48017, buffer_size = 1, ret = 1
+<6>[   12.102690] APPNV: IOCTL_GET_NONVOLATILE id = 40053, buffer_size = 1, ret = 1
+<6>[   12.102721] APPNV: IOCTL_GET_NONVOLATILE id = 40052, buffer_size = 1, ret = 1
+<3>[   12.112488] pcpc:can't set unknown scene (at 0): BOOST_LCDON
+<3>[   12.112499] pcpc:can't set any scenes: BOOST_LCDON
+<6>[   12.205810] APPNV: IOCTL_GET_NONVOLATILE id = 41071, buffer_size = 1, ret = 1
+<6>[   12.211200] lowmem_shrink: convert oom_adj to oom_score_adj:
+<6>[   12.211213] oom_adj 0 => oom_score_adj 0
+<6>[   12.211220] oom_adj 1 => oom_score_adj 58
+<6>[   12.211228] oom_adj 2 => oom_score_adj 117
+<6>[   12.211234] oom_adj 3 => oom_score_adj 176
+<6>[   12.211241] oom_adj 9 => oom_score_adj 529
+<6>[   12.211248] oom_adj 15 => oom_score_adj 1000
+<6>[   12.530866] acc_open
+<6>[   12.530882] acc_release
+<6>[   12.677766] [LCD]mdss_dsi_panel_bklt_custom_dcs mode change(255)
+<6>[   13.169571] mtp_open
+<6>[   14.226719] calling msm_rng_bus_scale(LOW)
+<6>[   14.236523] msm_thermal: Core control disabled
+<6>[   14.250463] msm_thermal: Core control enabled
+<5>[   14.267710] type=1400 audit(20310262.184:5): avc:  denied  { getattr } for  pid=1553 comm="roid.pandaspace" path="/data/app" dev="mmcblk0p37" ino=12 scontext=u:r:untrusted_app:s0 tcontext=u:object_r:apk_data_file:s0 tclass=dir
+<5>[   14.385255] type=1400 audit(20310262.304:6): avc:  denied  { getattr } for  pid=1553 comm="roid.pandaspace" path="/system/xbin/su" dev="mmcblk0p21" ino=2165 scontext=u:r:untrusted_app:s0 tcontext=u:object_r:su_exec:s0 tclass=file
+<6>[   14.396868] [max17048_batt][max17048_effect_battery_capacity] capacity = 99, old_capacity = 99, read_soc = 99
+<3>[   14.544209] init: sys_prop: permission denied uid:1003  name:service.bootanim.exit
+<6>[   15.820686] APPNV: IOCTL_GET_NONVOLATILE id = 48008, buffer_size = 1, ret = 1
+<7>[   16.685077] audio_log_func_workqueue start
+<6>[   17.505154] wcnss_post_bootup: Cancel APPS vote for Iris & WCNSS
+<6>[   19.087160] <d.process.acore> killed by <Binder_9>
+<6>[   19.185794] <ndroid.settings> killed by <Binder_F>
+<6>[   19.281811] <om.qti.cbwidget> killed by <Binder_5>
+<6>[   19.345646] <.android.dialer> killed by <Binder_1>
+<5>[   19.442758] type=1400 audit(20310267.354:7): avc:  denied  { getattr } for  pid=2096 comm="ce:bdservice_v1" path="/data/app" dev="mmcblk0p37" ino=12 scontext=u:r:untrusted_app:s0 tcontext=u:object_r:apk_data_file:s0 tclass=dir
+<6>[   19.481879] <fujitsu.fjtools> killed by <Binder_2>
+<6>[   20.085175] ***** pet_watchdog *****
+<6>[   21.124106] [bq24192_chg_hw] [fj_bq_chg_hw_set_wdt_kick] Chg-IC Dog Kick, ret=0
+<6>[   21.617727] [max17048_batt][max17048_effect_battery_capacity] capacity = 99, old_capacity = 99, read_soc = 100
+<7>[   21.695752] audio_log_func_workqueue start
+<6>[   21.983003] <viders.calendar> killed by <Binder_5>
+<6>[   23.460413] <timeinitializer> killed by <Binder_1>
+<6>[   24.081362] [LCD]mdss_dsi_panel_bklt_custom_dcs mode change(254)
+<6>[   26.522342] [BKL]fjbkl_brightness_set: turn off req(0).
+<6>[   26.523452] [BKL]fjbkl_brightness_work: Backlight turn off.
+<6>[   26.598455] [LCD]mdss_dsi_panel_off enter
+<6>[   26.701437] [LCD]mdss_dsi_panel_off leave
+<6>[   26.703256] [LCD]mdss_dsi_panel_power_on enter(0)
+<7>[   26.705287] audio_log_func_workqueue start
+<6>[   26.866922] [LCD]mdss_dsi_panel_power_on leave
+<6>[   26.868889] [Fbnotifier pwrdown] notify call handlers
+<6>[   26.868951] [TPD] H:[TPD_Es] cyttsp5_fj_mt_fb_suspend: (0,0), lo(0), vct(su=0, se=0, wc=0, md=0, ds=0, ic=0, if=0), td[031E], rev/cf/cr(0x0008E3A6, 0x0020, 0x9033), pi[01 01], bl[02 00], fw[01 00], pid[0002].
+<6>[   26.870367] wq exec time: 250 ms(console_flush+0x0/0x10)
+<6>[   26.870556] cyttsp5_core main_ttsp_core.cyttsp5_i2c_adapter: cyttsp5_core_sleep_: suspend driver irq now disabled
+<6>[   26.870930] active wake lock PowerManagerService.Broadcasts, active_since 0.345037916 seconds
+<6>[   26.870948] active wake lock PowerManagerService.WakeLocks, active_since 14.218327129 seconds
+<6>[   26.870965] active wake lock sensors_server, active_since 14.705266295 seconds
+<6>[   26.870981] active wake lock fj_charging, active_since 23.995845146 seconds
+<6>[   26.870997] active wake lock fj-walkmotion, active_since 14.698132598 seconds, time left 197
+<6>[   26.871012] active wake lock msm_dwc3, active_since 26.060170303 seconds
+<6>[   27.060172] <roid.pandaspace> killed by <roid.pandaspace>
