@@ -1,0 +1,12 @@
+
+* BSP资产 [3/4]
+  - [X] POWER1  <BSP POWER#1>
+	彭国宁
+  - [X] POWER2  <BSP POWER#2>
+	张显东
+  - [ ] POWER3  <BSP POWER#3>
+  - [X] VM      <BSP VM>
+	彭国宁
+
+   
+
