@@ -1,0 +1,50 @@
+#!/bin/bash
+if [ "-$1" == "---help" ];then
+echo "--help:
+ Description: record current over work time into file.
+ Param1: if exist, means xx元 at this time", default is 50元
+ exit
+fi
+
+
+echo -n "Do you want to add leave time now?(y/n):"
+read record
+
+NAME=zxd
+RECORD_FILE="/home/zxd/work/tools/zxd-tools/get_all_overtime/"$NAME
+touch $RECORD_FILE
+MAX_TIME=10
+MAX_NUM=5  # random base
+TOTAL=50   # total
+   
+
+function add_time(){
+	echo "$1" | awk -vtime=$MAX_TIME -vdata=$RECORD_FILE -F"[ |:]" 'BEGIN{str=""; value=int(rand()*time);}{for(i=1;i<=NF;i++){ if (i==4) {if($i+value <=60) {x=sprintf("%02d",$i+value);}else x=60 ;str=str":"x} else str=str" "$i }}END{print str >> data}'
+}
+
+
+if [ "$record" != "" ];then
+  if [ $record = "y" ];then
+    #if [[ ! -n "$1" ]];then
+    WEEKDAYS=(星期日 星期一 星期二 星期三 星期四 星期五 星期六)
+    WEEKDAY=$(date +%w)
+    now="$(date +%Y.%m.%d) ${WEEKDAYS[$WEEKDAY]}"
+    now="$now $(date +%H:%M)"
+
+    if [ "$1" != "" ];then
+    now=$now" "$1"元"
+    else
+#now=$now" 50元"
+    x=$((`date +%s`))
+    x=$(($x%$MAX_NUM))
+	x=$(($TOTAL-$x))
+	now=$now" "$x"元"
+    fi
+
+	now=$now" "$NAME
+	add_time "$now" 
+    #fi
+  fi
+fi
+
+cat $RECORD_FILE
