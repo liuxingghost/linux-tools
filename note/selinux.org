@@ -1,0 +1,112 @@
+#+TITLE:       linux selinux
+#+AUTHOR:      zxd641326
+#+EMAIL:       zxd641326@163.com
+#+DATE:        2015-01-08 四
+#+URI:         /blog/%y/%m/%d/linux selinux
+#+KEYWORDS:    linux,selinux,android
+#+TAGS:        linux,android
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: android linux selinux policy
+
+selinux 是Google 在Android 4.4上正式推出的一套以Selinux为基础核心的系统安全机制。\\
+在Linux kernel中selinux通过LinuxSecurity Modules实现
+
+* Selinux 背景
+** DAC
+  在Selinux之前，Linux上的安全模型为DAC(Discretionary Access
+  Control)既自主访问控制。\\
+  DAC 核心：进程理论上拥有的权限与执行它的用户的权限相同。\\
+  比如以 root用户启动一个进程，那么该进程就有root用户的权限，可以
+  在系统中做任何事情。
+** MAC
+   由于DAC太过于简单，导致系统很不安全，所以selinux在DAC之，
+   设计了一个新的安全模型，MAC(Mandatory Access Control)既强
+   制访问控制。\\
+   MAC 核心: 任何进行想要在Selinux中执行任何动作，都必须先在
+   安全策略配置文件中赋予权限，凡是没有出现在安全策略配置文
+   件中，进程就没有该权限。
+
+综上：MAC比DAC在权限管理方面更复杂，更严格，更细致。在
+Selinux中，安全策略文件中的配置指明了所有进程的相关权限，要
+添加/修改进程的权限需要在策略配置文件中进行相关的修改
+
+* Selinux Policy 语法
+  Selinux中，所有的东西(文件/进程)都会被赋予一个安全属性
+  Security Context，它是一个由三部分组成的字符串。 
+** 进程 Context
+  打开了SElinux,可以通过 ps -Z查看进程Context 比如：\\
+  u:r:init:s0              root      1     0     /init  \\
+  u:r:shell:s0             shell     278   1     /system/bin/sh \\
+  其中：
+ + u 为user，Selinux中定义了一个selinux用户，即u
+ + r 为role，一个u可以属于多个role，不同的role具有不通的权
+    限
+ + init/shell 即进程所属的domain，正常情况下不同的domain具
+    有不通的权限
+ + S0 为MLS机制相关，代表MLS级别
+** 文件Context 
+  通过 ls -Z 可以查看文件的Context 比如： \\
+  crw-rw---- system   system
+  u:object_r:non_device:s0 nonvolatile \\
+  brw------- root     root
+  u:object_r:block_device:s0 mmcblk0p1 \\
+  
+ + u 为user，代表创建这个文件Selinux user
+ + object_r 文件使用object_r来表示它的role
+ + non_device/block_device 文件对应Type，和进程的domain一样，
+ + s0 MLS级别
+
+** TE 文件
+   根据Selinux规范，完整的SContext字符串为
+   user:role:type[:range] \\
+   其中方括号的内容为可选项，s0属于range的一部份。SContext的
+   核心为其前三个部分:user:role:type,MAC基本管理单位为
+   TEAC(Type Enforcement Accesc Control),然后是高一级别的
+   Role Based Accesc Control. TE为Selinux中最重要的一部份。\\
+   在LINUX/android/external/sepolicy/目录下有很多*.te文件，
+   te文件里有很多的allow开头行，如：\\
+   allow netd proc:file write; \\
+   
+ + allow: TE的allow语句，表示授权。还有其他授权模式：
+   allowaudit/dontaudit/neverallow等
+ + netd: source Type,也叫subject，domain
+ + proc: target Type,其代表后面的file所对应的Type
+ + file: 代表Object Class，它代表能够给subject操作的东西，如file/dir/socket等。在Android系统中，有一个其他linux系统没
+   有的object class，Binder
+ + write: 在改类Object class中所定义的操作
+ 
+   根据SElinux规范，完整的allow相关语句格式为: \\
+   rule_name source_type target_type:class perm_set \\
+   多个的perm_set使用{}括起来
+*** Object class
+	常见的Object class定义在
+	extern/sepolicy/securtiy_classes  如: \\
+
+	#+BEGIN_SRC text -t -n
+
+	class security
+	class process
+	class system
+	class capability
+	
+	# file-related classes
+	class filesystem
+	class file
+	class dir
+	class fd
+	class lnk_file
+	class chr_file
+	class blk_file
+	class sock_file
+	class fifo_file
+	#+END_SRC
+	该文件一般不需要我们修改
+*** perm_set
+	perm_set指某种Object class所拥有的操作，以file这种Object
+	class而言，其拥有的perm_set包括
+	read,write,open,create,execute等 \\
+
+	Selinux/Seandroid所支持的Perm_set定义在
+	external_sepolicy/access_vectors \\
+

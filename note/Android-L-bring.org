@@ -1,0 +1,182 @@
+#+TITLE:       Android-L Bring Up note
+#+AUTHOR:      zxd641326
+#+EMAIL:       zxd641326@163.com
+#+DATE:        2014-11-10 Mon
+#+URI:         /blog/%y/%m/%d/Android-L Bring Up note
+#+KEYWORDS:    android-l,adb,bring upA
+#+TAGS:        android
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: 简单的记录一下androidl的porting中的一些问题，以及解决办法
+
+* all
+**  minicom 配置
+    sudo minicom --device=/dev/ttyUSB0 --capturefile=./minicom.cap
+** 编译目标选择
+    + android编译的时候的target选择一般为：vendor/qcom/proprietary/modem-apis/目录下有一个子目录,一般就选择这个子目录的名字作为参数
+    + 编译提示java版本问题
+    使用openjdk7 ：#/usr/bin/javac -version
+                 javac 1.8.0_05  
+                 #/usr/bin/java -version
+                 java version "1.7.0_55"
+                 OpenJDK Runtime Environment (IcedTea 2.4.7) (7u55-2.4.7-1ubuntu1~0.13.10.1)
+                 OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode)
+    使用TM jdk7： #javac -version
+                javac 1.7.0_51
+                #java -version
+                java version "1.7.0_51"
+                Java(TM) SE Runtime Environment (build 1.7.0_51-b13)
+                Java HotSpot(TM) 64-Bit Server VM (build 24.51-b03, mixed mode)
+    在build/core/main.mk +139 中会对java以及javac版本进行判定，大于1.7视为版本不配
+
+      
+** git push commit时流程
+ +  #先从服务器上check一个最新的分支
+   git checkout -b ttt --track remotes/brach
+ +  #切换到工作分支
+   git checkout xx
+ +  #rebase 新分支到工作分支
+   git rebase ttt
+ +  #解决冲突
+** 查看log分支命令
+   git log --graph --pretty=oneline --abbrev-commit
+   git log --pretty=format:'\''%h : %an : %ad : %s'\' --topo-order --graph --date=short
+
+
+** 验证是否睡眠
+    可以创建一个后台进程,打印时间搓
+ $ :while [ 1 ];do  
+    echo "====`date`====" >> /data/xx.log
+    sleep 1
+    done &
+
+** 移植驱动时发现Makefile中使用的宏没有定义,但是在fjdev_defconfig中是有相关定义的
+   修改了默认的config配置文件android/device/qcom/msm8974/AndroidBoard.mk不起作用
+#----------------------------------------------------------------------
+# Compile Linux Kernel
+#----------------------------------------------------------------------
+ifeq ($(KERNEL_DEFCONFIG),)
+    KERNEL_DEFCONFIG := fjdev_defconfig
+endif
+
+   后来发现是对应的Kconfig文件没有做出对应的修改，默认生成的.config由defconfig合Kconfig里面的配置项一起经
+   过工具生成
+   
+
+** earphone 检测问题
+   耳机检测有两种方式：
+        1 -> input event
+        2 -> sys/class
+        device/qcom/common/overlay/frameworks/base/core/res/res/values/config.xml
+        或者
+        device/qcom/common/device/overlay/frameworks/base/core/res/res/values/config.xml
+        config_useDevInputEventForAudioJack指定使用方式        
+
+       qual参考代码使用的是inputevent方式相关代码路径：kernel/sound
+       调用流程sitar_snd_soc_jack_report->snd_soc_jack_report_no_dapm->snd_jack_report
+
+
+** TZ 问题 内核到固定位置不继续往下走
+[    7.346307] Engines Availability = 0x1010853
+[    7.371264] QCE50: qce_sps_init:  Qualcomm MSM CE-BAM at 0x00000000fd444000 irq 268
+[    7.378758] qcrypto fd440000.qcom,qcrypto: qcrypto-ecb-aes
+[    7.383971] qcrypto fd440000.qcom,qcrypto: qcrypto-cbc-aes
+[    7.389431] qcrypto fd440000.qcom,qcrypto: qcrypto-ctr-aes
+[    7.396033] qcrypto fd440000.qcom,qcrypto: qcrypto-ecb-des
+[    7.400621] qcrypto fd440000.qcom,qcrypto: qcrypto-cbc-des
+[    7.406055] qcrypto fd440000.qcom,qcrypto: qcrypto-ecb-3des
+[    7.411674] qcrypto fd440000.qcom,qcrypto: qcrypto-cbc-3des
+[    7.417181] qcrypto fd440000.qcom,qcrypto: qcrypto-xts-aes
+[    7.422652] qcrypto fd440000.qcom,qcrypto: qcrypto-sha1
+[    7.427860] qcrypto fd440000.qcom,qcrypto: qcrypto-sha256
+[    7.433233] qcrypto fd440000.qcom,qcrypto: qcrypto-aead-hmac-sha1-cbc-aes
+[    7.440040] qcrypto fd440000.qcom,qcrypto: qcrypto-aead-hmac-sha1-cbc-des
+[    7.446788] qcrypto fd440000.qcom,qcrypto: qcrypto-aead-hmac-sha1-cbc-3des
+[    7.453598] qcrypto fd440000.qcom,qcrypto: qcrypto-hmac-sha1
+[    7.459253] qcrypto fd440000.qcom,qcrypto: qcrypto-hmac-sha256
+[    7.465056] qcrypto fd440000.qcom,qcrypto: qcrypto-aes-ccm
+[    7.470548] qcrypto fd440000.qcom,qcrypto: qcrypto-rfc4309-aes-ccm
+[    7.476618] qcrypto: FIPS140-2 Known Answer Tests: Skipped
+[    7.482124] QCE50: __qce_get_device_tree_data: bam_pipe_pair=0x0
+[    7.487921] QCE50: __qce_get_device_tree_data: ce-device =0x1
+[    7.493652] QCE50: __qce_get_device_tree_data: ce_phy_reg_base=0xfd440000  
+[    7.500595] QCE50: __qce_get_device_tree_data: ce_virt_reg_base=0xc61c0000
+[    7.507624] QCE50: __qce_get_device_tree_data: ce_bam_phy_reg_base=0xfd444000  
+[    7.514726] QCE50: __qce_get_device_tree_data: CRYPTO BAM IRQ = 268.
+[    7.521526] qcrypto fd440000.qcom,qcrypto1: Qualcomm Crypto 5.1.0 device found @0xfd440000
+[    7.529501] qcrypto fd440000.qcom,qcrypto1: CE device = 0x1
+[    7.529504] , IO base, CE = 0xc61c0000
+[    7.529505] , Consumer (IN) PIPE 0,    Producer (OUT) PIPE 1
+[    7.529508] IO base BAM = 0x0
+[    7.529509] BAM IRQ 268
+[    7.529510] Engines Availability = 0x1010853
+     #从新烧录tz镜像
+**  wcnss crash shutdown 1
+    wcnss: wcnss_nvbin_dnld: request_firmware failed for wlan/prima/WCNSS_qcom_wlan_nv.bin(ret = -2)
+    #烧录persist分区：fastboot flash persist persist.img
+
+
+
+** dtb 文件
+    生成完整dtb文件:dtc -I dts msm8974pro-ab-FJDEV018-rev3.dts -O dts -o all-my.dts
+** 系统启动后在LCD点亮usb adb用不了
+    现象为LCD灭的时候usb adb可以使用,LCD亮的时候usb adb不能使用.追查发现屏幕亮时会有产生一个中断,响应中断后usb就断开链接.最后发现事是LCD dts(msm8974-mdss.dtsi)中的GPIO(GPIO58)冲突,GPIO58为USB电源检测IO,参考【14-1st】OVPドライバ_基本設計書.doc
+
+** 合入audio相关的代码到内核后出现内核不能正常启动问题,关键log如下
+xo get failed
+mc_yamaha_clock_set: Configuring MSM_XO_MODE_ON failed (-22)
+
+到mc_yamaha驱动中查找发现执行:	mc_asoc_i2c_probe-> audhub_clk = clk_get(&client->dev, "xo")时获取时钟错误
+现在平台的时钟出初始化:msm8974_init->msm8974_add_drivers->msm_clock_init->msm_clocks_8974 合入clock-8974.c中xo时钟内容即可编译通过
+
+** 编译systemimage时出错问题
+    + hardware/qcom/audio/legacy/libalsa-intf/alsa_mixer.c:33:23: fatal error: sound/tlv.h: No such file or direct
+      参考头文件包含路径build/core/combo/TARGET_linux-arm64.mk 中的系统指定路径
+      该文件包含关系:build/core/combo/select.mk:65:include $(BUILD_COMBOS)/$(combo_target)$(combo_os_arch).mk
+    
+    + system/media/audio_route/audio_route.c:547: error: undefined reference to 'hw_get_module'
+      在Android.mk中添加 LOCAL_SHARED_LIBRARIES += libhardware
+** speaker 选择问题
+参考代码speaker选择文件路径:device/fujitsu/FJDEV/fjdev_mixer_paths.xml
+修改后需要完整编译systemimage
+** framework选择检测耳机方式 是input event还是sys file方式
+services/core/java/com/android/server/WiredAccessoryManager.java中的变量
+ mUseDevInputEventForAudioJack = false;
+其中有一个配置文件:device/qcom/common/device/overlay/frameworks/base/core/res/res/values/config.xml
+中的变量config_useDevInputEventForAudioJack,应该是能够控制mUseDevInputEventForAudioJack,但是修改 不知道为什么灭有成功
+** FTA cmd <log !#! STORE !#!> 执行后没有反应，在对应的代码中添加log后也不起作用
+   MK文件中的变量：LOCAL_SHARED_LIBRARIES指定使用的动态库
+   参考http://blog.csdn.net/qianlong4526888/article/details/8534716
+* 其他
+[R42061][8974LBU]
+
+Modification ID:   8974LBU-BSP-FID3005
+Scratch or Copy [S/C]:
+Copy from:  
+Other Info: 
+
+
+
+/* TS:2014-xx-xx FID0101 ADD-S */ 
+   添加的代码 
+/* TS:2014-xx-xx FID0101 ADD-E */ 
+
+删除部分代码：
+
+#if 0 /* TS:2014-xx-xx FID0101 DEL-S */ 
+   删除的代码 
+#endif /* TS:2014-xx-xx FID0101 DEL-E */ 
+
+修改部分代码：
+
+#if 0 /* TS:2014-xx-xx FID0101 MOD-S */ 
+   修改前代码
+#else /* TS:2014-xx-xx FID0101 MOD */ 
+   修改后代码 
+#endif /* TS:2014-xx-xx FID0101 MOD-E */
+
+
+
+git checkout --track -b foobar origin/foobar 將遠端的 branch checkout 回來並建立一個新的 local branch，加上 --track 表示你之後還要pull、push回去，所以請 Git 記住對應關係
+
+git cherry-pick 用于把另一个本地分支的commit修改应用到当前分支
