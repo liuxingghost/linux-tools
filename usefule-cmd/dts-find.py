@@ -12,8 +12,9 @@ def dts_find(name, delta):
 	if os.path.isfile(name):
 		fp = open(name)
 		for line in fp:
-			if line.find('/include/') != -1:
-				if line.startswith('/include'):
+            #print line
+			if line.find('/include/') != -1 or (line.find('#include') != -1 and line.find('dtsi') !=-1):
+				if line.startswith('/include/') or line.startswith('#include'):
 					dts_file = line.split('"')[1]
 					print delta + dts_file
 					delta_char = delta + '\t'
