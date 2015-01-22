@@ -5,13 +5,13 @@ ALL_DTS="---all"
 #
 # xd-dts -p xxx.dts -c xxx.dts
 # -p : print all dts file tree
-# -c : create all 
-#
+# -d : create dts file include all dsti 
+# -b : create dtb file
 ################################################
 
 
 # get command line options
-while getopts "p:c:" dts_flg
+while getopts "p:d:b:" dts_flg
 do
     case $dts_flg in
 
@@ -19,10 +19,17 @@ do
 			python ~/bin/dts-find.py $OPTARG
 
            ;;
-		c) 	DTS_FILE="$OPTARG"
+		d) 	DTS_FILE="$OPTARG"
 			ALL_DTS="$OPTARG"$ALL_DTS
-			dtc -I dts $DTS_FILE -O dts -o $ALL_DTS
+			cpp -Wp,-MD,x.pre.tmp -nostdinc -I. -Iinclude  -undef -D__DTS__ -x assembler-with-cpp -o xx.dts.tmp $DTS_FILE
+			dtc -I dts -O dts -o $ALL_DTS xx.dts.tmp
 			;;
+		b) 	DTS_FILE="$OPTARG"
+			ALL_DTS="$OPTARG"$ALL_DTS"--dtb"
+			cpp -Wp,-MD,x.pre.tmp -nostdinc -I. -Iinclude  -undef -D__DTS__ -x assembler-with-cpp -o xx.dts.tmp $DTS_FILE
+			dtc -I dts -O dtb -o $ALL_DTS xx.dts.tmp
+			;;
+		
 		?)
 			;;
 	esac
