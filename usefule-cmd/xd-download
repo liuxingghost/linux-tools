@@ -1,0 +1,90 @@
+#!/bin/bash
+
+flash_boot=0
+flash_kernel=0
+flash_dtb=0
+flash_userdata=0
+flash_all=0
+
+moreoptions=1
+
+OF_PATH="/dev/sdb"
+OF_PATH1="/dev/sdc"
+
+IF_PATH=""
+BOOT="u-boot-imx6qsabresd.imx"
+#KERNEL="uImage_imx_v7_defconfig"
+KERNEL="uImage"
+DTB="uImage-imx6q-sabresd.dtb"
+
+USERDATE=""
+
+function help(){
+	echo "$0 uboot(-b)|kernel(-k)|userdata(-u)|help(-h)|all(-a)"
+}
+
+while [ "$moreoptions" = 1 -a $# -gt 0 ]; do
+	case $1 in
+		-h) help; exit ;;
+	    uboot | -b ) flash_boot=1 ;;
+		kernel | -k) flash_kernel=1 ;;
+		userdata | -u) flash_userdata=1 ;;
+		dtb | -d) flash_dtb=1 ;;
+		all | -a) flash_boot=1; flash_kernel=1;flash_dtb=1;flash_userdata=1 ;;
+		*) moreoptions=0 ; help &&exit ;;
+	esac
+	[ "$moreoptions" = 0 ] && [ $# -gt 1 ] && help && exit
+	[ "$moreoptions" = 1 ] && shift
+done
+
+if [ ! -e  "$OF_PATH" ];then
+	if [ ! -e "$OF_PATH1" ];then
+		echo "please plug you sd card"
+		exit
+	else
+		OF_PATH=$OF_PATH1
+	fi
+	
+fi
+
+
+if [ $flash_boot -ne 0  ] ;then
+   	IF_PATH=$BOOT
+	if [ -f  $IF_PATH ];then
+		echo "dd if=$IF_PATH of=$OF_PATH bs=512 seek=2 conv=fsync"
+			sudo dd if=$IF_PATH  of=$OF_PATH bs=512 seek=2 conv=fsync
+	else
+		echo "$IF_PATH is not exist"
+	fi
+	
+fi
+if [ $flash_kernel -ne 0  ] ;then
+   	IF_PATH=$KERNEL
+	if [ -f  $IF_PATH ];then
+		echo "dd if=$IF_PATH of=$OF_PATH bs=512 seek=2048 conv=fsync"
+			sudo dd if=$IF_PATH  of=$OF_PATH bs=512 seek=2048 conv=fsync
+	else
+		echo "$IF_PATH is not exist"
+	fi
+	
+fi
+if [ $flash_dtb -ne 0  ] ;then
+   	IF_PATH=$DTB
+	if [ -f  $IF_PATH ];then
+		echo "dd if=$IF_PATH of=$OF_PATH bs=512 seek=20480 conv=fsync"
+			sudo dd if=$IF_PATH  of=$OF_PATH bs=512 seek=20480 conv=fsync
+	else
+		echo "$IF_PATH is not exist"
+	fi
+	
+fi
+# if [ $flash_userdata -ne 0  ] ;then
+#    	IF_PATH=$DTB
+# 	if [ -f  $IF_PATH ];then
+# 		echo "dd if=$IF_PATH of=$OF_PATH bs=512 seek=20480 conv=fsync"
+# 			#dd if=$IF_PATH  of=$OF_PATH bs=512 seek=20480 conv=fsync
+# 	else
+# 		echo "$IF_PATH is not exist"
+# 	fi
+	
+# fi
