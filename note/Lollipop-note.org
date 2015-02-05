@@ -1,0 +1,191 @@
+#+TITLE:       Lollipop总结记录
+#+AUTHOR:      zxd641326
+#+EMAIL:       zxd641326@163.com
+#+DATE:        2015-01-09 五
+#+URI:         /blog/%y/%m/%d/Lollipop总结记录
+#+KEYWORDS:    Lollipop, android,linux
+#+TAGS:        android,Lollipop
+#+LANGUAGE:    en
+#+OPTIONS:     ^:{}
+#+DESCRIPTION: Lollipop升级过程记录
+
+Lollipop升级项目告一段落，此次参与项目收获颇多，以下为按照功能模块记录总结
+
+* LOADER LOG
+  添加loaderlog功能后正常开机会在/persist/Logs目录下生成文件loaderlog.gz.cip 文件 \\
+
+ + 新加目录 LINUX/android/vendor/fujitsu/apps/aes_app
+ + 新加目录 LINUX/android/vendor/fujitsu/apps/loaderlog
+ + 新加文件 LINUX/android/device/qcom/msm8974/fjdev_log.mk
+ + 修改文件 LINUX/android/device/qcom/msm8974/init.target.rc \\
+ 新加loaderlog服务
+ #+BEGIN_SRC sh -t -n
+   	# FUJITSU:2013-07-12_[P]-13-2ND-GEN_GEN-132-LOG-DETAL-001_SPEC-GEN_ADD-S
+		service loaderlog /sbin/loaderlog.sh
+		class main
+		user root
+		oneshot
+	# FUJITSU:2013-07-12_[P]-13-2ND-GEN_GEN-132-LOG-DETAL-001_SPEC-GEN_ADD-E
+ #+END_SRC
+ 
+ + 修改文件 LINUX/android/device/qcom/msm8974/msm8974.mk \\
+ 添加loaderlog相关mk文件
+ #+BEGIN_SRC sh -t -n
+	# FUJITSU:2013-11-29_[N]_14-1ST-GEN_XXXXX_SPEC-GEN_ADD-S
+		include device/qcom/msm8974/fjdev_log.mk
+	# FUJITSU:2013-11-29_[N]_14-1ST-GEN_XXXXX_SPEC-GEN_ADD-E
+ #+END_SRC
+
+ *新加的目录和文件，均从SQUASH代码中完整COPY* \\
+ 参考：http://164.69.155.29/fujitsu/#/c/9306/
+* ABOOT 
+  aboot镜像大小超出限制，导致SDDL升级/QPST完整烧录后启动挂在SBL1
+  + 修改文件 LINUX/android/bootable/bootloader/lk/dev/fbcon/fbcon.c
+  去掉高通默认的开机图片
+  #+BEGIN_SRC sh -t -n
+    +#if 0  /* TS:2015-1-8 8974LBU-SDDL-FID0101 DEL-S */
+    #include <splash.h>
+    +#endif /* TS:2015-1-8 8974LBU-SDDL-FID0101 DEL-E */
+
+    +#if 0  /* TS:2015-1-8 8974LBU-SDDL-FID0101 MOD-S */
+     void display_image_on_screen()
+     {
+        struct fbimage default_fbimg, *fbimg;
+    @@ -300,7 +301,11 @@ void display_image_on_screen()
+ 
+        fbcon_putImage(fbimg, flag);
+     }
+    -
+    +#else /* TS:2015-1-8 8974LBU-SDDL-FID0101 MOD */
+    +void display_image_on_screen(){
+    +       ;
+    +}
+    +#endif /* TS:2015-1-8 8974LBU-SDDL-FID0101 MOD-E */
+  #+END_SRC
+  
+  *各个镜像大小限制参考：/common/build/partition.xml* \\
+  在ES上不存在改问题，仅仅是在CS上做修改
+* RECOVERY SELINUX
+  CS中selinux默认打开，打开selinux后recovery模式下很多操作都
+  没有权限，导致SDDL升级/QPST完整烧录后开机启动不了 \\
+
+  方式1： 关闭selinux \\
+  + 修改/LINUX/android/device/qcom/msm8974/BoardConfig.mk
+  修改cmdline指定selinux为关闭状态
+  #+BEGIN_SRC sh -t -n
+    +BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.selinux=permissive
+    -BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3b7 ehci-hcd.park=3
+  #+END_SRC
+
+  方式2：添加recovery模式下相关操作的权限 \\
+  + 修改 LINUX/android/external/sepolicy/file_context
+  新加设备文件context
+  #+BEGIN_SRC sh -t -n
+    #  TS:2015-1-9 8974LBU-SDDL-FID0101 ADD-S
+    /dev/nonvolatile        u:object_r:non_device:s0
+    /dev/mmcdl              u:object_r:sd_device:s0
+    #  TS:2015-1-9 8974LBU-SDDL-FID0101 ADD-E
+  #+END_SRC
+  + 修改 LINUX/android/external/sepolicy/device.te
+  新加设备文件type
+  #+BEGIN_SRC sh -t -n
+    #  TS:2015-1-9 8974LBU-SDDL-FID0101 ADD-S
+    type non_device, dev_type;
+    type sd_device, dev_type;
+    #  TS:2015-1-9 8974LBU-SDDL-FID0101 ADD-E
+  #+END_SRC
+
+  + 修改 LINUX/android/external/sepolicy/recovery.te
+  新加recovery模式下相关权限
+  #+BEGIN_SRC sh -t -n
+    #  TS:2015-1-9 8974LBU-SDDL-FID0101 ADD-S
+    allow recovery non_device:chr_file rw_file_perms;
+    allow recovery sd_device:chr_file rw_file_perms;
+
+    allow recovery fs_type:dir { open read search };
+
+    allow recovery sdcard_type:file { open read getattr};
+    allow recovery self:capability sys_boot;
+    allow recovery proc_sysrq:file rw_file_perms;
+    #  TS:2015-1-9 8974LBU-SDDL-FID0101 ADD-E
+  #+END_SRC
+  
+  *ES中不存在该问题，只是在CS中修改了*
+
+* EARPHONE
+  耳机驱动主要在功能为上层提供耳机插入拔出事件，提够耳机通路
+  + 新加目录 /LINUX/android/kernel/drivers/earphone
+  + 新加目录 /LINUX/android/kernel/drivers/nonvolatile
+  + 修改文件 /LINUX/android/kernel/drivers/Makefile
+  添加earphone和nonvolate为build-in
+  #+BEGIN_SRC sh -t -n
+    # FUJITSU:2013-04-23 H1320003 add start	155
+	obj-y += nonvolatile/
+	# FUJITSU:2013-04-23 H1320003 add end
+    obj-y += earphone/
+  #+END_SRC
+  + 修改文件 /LINUX/android/kernel/init/main.c
+  新加fj_boot_mode定义	
+  #+BEGIN_SRC sh -t -n
+    /* FUJITSU:2013-06-18 H1320084 add start */
+	#include <linux/fj_mode.h>
+	int fj_boot_mode = FJ_MODE_NORMAL;
+	/* FUJITSU:2013-06-18 H1320084 add end */
+
+    /* FUJITSU:2013-06-18 H1320084 add start */
+    static int __init boot_mode_setup(char *str)
+	{
+	  if (!strcmp(str, "chargemode"))
+	     fj_boot_mode = FJ_MODE_OFF_CHARGE;
+	  else if (!strcmp(str, "makermode"))
+	     fj_boot_mode = FJ_MODE_MAKER_MODE;
+	  else if (!strcmp(str, "kernelmode"))
+	     fj_boot_mode = FJ_MODE_KERNEL_MODE;
+	     printk(KERN_INFO"fj_boot_mode = %d\n",fj_boot_mode);
+	  return 1;
+	}
+	__setup("mode=", boot_mode_setup);
+	/* FUJITSU:2013-06-18 H1320084 add end */
+  #+END_SRC
+  + 新加文件 /LINUX/android/kernel/arch/arm/boot/dts/fujitsu/devices/edc/FJDEV-edc.dtsi
+  + 修改文件 /LINUX/android/kernel/arch/arm/boot/dts/fujitsu/targets/FJDEV018/rev3-device-list.dtsi
+  添加earphone设备树
+  #+BEGIN_SRC sh -t -n
+    /include/ "../../devices/edc/FJDEV-edc.dtsi"
+  #+END_SRC
+  + 新加文件 /LINUX/android/kernel/include/linux/earphone.h
+  + 新加文件 /LINUX/android/kernel/include/linux/fj_mode.h
+  + 新加文件 /LINUX/android/kernel/include/linux/nonvloatile_common.h
+
+ *新加文件/目录均从SQUASH中COPY* \\
+ 参考：http://164.69.155.29/fujitsu/#/c/9276/
+
+* FTA LOG 
+  参考：
+  http://164.69.155.29/fujitsu/#/c/9294/
+  http://164.69.155.29/fujitsu/#/c/9295/
+  http://164.69.155.29/fujitsu/#/c/9296/
+  http://164.69.155.29/fujitsu/#/c/9297/
+  http://164.69.155.29/fujitsu/#/c/9298/
+  http://164.69.155.29/fujitsu/#/c/9299/
+  http://164.69.155.29/fujitsu/#/c/9300/
+  http://164.69.155.29/fujitsu/#/c/9301/
+  http://164.69.155.29/fujitsu/#/c/9302/
+* AUDIO
+  参考：
+  http://164.69.155.29/fujitsu/#/c/9272/  
+  http://164.69.155.29/fujitsu/#/c/9274/  
+  http://164.69.155.29/fujitsu/#/c/9275/  
+  http://164.69.155.29/fujitsu/#/c/9277/  
+  http://164.69.155.29/fujitsu/#/c/9278/  
+* test
+#+begin_src ditaa :file ditaa-simpleboxes.png
++---------+
+|         |
+| Foo     |
+|         |
++----+----+---+
+|Bar |Baz     |
+|    |        |
++----+--------+
+#+end_src

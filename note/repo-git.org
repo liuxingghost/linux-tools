@@ -1,0 +1,22 @@
+#+TITLE:       Android-L Bring Up note
+#+AUTHOR:      zxd641326
+#+EMAIL:       zxd641326@163.com
+#+DATE:        2015年 01月 23日 星期五 10:10:39 CST
+#+TAGS:        android
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: 简单的记录一下repo-git相关笔记
+
+* repo
+  + repo start --all xxx
+	将当前代码中的所有git库创建xxx分支，并切换到新创建分支，新创建分支关联远程分支
+* git
+  + git reset --soft xxxx
+	将当前代码的回溯到xxx，丢弃到回溯中间的commit信息，代码保持不变，状态改变，可以用来合并多个commit为一个
+  + git format-patch xxx1..xxx2
+	将commitid 为xxx1到xxx2之间的修改打包成patch
+  + git am -3 xxx
+	将format-patch 生成的patch包合并到当前分支
+* commit
+  + git commit --amend
+	修改最新的一个commit的信息
