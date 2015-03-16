@@ -1,0 +1,50 @@
+#+TITLE:       emacs24.4-eww-baidu
+#+AUTHOR:      zxd
+#+EMAIL:       zxd@zxd-OptiPlex-3020
+#+DATE:        2015-02-05 四
+#+URI:         /blog/%y/%m/%d/emacs24.4-eww-baidu
+#+KEYWORDS:    emacs24.4,eww,baidu
+#+TAGS:        emacs
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: emacs内置浏览器添加百度
+
+emacs24.4内置了浏览器eww，下载编译，输入:M-x:eww 后完全没有
+反映。 \\
+但是又想试试eww，没有办法只有自己解决了。
+* xml2
+  eww依赖与libxml2，查看配置文件输出找到xml相关内容:checking
+  for libxml-2.0 > 2.6.17... no \\
+  原来是libxml边本太低，果断升级
+     #sudo apt-get install libxml2
+     #sudo apt-get install libxml2-dev
+
+* gnutls-cli
+  升级xml2后发现配置完全没有问题了，但是还是不行，查看emacs
+  message，发现需要gnutls-cli，到命令行一看，没有该命令。果
+  断执行
+  #sudo apt-get install gnutls-cli
+
+* 修改引擎
+  安装gnutls-cli后再次执行eww，还是不行，查看message 搜索引
+  擎是：duckduckgo.com，妈蛋啊duckduckgo.com 早就让GCD墙了，
+  只能自己换度娘了。
+  去源码里面搜索：duckduckgo:grep duckduck . -rnH
+  ./lisp/net/eww.el:48:;(defcustom eww-search-prefix "https://duckduckgo.com/html/?q="
+  ./lisp/net/webjump.el:224:     [simple-query "duckduckgo.com"
+  ./lisp/net/webjump.el:225:		   "duckduckgo.com/?q=" ""])
+  
+  好吧，找到了根，eww.el 直接修改即
+  #+BEGIN_SRC lisp -t -n
+  ;(defcustom eww-search-prefix "https://duckduckgo.com/html/?q="
+  (defcustom eww-search-prefix "https://www.baidu.com/html/s?wd="
+  #+END_SRC
+
+  webjump.el 参照添加项，或者修改
+  #+BEGIN_SRC lisp -t -n
+    ;; Internet search engines.
+    ("DuMaMa" .
+     [simple-query "baidu.com"
+		   "baidu.com/s?wd=" ""])
+  #+END_SRC
+
