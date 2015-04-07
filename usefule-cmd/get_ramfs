@@ -1,0 +1,14 @@
+#!/bin/bash
+#mmc read 0x12000000 0x800 0x4000;           load kernel
+#mmc read 0x18000000 0x5000 0x800;           load dtb
+#mmc read 0x15000000 0x5800 0x8000;          load initramfs
+#bootm 0x12000000 0x15000000 0x18000000      boot
+
+# console=ttymxc0,115200 initrd=0x15000040,0x290AF7 root=/dev/ram   uboot bootargs
+
+
+find . | cpio -o -H newc | gzip > /home/zxd/al_ln/cda-bj/imx6qsabresd/image.cpio.gz
+cd /home/zxd/al_ln/cda-bj/imx6qsabresd
+mkimage -a 0x15000000 -e 0x15000040 -n 'uboot  ramdisk rootfs' -A arm -O linux -T ramdisk -C gzip -d image.cpio.gz image.cpio.gz.uboot|tee xx
+cat xx| grep Data | awk -F"[: ]+" '{printf("initramfs size: 0x%x\n",$3);}' 
+cd -
