@@ -1,0 +1,118 @@
+[user]                                                                                                                                        
+	name = zhangxd
+	email = zhangxd1224@thundersoft.com
+# colors    
+# normal、black、red、green、yellow
+# blue、magenta、cyan、white    
+# bold、dim、ul、blink、reverse
+[color]
+    ui = true
+    branch = true
+    diff = true
+    status = true
+    log = true
+    pager = true
+    decorate = true
+[color "branch"]
+    current = red bold#reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow 
+    old = green bold
+    new = red bold
+    whitespace = yellow
+    commit = yellow 
+    frag = cyan 
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan    
+#   header = green
+#   updated = green
+[color "grep"]
+#   external = yellow
+    match = red
+    linenumber = yellow # [-n]
+
+[color "interactive"]
+    header = yellow
+    help = yellow
+    prompt = yellow 
+[color "log"]
+    commit = red
+    decorate = green
+    showroot = yellow
+#   header = green
+[commit]
+   # template = ~/.gitmsg.template
+[alias]
+#   co = checkout         #切换分支[br]
+#   ci = commit           #提交到本地版本库
+#
+#   #cm = commit -m        #提交到本地版本库[msg]
+#   rm = rm               #删除文件[file]
+
+
+#   add = add             #提交修改[file]
+#   addall = add -A       #提交所有修改
+#   rh = reset --hard     #所有未提交的内容清空
+#   br = branch           #创建新分支[br] | 查看本地所有分支
+#   bm = branch -m        #分支的重命名[br newbr]
+#   bd = branch -D        #删除本地分支[br]
+#   st = status           #文件修改状态
+#   df = diff             #查看文件改动[br1 br2]|[file]
+#   mg = merge            #合并文件[br]
+#   hp = help                   #获取git帮助信息
+#   gl = config --global --list #获取git配置列表
+#   slog = shortlog                                                                                                                           
+#   ca = ci --amend             #增加遗漏文件并重新修改提交说明
+#   rf = reset HEAD             #取消暂存[file]
+#   ck = checkout               #显示修改文件列表｜取消文件修改[file]   
+	log5 = log -5           #显示最近的5个提交
+
+	log10 = log -10         #显示最近的10个提交
+
+#   logp = log -p           #显示每次提交的差异
+
+#   logp5 = log -p -5       #显示最近5次提交的差异
+#   bra = branch -a         #列出所有分支
+#   rim = rebase -i master  #rebase了master分支
+#   pl = pull                   #同步版本库
+#   ps = push                   #推动改进
+#   sw = show                   #查看版本文件,[file-name]|[tag-name
+#   gp = grep                   #搜索文件[file]
+#   patch = format-patch        #生成patch文件
+#   bm = blame       #查找文件被谁修改   
+#   tagl = tag -ln   #列出当前已有tags
+#   taga = tag -a -m #创建附注标签[tag-name]&[messsage]|[hash-value] 
+#   tags = tat -s -m #创建附注签署标签[tag-name]&[messsage]|[hash-value] 
+#   tagd = tag -d    #删除tags[tag_name] 
+#   tagv = tag -v    #验证签署标签[tag-name]
+#   ft = fetch       #到远程仓库拉取所有你本地仓库没有的数据
+#   rb = rebase             #将服务器最新内容合并到本地时使用
+#   rv = remote -v          #显示当前的远程库
+#   am = am
+#   wc = whatchanged -p #查看某一文件都被哪些补丁改动过
+    glog = log --pretty=oneline --graph
+	oneline=log --pretty=format:'%h : %an : %ad : %s' --topo-order --graph --date=short
+	st = status
+	co = checkout
+	ct = commit
+	df = diff
+	br = branch
+#   onelog = log -p -1
+#   last = log -1 HEAD      #查看最后一次的提交信息
+[core]
+    editor = vim
+#   editor = emacs
+#   editor = gedit
+[merge]
+#   tool = vimdiff
+    tool = meld
+#   tool = bcompare
+[branch "******"]
+    remote = origin
+	#merge = *******   
+#[url "semc@192.168.9.142:semcj/"]
+#	insteadOf = git://review.sonyericsson.net/
