@@ -1,0 +1,31 @@
+#!/bin/sh
+
+tmp=$$.tmp
+if [ $# -lt 1 ]; then
+path=`pwd`
+else
+path=$1
+j=0
+fi
+#echo "use the $path"
+	 
+if [ -d $path ];then
+  echo "path ok"
+else
+	echo "patch error"
+	exit 1
+fi
+
+echo "`git status . | grep ".c$\|.h$" | grep : | awk '{print  \
+ "./"$NF}'`"  > $tmp #| tee $tmp
+
+for i in `cat $tmp`
+do
+	j=`expr $j + 1`
+	echo $j "`astyle --mode=c --style=linux --indent=spaces=4 --add-brackets  --indent-preprocessor --align-pointer=name --pad-oper --pad-header --unpad-paren --suffix=none --lineend=linux --indent-switches --indent-col1-comments --min-conditional-indent=1 --max-instatement-indent=80 ${i}`"
+
+done
+
+rm -rf $tmp
+
+
