@@ -1,0 +1,96 @@
+#!/bin/bash
+
+file_path=$HOME"/work/doc/"
+
+project=""
+txt_dir="txt"
+txt_path=""
+doc_dir="docx"
+doc_path=""
+xls_dir="xlsx"
+xls_path=""
+pdf_dir="pdf"
+pdf_path=""
+log_dir="log"
+log_path=""
+pic_dir="pic"
+pic_path=""
+tar_dir="tar"
+tar_path=""
+sou_dir="source"
+sou_path=""
+
+if [ $# -le 0 ] ; then
+	echo "please use cmd as : xd-mv-file  xxx"
+	exit 1
+fi
+
+project=$1
+
+# get sub dir 
+date=`date +%F|cut -b 1-7`
+
+function mkdir_path()
+{
+		 if [ ! -d "$1" ] ; then
+		    echo "mkdir $1"
+		    mkdir -p $1
+		 fi
+}
+#get root dir
+txt_path=$file_path$project"/"$txt_dir"/"$date
+mkdir_path $txt_path ;
+doc_path=$file_path$project"/"$doc_dir"/"$date
+mkdir_path $doc_path ;
+xls_path=$file_path$project"/"$xls_dir"/"$date
+mkdir_path $xls_path ;
+pdf_path=$file_path$project"/"$pdf_dir"/"$date
+mkdir_path $pdf_path ;
+log_path=$file_path$project"/"$log_dir"/"$date
+mkdir_path $log_path ;
+pic_path=$file_path$project"/"$pic_dir"/"$date
+mkdir_path $pic_path ;
+tar_path=$file_path$project"/"$tar_dir"/"$date
+mkdir_path $tar_path ;
+sou_path=$file_path$project"/"$sou_dir"/"$date
+mkdir_path $sou_path ;
+
+################mv file function#################
+function mv_file()
+{
+		type=`echo $1 | awk -F "." '{if(NF>1)print $NF}'`
+		x=$(echo $2 | tr [a-z] [A-Z])
+		y=$(echo $type | tr [a-z] [A-Z])
+		if [ "$y" = "$x" ];then
+#				echo $3,$1
+			mv `pwd`"/"$1 $3
+			echo "mv `pwd`"/"$1 $3"
+		fi		
+
+}
+
+#################get all file ##############
+for i in `ls`:
+do
+		if [ -f $i ];then
+		   mv_file $i "txt" $txt_path ;
+		   mv_file $i "org" $txt_path ;
+		   mv_file $i "pdf" $pdf_path;
+		   mv_file $i "docx" $doc_path;
+		   mv_file $i "doc" $doc_path;
+		   mv_file $i "xlsx" $xls_path;
+		   mv_file $i "xls" $xls_path;
+		   mv_file $i "log" $log_path;
+		   mv_file $i "png" $pic_path;
+		   mv_file $i "PNG" $pic_path;
+		   mv_file $i "jpg" $pic_path;
+		   mv_file $i "tar" $tar_path;
+		   mv_file $i "bz2" $tar_path;
+		   mv_file $i "xz" $tar_path;
+		   mv_file $i "zip" $tar_path;
+		   mv_file $i "gz" $tar_path;
+		   mv_file $i "c" $sou_path;
+		   mv_file $i "h" $sou_path;
+		fi
+done
+############################################
