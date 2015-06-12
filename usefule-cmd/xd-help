@@ -1,7 +1,6 @@
 #!/bin/bash
 
 BIN_PATH=$HOME"/bin"
-cd $BIN_PATH
 HELP_FILE=$HOME"/bin/help"
 
 RED="31m"
@@ -44,6 +43,7 @@ if [ $# -ge 1 ] ; then
     install ;
 fi
 
+cd $BIN_PATH
 for i in `ls` ;
 do
     if [ -f $i -a -x $i -a "${i:0:2}" = "xd" ] ;then
