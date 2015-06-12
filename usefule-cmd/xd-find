@@ -1,5 +1,9 @@
 #!/bin/sh
 
+#H_S
+# 从cscope数据库中查找参数指定文件
+#H_E
+
 data_base="cscope.files"
 find_path=""
 file_name=""

@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#H_S
+# 降文件按照类型分类,并按月存入指定的目录中,项目中分类相关文件用
+#H_E
+
 file_path=$HOME"/work/doc/"
 
 project=""
@@ -73,8 +77,10 @@ function mv_file()
 for i in `ls`:
 do
 		if [ -f $i ];then
+           echo $i
 		   mv_file $i "txt" $txt_path ;
 		   mv_file $i "org" $txt_path ;
+		   mv_file $i "html" $txt_path ;
 		   mv_file $i "pdf" $pdf_path;
 		   mv_file $i "docx" $doc_path;
 		   mv_file $i "doc" $doc_path;
@@ -91,6 +97,8 @@ do
 		   mv_file $i "gz" $tar_path;
 		   mv_file $i "c" $sou_path;
 		   mv_file $i "h" $sou_path;
+		   mv_file $i "bin" $sou_path;
+		   mv_file $i "img" $sou_path;
 		fi
 done
 ############################################

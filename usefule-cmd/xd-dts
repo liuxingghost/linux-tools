@@ -1,4 +1,7 @@
 #!/bin/bash
+#H_S
+# 依据dts文件生成对应dtb文件/打印dts文件包含文件树/展开dts所有包含文件为一个完整文件
+#H_E
 DTS_FILE=""
 ALL_DTS="---all"
 ##################################################
@@ -23,11 +26,16 @@ do
 			ALL_DTS="$OPTARG"$ALL_DTS
 			cpp -Wp,-MD,x.pre.tmp -nostdinc -I. -Iinclude  -undef -D__DTS__ -x assembler-with-cpp -o xx.dts.tmp $DTS_FILE
 			dtc -I dts -O dts -o $ALL_DTS xx.dts.tmp
+			rm -rf *tmp$
+			rm -rf xx.dts.tmp
 			;;
 		b) 	DTS_FILE="$OPTARG"
-			ALL_DTS="$OPTARG"$ALL_DTS"--dtb"
+			ALL_DTS=${OPTARG%.*}
+			ALL_DTS=$ALL_DTS".dtb"
 			cpp -Wp,-MD,x.pre.tmp -nostdinc -I. -Iinclude  -undef -D__DTS__ -x assembler-with-cpp -o xx.dts.tmp $DTS_FILE
 			dtc -I dts -O dtb -o $ALL_DTS xx.dts.tmp
+			rm -rf *tmp$
+			rm -rf xx.dts.tmp
 			;;
 		
 		?)

@@ -1,0 +1,57 @@
+#!/bin/bash
+
+BIN_PATH=$HOME"/bin"
+cd $BIN_PATH
+HELP_FILE=$HOME"/bin/help"
+
+RED="31m"
+GREEN="32m"
+BLUE="34m"
+RED1="35m"
+
+color=$RED
+#color=$RED1
+#color=$BLUE
+#color=$GREEN
+
+tmp=$$
+
+INSTALL_PATH=$HOME"/bin"
+
+function install()
+{
+    if [ ! -d $INSTALL_PATH ] ;then
+        mkdir $INSTALL_PATH
+    fi
+
+    cp ./* $INSTALL_PATH
+}
+
+function get_help ()
+{
+    echo -e "\e[1;$color$1 \e[0m"
+    awk '{
+        if(s==1 && !/^#H_E/) \
+            print $0;
+        if(/^#H_S/) \
+            s=1;   \
+        if(/^#H_E/)  \
+            s=0;  \
+    }' $1
+}
+
+if [ $# -ge 1 ] ; then
+    install ;
+fi
+
+for i in `ls` ;
+do
+    if [ -f $i -a -x $i -a "${i:0:2}" = "xd" ] ;then
+        get_help $i >> $tmp
+    fi
+done 
+
+awk '{if(!/^#/){s=$0;}else{print s,"\t",$2}}' $tmp
+
+rm -rf $tmp
+

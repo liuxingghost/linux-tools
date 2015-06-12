@@ -1,6 +1,18 @@
-ls -alh | sort -k7 -nr
-adb reboot bootloader
+
+git push origin HEAD:refs/for/yocto-dev-temp
+
+ls -alh | sort -k7 -nr | head
+
+
+# 清除掉目录中的空格
+find . -maxdepth 1 -type d |cut -d "/" -f 2|grep " "|perl -nle '$old=$_;$_=~s/ //g;`mv "$old" "$_"`'
+fastboot flash kernel /home/zxd/al_ln/cda-bj/kernel/arch/arm/boot/uImage 
+fastboot flash dtb   /home/zxd/al_ln/cda-bj/kernel/arch/arm/boot/dts/imx6dl-sabresd.dtb 
+fastboot flash boot   /home/zxd/al_ln/cda-bj/u-boot/u-boot.imx 
+
 fastboot reboot
+## 以前用现在不常用
+adb reboot bootloader
 
 fastboot flash sbl1 sbl1.mbn
 fastboot flash boot boot.img
@@ -11,3 +23,9 @@ scp zhangxd@192.168.11.115:/home/zhangxd/work/Lollipop-CS/boot_images/build/ms/b
 scp zhangxd@192.168.11.115:/home/zhangxd/work/Lollipop-CS/LINUX/android/out/target/product/msm8974/boot.img ./
 scp zhangxd@192.168.11.115:/home/zhangxd/work/Lollipop-CS/LINUX/android/out/target/product/msm8974/system.img ./
 scp zhangxd@192.168.11.115:/home/zhangxd/work/Lollipop-CS/LINUX/android/out/target/product/msm8974/emmc_appsboot.mbn ./
+
+ssh quwz0302@192.168.4.125
+ssh quwz0302@192.168.12.12
+ssh junius@192.168.12.21
+
+MACHINE=imx6solosabresd source fsl-setup-release.sh -b build -e dfb

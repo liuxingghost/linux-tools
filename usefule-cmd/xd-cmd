@@ -1,6 +1,9 @@
 #!/bin/bash
+#H_S
+# 快速执行常用命令,常用命令记录在cmd.txt文件中
+#H_E
 
-CMD_FILE='/home/zxd/bin/cmd.txt'
+CMD_FILE=$HOME"/bin/cmd.txt"
 MAX_CMD_NUM=20
 
 function use_info () {

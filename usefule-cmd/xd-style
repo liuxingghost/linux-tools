@@ -1,4 +1,7 @@
 #!/bin/sh
+#H_S
+# 格式化参数传入源文件
+#H_E
 
 file_name=$1
 

@@ -1,5 +1,7 @@
 #!/bin/sh
-
+#H_S
+# 格式化目录中对应的源文件,递归操作
+#H_E
 tmp=$$.tmp
 if [ $# -lt 1 ]; then
 path=`pwd`

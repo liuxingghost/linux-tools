@@ -1,4 +1,7 @@
 #!/bin/sh
+#H_S
+# kill指定参数内容相关的进程
+#H_E
 process_name=""
 kill_id=0
 if [ $# -lt 1 ] ; then 
@@ -9,9 +12,9 @@ if [ $# -gt 1 ] ;then
    kill_id=$2
 fi
 #echo "$process_name ,$kill_id"
-if [ "$kill_id" == "1" ];then
-	ps -aux | grep "$process_name" | awk -F ' +' '{print $2;exit}'| xargs kill
+if [ "$kill_id" == "1" ] ;then
+	ps -aux | grep "$process_name"|grep -v grep | awk -F ' +' '{print $2;exit}'| xargs kill
 else
-	ps -aux | grep "$process_name" | awk -F ' +' '{print $2}' | xargs kill
+	ps -aux | grep "$process_name" |grep -v grep | awk -F ' +' '{print $2}' | xargs kill -s 9
 
 fi

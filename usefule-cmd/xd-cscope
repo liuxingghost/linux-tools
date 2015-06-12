@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#H_S
+# 根据参数指定目录生成cscope数据库
+#H_E
 DIR=`pwd`
 LIST_FILE='cscope.files'
 DATABASE_FILE='cscope.out'
@@ -20,7 +23,7 @@ fi
 rm -rf $LIST_FILE
 rm -rf $DATABASE_FILE
 #find the right file type what we want
-cat $$ | egrep -i '\.([chly](xx|pp)*|cc|hh|java)$' | \
+cat $$ | egrep -i '\.([chly](xx|pp)*|cc|hh|S|s)$' | \
 	   	 sed  -e 's/^\.\///' -e '/\.git/d' -e '/\.repo/d' -e '/\/svn\//d' -e '/\/CVS\//d' -e '/\/RCS\//d' -e '/\#/d'| \
 		 sort > $LIST_FILE
 

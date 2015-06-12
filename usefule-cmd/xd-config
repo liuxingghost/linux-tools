@@ -1,5 +1,7 @@
 #!/bin/sh
-
+#H_S
+# 根据指定配置文件中的宏,确定Makefile文件中那些文件参与编译
+#H_E
 #check arguments
 
 if [ $# -le 1 ] ; then
