@@ -13,7 +13,8 @@ function use_info () {
 
 function get_all_cmd(){
 	#echo "=====$1"
-	awk -F"+" -v id=$1 -v max_id=$MAX_CMD_NUM 'BEGIN{i=1}!/^#/&&!/^$/{if(i<=max_id)CMD_DATA[i++]=$0 }END{
+
+	time awk -F"+" -v id=$1 -v max_id=$MAX_CMD_NUM 'BEGIN{i=1}!/^#/&&!/^$/{if(i<=max_id)CMD_DATA[i++]=$0 }END{
          if(id+1 <= i ) \
           #  {print CMD_DATA[id]} \
             {printf("\033[47;35m ==>%s \033[0m\n",CMD_DATA[id])} \

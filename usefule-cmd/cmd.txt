@@ -1,7 +1,13 @@
 
 git push origin HEAD:refs/for/yocto-dev-temp
 
-ls -alh | sort -k7 -nr | head
+ls -alh | sort -k6nr -k7nr |  head
+#----grep 相关命令----
+perl -nle 'system("grep $_ . -rwinH --include=*.c --color=auto");exit' -
+perl -nle 'system("grep $_ . -rwinH --include=*.h --color=auto");exit' -
+perl -nle 'system("grep $_ . -rwinH --color=auto");exit' -
+#---------------
+# 查找历史记录命令
 perl -nle 'system("cat /home/zxd/.bash_history  | grep $_ | sort  |  uniq -c | sort -k1 -nr | head -n 20");exit' -
 # 清除掉目录中的空格
 find . -maxdepth 1 -type d |cut -d "/" -f 2|grep " "|perl -nle '$old=$_;$_=~s/ //g;`mv "$old" "$_"`'
