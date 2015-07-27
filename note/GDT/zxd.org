@@ -1,0 +1,45 @@
+#+TAGS: { work(w) lean(l)  other(o) }
+#+SEQ_TODO: TODO(t) STARTED(s) WAITING(w)  | DONE(d) CANCELLED(c) DEFERRED(f)
+#+COLUMNS: %40ITEM  %CLOCKSUM %CLOCKSUM_T %TODO %TAGS
+#+PROPERTY: CLOCK_INTO_DRAWER t
+* WORK :work
+** connected														   :work:
+*** STARTED 早会													   :work:
+	 :LOGBOOK:
+	 CLOCK: [2015-06-26 五 09:59]--[2015-06-26 五 13:59] =>  4:00
+	 :END:
+
+* OTHER :other
+
+* LEAN :lean
+* ALL																  
+#+BEGIN: clocktable :maxlevel 3 :scope agenda-with-archives :block thisweek :fileskip0 t :indent t :tags "work"
+#+CAPTION: Clock summary at [2015-01-12 一 17:50], for week 2015-W03.
+| File | Headline         | Time   |
+|------+------------------+--------|
+|      | ALL *Total time* | *0:00* |
+#+END:
+#+BEGIN: clocktable :maxlevel 3 :scope agenda-with-archives :block thisweek :fileskip0 t :indent t :tags "other"
+#+CAPTION: Clock summary at [2015-01-12 一 17:50], for week 2015-W03.
+| File | Headline         | Time   |
+|------+------------------+--------|
+|      | ALL *Total time* | *0:00* |
+#+END:
+#+BEGIN: clocktable :maxlevel 3 :scope agenda-with-archives :block thisweek :fileskip0 t :indent t :tags "lean"
+#+CAPTION: Clock summary at [2015-01-12 一 17:50], for week 2015-W03.
+| File | Headline         | Time   |
+|------+------------------+--------|
+|      | ALL *Total time* | *0:00* |
+#+END:
+
+#+BEGIN_SRC emacs-lisp :results value
+(setq week-range (org-clock-special-range 'thisweek nil t))
+(org-clock-sum-today-by-tags nil (nth 0 week-range) (nth 1 week-range) t)
+#+END_SRC
+
+#+RESULTS:
+=[-Nothing-] Done nothing!!!
+==** C-c C-c 统计快捷键/插入项目tag C-c C-t 插入状态tag
+ 
+
+

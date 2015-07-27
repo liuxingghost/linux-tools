@@ -1,0 +1,11 @@
+#!/bin/sh
+#H_S
+# 获取repo库中对已字符串在服务器中所在的库
+#H_E
+#check arguments
+
+echo "String-->"
+read strings
+
+echo "path: "
+grep $strings . -rnH | grep -oP '(?<=name\=\")(.[^"]*)'
