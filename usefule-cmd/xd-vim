@@ -1,0 +1,37 @@
+#!/bin/bash
+#H_S
+# 快速打开xd-cmd后查找的对应文件
+#H_E
+
+CMD_FILE="/tmp/xd-grep-tmp"
+
+function use_info () {
+	echo "===>use $0 xxx<====="
+}
+
+function get_all_cmd(){
+		 awk -F":" -v id=$1 '{ \
+		 	 if($1 == id){ \
+			  #printf("%s +%d\n",$2,$3) \
+			  str=sprintf("vim %s +%d",$2,$3); \
+			  #printf("%s\n",str) \
+			  system(str)
+		} \
+	}' $CMD_FILE
+
+	# echo "=====$1"
+	# 	 awk -F":" -v id=$1 'BEGIN{str=""}/$1 == id/{if($1== id){ \
+	# 	 	  str="vim"+" "+$2+" "+$3 ; \
+	# 		  print $str ;\
+	# 		  printf("vim %s +%d\n",$2,$3); \
+	# 		  }\
+
+	# 	}' $CMD_FILE 
+}
+
+if [ $# -le 0 ] ; then
+ 	use_info;
+else
+	get_all_cmd $1;
+fi
+
